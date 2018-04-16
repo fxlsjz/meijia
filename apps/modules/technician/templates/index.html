@@ -1,0 +1,41 @@
+<!--tabbar上的技师列表-->
+<ion-view class="technician-index wrap">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="backnow()"></div>
+		<div class="ub-f1 wrap-search">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)" />
+		</div>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<!--选项-->
+	<div class="tabbed-slidebox" tab="0">
+		<div class="tsb-icons">
+			<div class="tsb-ic-wrp">
+				<ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+					<span ng-class="{'active': current == {{title.number}}}" on-tap="tab({{title.number}})" ng-repeat="title in techniciantitles">
+						<i ng-bind="title.title" class="icon iconfont oa-Inbox ">距离最近</i>
+                    </span>
+				</ion-scroll>
+			</div>
+		</div>
+	</div>
+	<div style="bottom: 5.2rem;top: 4.15rem; position: absolute; width: 100%;">
+		<ion-content delegate-handle="contentReload" id="body-view" class="technician-content" style='bottom: 4rem;' lazy-scroll>
+			<!--下拉刷新-->
+			<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+			<!--无数据-->
+			<mobo-no-data text="暂无数据!" layout="x" ng-if="failImg"></mobo-no-data>
+			<!--<mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="x" ng-if="items.length == 0"></mobo-no-data>-->
+			<div ng-include="'apps/modules/technician/templates/technician-list.html'"></div>
+			<div class="h4rem"></div>
+			<ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+		</ion-content>
+		<div class="u-bottom-footer ub" id="btnBottom" on-tap="selectAddress()">
+			<span class="u-location-ion"></span>
+			<span class="ub-f1">{{orderInfo.serAddress+orderInfo.detailaddres}}</span>
+			<!--<span class="u-white-triangle">2</span>-->
+		</div>
+	</div>
+</ion-view>

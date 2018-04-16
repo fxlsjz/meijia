@@ -1,0 +1,51 @@
+<!--本月推荐服务-->
+<ion-view class="home">
+    <ion-content lazy-scroll>
+        <div class="hot-content">
+            <div class="text-center c-df3680 m-t-50 m-b-40 f-s-28 f-w-b">·&nbsp;&nbsp; 本月推荐&nbsp;&nbsp;·</div>
+            <div class="hot-list lazy-scroll">
+                <div class="ub list-item" ng-repeat="item in recommendList" on-tap="monthRecommendListGoDetail(item)">
+                    <div ng-if="($index+1)%2 != 0" class="list-class">
+                        <div class="hot-list-img background-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                        <div class="hot-right-content">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32 c-df3680" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                            </div>
+                            <div class="u-cancel-collect" ng-if="item.iscollection == 'N'" on-tap="serversCollection($event,item,'N')"></div>
+                            <div class="u-collect" ng-if="item.iscollection == 'Y'" on-tap="serversCancelCollection($event,item,'Y')"></div>
+                        </div>
+                    </div>
+                    <div ng-if="($index+1)%2 == 0" class="list-class">
+                        <div class="hot-right-content-even">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                            </div>
+                            <div class="u-cancel-collect" ng-if="item.iscollection == 'N'" on-tap="serversCollection($event,item,'N')"></div>
+                            <div class="u-collect" ng-if="item.iscollection == 'Y'" on-tap="serversCancelCollection($event,item,'Y')"></div>
+                        </div>
+                        <div class="hot-list-img-even background-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--无数据显示-->
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <!--下拉刷新-->
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <!--上拉加载-->
+        <ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMorePackageList()"></ion-infinite-scroll>
+    </ion-content>
+        </ion-infinite-scroll>
+    </ion-content>
+
+</ion-view>

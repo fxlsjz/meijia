@@ -1,0 +1,25 @@
+<!--防伪验证-->
+<ion-view class="scan">
+
+
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">防伪码</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+        <!--    <div class="bar-submit">&nbsp;&nbsp;</div>-->
+    </ion-header-bar>
+
+    <ion-content class="bg-color-f">
+        <div class="waiceng ">
+            <div class="rabite ub ub-f1"></div>
+        </div>
+        <div class="ub-f1 search">
+            <input type="text" placeholder="请输入您的防伪码" ng-keyup="search($event)" ng-model="securitycode.key"/>
+            <div class="yanzhengma btn button ufr" on-tap="verify()">验证</div>
+        </div>
+
+        <!--<div class="buttonW">-->
+        <!--<div class="buttonI c-f f-s-32 bg-color-r " on-tap="scan()">进入扫一扫</div>-->
+        <!--</div>-->
+    </ion-content>
+</ion-view>

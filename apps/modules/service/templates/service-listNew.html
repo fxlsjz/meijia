@@ -1,0 +1,83 @@
+<div class="sLists">
+	<!--<div class="list ub" ng-repeat="item in items">
+		<div class="background-img service-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}" on-tap="goDetail(item,item.itemid,item.selected)">
+			<span ng-if="item.isrecommend == 'Y'"></span>
+		</div>
+		<div class="ub-f1 list-border" on-tap="goDetail(item,item.itemid,item.selected)">
+			<div class="f-s-28 c-3 line-ellipsis-1 name" ng-bind="item.iname"></div>
+			<div class="f-s-20 c-3 ub-ac" style="display: inline-block;height: 1.6rem;line-height: 1.6rem;"><span class="clock"></span><span ng-bind="item.iusetime" style="margin-left: 1.5rem;"></span>分钟</div>
+
+			<div class="list-price">
+				<span class="c-e6">¥</span><span class="c-e6 f-s-28" ng-bind="item.nowprice"></span>
+				<span class="f-s-18 c-6" ng-if="oldPrice">¥</span><i class="price f-s-18 c-6" ng-bind="item.oldprice" ng-if="oldPrice"></i>
+				<span class="f-s-20 c-6" ng-if="!oldPrice">/</span><i class="f-s-20 c-6" ng-bind="item.service_count" ng-if="!oldPrice"></i><span class="f-s-20 c-6" ng-if="!oldPrice">次</span>
+			</div>
+			<div class="f-s-16 c-9 ">
+				<div class="line-ellipsis-1" ng-bind="item.iusecount+'人购买'"></div>
+			</div>
+		</div>
+		<div class="list-border">
+			<div class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></div>
+			<div class="u-collect collection" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></div>
+			<div class="join-car" ng-class="{active:item.selected == true}" on-tap="joinCar($event,item)" ng-bind="item.text"></div>
+		</div>
+	</div>-->
+	
+	
+	<!--首页的梯形-->
+	<div class="list-item" ng-repeat="item in items" on-tap="goDetail(item,$index)">
+            <div ng-if="($index+1)%2 != 0" class="list-class">
+                <div class="hot-list-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+                <div class="hot-right-content">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center m-t-5">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20 m-t-5">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span class="m-l-5" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="botomBtns m-t-5">
+                    	<span class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)" ></span>
+                    	<span class="u-collect collection" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></span>
+                    	<!--加入购物车-->
+						<span class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)"></span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div ng-if="($index+1)%2 == 0" class="list-class">
+                <div class="hot-right-content-even">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center" style="margin-top: 5px;">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20" style="margin-top: 5px;">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span class="m-l-5" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="botomBtns m-t-5">
+                    	<span class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></span>
+                    	<span class="u-collect collection m-t-5" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></span>
+                    	<!--加入购物车-->
+						<span class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)"></span>
+                    </div>
+                    
+                </div>
+                <div class="hot-list-img-even" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+            </div>
+    </div>
+	<!--end-->
+	
+	
+</div>
+<!--无数据显示-->
+<mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+<!--下拉刷新-->
+<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+<!--上拉加载-->
+<ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>

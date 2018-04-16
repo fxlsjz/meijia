@@ -1,0 +1,28 @@
+<!--订单列表(我的里面的)by zl-->
+
+<ion-view class="order-index">
+    <div class="ub">
+        <div class="ub-f1 stype-selectoring" on-tap="categoryOrder(0, false)">
+            <div style="display: inline-block; text-align: center;">
+                <div ng-class="{true:'stype-selctor-res',false:' '}[isLeft]">进行中</div>
+                <div class="typebottomline" ng-if='isLeft'></div>
+            </div>
+        </div>
+        <span class="typelinespan"></span>
+        <div class="ub-f1 stype-selectorold" on-tap="categoryOrder(1, false)">
+            <div style="display: inline-block; text-align: center;">
+                <div ng-class="{true:' stype-selctor-res',false:' '}[!isLeft]">历史订单
+                </div>
+                <div class="typebottomline" ng-if='!isLeft'></div>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="t-4" lazy-scroll delegate-handle="orderListScroll">
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <div ng-include="'apps/modules/order/templates/order-list.html'"></div>
+        <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                             distance="1%" immediate-check="false" on-infinite="loadMoreList()"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

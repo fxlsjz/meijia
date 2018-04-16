@@ -1,0 +1,42 @@
+<style>
+	.view-container{
+		z-index: -1;
+	}
+	.bar-header h1.title, .bar-header h1.bar-title{
+		position: static;
+	}
+</style>
+<ion-view class="service-address">
+	<ion-header-bar class="ub ub-ac bar bar-header" ng-show="showHide" >
+		<div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+		<div id="r-result" style="width: 100%;">
+					<div id="l-map" style="display: none;"></div> <!--on-tap="inputed()"-->
+					<input type="text"  id="suggestId" ng-model="add.text" size="20" value="百度" placeholder="输入搜索地址名称" style="width: 75%;border-radius: 2.2rem;height: 2.5rem; padding-left: 1rem;" />
+					<input id="searchResultPanel" style="border:1px solid #C0C0C0;height:auto; display:none; z-index: 99;">
+		</div>
+		<h1 class="bar-title ub-f1">新增地址</h1>
+		<div class="bar-submit bar-submitNew" on-tap="submit()">保存</div>
+	</ion-header-bar>
+	<ion-header-bar class="ub ub-ac bar bar-header" ng-show="!showHide" >
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">新增地址</h1>
+		<div class="bar-submit bar-submitNew" on-tap="submit()">保存</div>
+	</ion-header-bar>
+	<ion-content class="service-add" style="top:3.75rem" ng-show="!showHide">
+		<div class="page_address ub f-s-30 c-3 p-l-30" >
+			<div class="p-r-32">到家地址:</div>
+			<div class="ub-f1 ub">
+				<span class="address-icon"></span>
+				<input on-tap="showApi()" class="ub-f1 address-text" ng-model="add.text" type="text" />
+			</div>
+			
+		</div>
+		<div class="p-l-30 bg-color-f m-t-10 detailed-address p-r-30">
+			<div class="p-t-20">详细地址:</div>
+			<div class="m-t-10">
+				<textarea class="textarea-text" ng-model='detailedAddress.text' placeholder="请输入您的详细地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea>
+			</div>
+		</div>
+	</ion-content>
+	
+</ion-view>

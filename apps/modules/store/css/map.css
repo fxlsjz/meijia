@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/*auth: tzb*/
+
+.map {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.map .btn-map {
+	padding-right: 1.5rem;
+}
+
+.map .loctiondata {
+	height: auto;
+}
+
+
+/*右上角切换图标*/
+
+.map .location-ion {
+	width: 3.75rem;
+	height: 3.75rem;
+	background-image: url(../../../images/store/fw_fanhui_btn.png);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: 1.8rem, 1.8rem;
+}
+
+
+/*viewpage*/
+
+.map .loctiondata .locationInfo {
+	height: 7.6rem;
+}
+
+
+/*店面名称和距离布局*/
+
+.map .loctiondata .locationInfo .location {
+	position: absolute;
+	bottom: 50%;
+	width: 100%;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+
+/*店面地址*/
+
+.map .loctiondata .locationInfo .adress {
+	line-height: 3.8rem;
+	position: absolute;
+	bottom: 0;
+	padding-left: 1.5rem;
+}
+
+.map #container {
+	width: 100%;
+	height: 100%;
+	font-family: "微软雅黑";
+}
+
+.map .icon {}
+
+.ion-record:before {
+	content: none;
+}
+
+
+
+.map .locationInfoNew {
+	background: #fff;
+	height: 7.6rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0
+}
+.map .locationInfoNew .location {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.map .locationInfoNew .adress {
+    line-height: 3.8rem;
+    position: absolute;
+    bottom: 0;
+    padding-left: 1.5rem;
+    color: #999;
+}
+

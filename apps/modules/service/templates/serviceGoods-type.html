@@ -1,0 +1,16 @@
+
+	<div class="mall-type">
+	    <div  class="mall-type-all">
+	    	<ion-scroll>
+		    	<i class="mall-type-detail" ng-class="{true:'active-itemc',false:''}[activeItemc == '']" 
+		    		on-tap="proTypeItem('','','全部')">全部</i>
+		        <div class="mall-type-detail" ng-repeat="item in itemsType">
+		            <i class="c-3 f-s-30 line-ellipsis-1" ng-bind="item.servicetype_name" 
+		            	ng-class="{true:'active-itemc',false:''}[activeItemc == item.servicetype_id]"
+		            	on-tap="proTypeItem(item.servicetype_id,item.servicetype_name)"></i>
+		        </div>
+		    </ion-scroll>
+	    </div>
+	</div>
+
+

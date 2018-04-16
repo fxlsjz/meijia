@@ -1,0 +1,57 @@
+@charset "utf-8";
+.send-detail .order-num{
+	border-bottom: 1px solid #dedede;
+}
+/*运送车图片*/
+.send-detail .send-car{
+	background: url(../../../images/my/wuliu_kuaidi_icon.png);
+	background-size: 100%;
+	width: 5rem;
+	height: 5rem;
+	margin-right: 1.75rem;
+}
+/*进度条*/
+.send-detail .detailSend:first-child .process{
+	background: url(../../../images/my/wuliu_yidaoda_xiushi.png);
+	background-size: 100%;
+	width: 1.4rem;
+	height: 1.4rem;
+	margin-right: 1.5rem;
+}
+.send-detail .detailSend:first-child .line{
+	background: url(../../../images/my/wuliu_hongxian_xiushi.png);
+	background-size: 100%;
+	width: 1.4rem;
+	max-height: 6rem;
+	max-height: 10rem;
+	overflow: auto;
+	margin-right: 1.5rem;
+	margin-top: 0.25rem;
+	background-position: 50% 50%;
+}
+.send-detail .detailSend .process{
+	background: url(../../../images/my/wuliu_huiyuan_xiushi.png) no-repeat center;
+	background-size: 100%;
+	width: 1.4rem;
+	height: 0.9rem;
+	margin-right: 1.5rem;
+	margin-top: 0.25rem;
+}
+.send-detail .detailSend .line{
+	background: url(../../../images/my/wuliu_huixian_xiushi.png) no-repeat;
+	background-size: 100%;
+	width: 1.4rem;
+	min-height: 6rem;
+	max-height: 10rem;
+	overflow: auto;
+	margin-right: 1.5rem;
+	margin-top: 0.25rem;
+	background-position: 50% 50%;
+}
+.send-detail .send-date{
+	min-height: 5rem;
+	line-height: 5rem;
+}
+
+
+

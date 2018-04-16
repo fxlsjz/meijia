@@ -1,0 +1,125 @@
+<!--购物车列表-->
+<ion-view class="shop-car">
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">购物车</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content lazy-scroll>
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <div class="" id="wrap-car">
+            <div class="ub c-gra   b-bla umh5 shop-car-wrap m-b-10" ng-repeat="item in items" ><!--on-tap="goGoodsDetail(item.product_id)"-->
+                <!--下架-->
+                <div ng-if="item.issale =='1'" class="rangeCheck" on-tap="checkShop(item,$event)">
+					<span class="check-box-ion mt-29 checkBox"
+                          ng-class="{active:item.$selected == true}"
+                          on-tap="checkShop(item,$event)" ng-style="noClick"></span>
+                </div>
+                <!--上架-->
+                <div div ng-if="item.issale =='0'" class="rangeCheck" on-tap="checkShop(item,$event)">
+                    <!--无货-->
+                    <span class="check-box-ion mt-29 checkBox" ng-if="item.isgoods =='0'"
+                          ng-class="{active:item.$selected == true}"
+                          on-tap="checkShop(item,$event)" ng-style="noClick"></span>
+                    <!--充足-->
+                    <span class="check-box-ion mt-29 checkBox" ng-if="item.isgoods =='1'"
+                          ng-class="{active:item.$selected == true}"
+                          on-tap="checkShop(item,$event)"></span>
+                    <!--不足-->
+                    <span class="check-box-ion mt-29 checkBox" ng-if="item.issale =='0' && item.isgoods == '2'"
+                          ng-class="{active:item.$selected == true}"
+                          on-tap="checkShop(item,$event)" ng-style="noClick"></span>
+                </div>
+                <!--商品图片-->
+                <div class="background-img wrap-con"
+                     image-lazy-background-image="true" image-lazy-src="{{(item.pimg.split(',')[0]) | baseUrl}}" on-tap="goGoodsDetail(item.product_id)">
+                    <!--剩余量-->
+                    <div ng-if="item.issale =='0' && item.isgoods == '2'" class="stock">剩余{{item.stock}}</div>
+                    <!--无货-->
+                    <div class="no-goods" ng-if="item.issale =='0' && item.isgoods =='0'">
+						<span class="out-circle">
+							<i class="in-circle">无货</i>
+						</span>
+                    </div>
+                    <!--下架-->
+                    <div class="no-goods" ng-if="item.issale =='1'" ng-style="noClick">
+						<span class="out-circle">
+							<i class="in-circle">下架</i>
+						</span>
+                    </div>
+                </div>
+                <!--商品的详细信息-->
+                <div class="ub-f1" ng-if="!item.$isShow">
+                    <h2 class="f-s-24 c-3 line-ellipsis-1 m-b-0" ng-bind="item.product_name" on-tap="goGoodsDetail(item.product_id)"></h2>
+                    <div class="c-80 f-s-20 ub c-gra   b-bla umh5" on-tap="goGoodsDetail(item.product_id)">规格 :
+                        <i class="line-ellipsis-1 ub-f1" ng-bind="item.intro"></i>
+                    </div>
+                    <!--<p class="m-b-0">-->
+                    	<div class="c-80 f-s-20" on-tap="goGoodsDetail(item.product_id)">
+                    		数量 :{{item.num}}
+                    	</div>
+						<!--<span class="c-80 f-s-20">数量 : 
+							<i ng-bind="item.num"></i>
+						</span>-->
+                    <!--</p>-->
+                    <div class="ub c-gra   b-bla umh5">
+                        <div class="ub-f1 c-e6 f-s-24" on-tap="goGoodsDetail(item.product_id)">
+                            ¥ <i ng-bind="item.price"></i>
+                        </div>
+                        <div class="ub-f1 c-e6 f-s-24 edit" on-tap="editor(item,$event)">
+		   					编辑
+		   				</div>
+                    </div>
+                </div>
+                <!--加、减-->
+                <div class="ub-f1 car-count" ng-if="item.$isShow">
+                    <!--下架-->
+                    <div ng-if="item.issale =='1'" class="issaleflag" on-tap="noResponse($event)">
+                        <span class="count-btn ub-f1" ng-style="noClick">－</span>
+                    </div>
+                    <!--上架-->
+                    <div ng-if="item.issale =='0'" class="issaleflag">
+                        <span class="count-btn" ng-style="isHidden" on-tap="delProduct(item,$event);"
+                              ng-if="item.isgoods =='0'">－</span>
+                        <span class="count-btn" ng-style="isHidden" on-tap="delProduct(item,$event);"
+                              ng-if="item.isgoods =='1'">－</span>
+                        <span class="count-btn" ng-style="isHidden" on-tap="delProduct(item,$event);"
+                              ng-if="item.isgoods =='2'">－</span>
+                    </div>
+                    <i class="count-num" ng-bind="item.num  | countMax:999:'+'"></i>
+                    <!--下架-->
+                    <div ng-if="item.issale =='1'" class="issaleflag" on-tap="noResponse($event)">
+                        <span class="count-btn" ng-style="noClick">＋</span>
+                    </div>
+                    <!--上架-->
+                    <div ng-if="item.issale =='0'" class="issaleflag">
+                        <span class="count-btn" on-tap="addProduct(item,$event);" ng-if="item.isgoods =='0'"
+                              ng-style="noClick">＋</span>
+                        <span class="count-btn" on-tap="addProduct(item,$event);" ng-if="item.isgoods =='1'">＋</span>
+                        <span class="count-btn" on-tap="addProduct(item,$event);" ng-if="item.isgoods =='2'">＋</span>
+                    </div>
+                    <div class="ub c-gra   b-bla umh5 m-t-165">
+                        <div class="comment-unselected count-btn-del" on-tap="editorDel($index,item,$event)">删除</div>
+                        <div class="comment-unselected count-submit" on-tap="editorSure($index,item,$event);">确定</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="placeholder-div"></div>
+
+    </ion-content>
+    <!--底部-->
+    <div class="shop-car-footer">
+        <div class="ub c-gra   b-bla umh5">
+            <div class="ub-f2">
+                <label on-tap="allSelect();">
+                    <span class="check-box-ion" ng-class="{active:selectedAll == true}"></span>
+                    全选&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </label>
+                合计：<i class="c-e6 f-s-24">¥{{prices ? (prices | number:1) : '0.0'}}</i>
+            </div>
+            <div class="footer-submit ub-f1 bg-color-r" on-tap="toPay()">去结算(<i ng-bind="total ? total : 0"></i>)</div>
+        </div>
+    </div>
+</ion-view>

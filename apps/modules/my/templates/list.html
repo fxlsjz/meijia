@@ -1,0 +1,65 @@
+<!--商品订单-->
+<div class="commodity-list" ng-repeat="item in items" on-tap="goGoodsOrderDetail(item)">
+
+    <!--订单编号+订单状态-->
+    <div class="ub f-s-26 item-top-info">
+        <div class="c-3">订单编号:&nbsp;</div>
+        <div class="c-3 ub-f1" ng-bind="item.orderno"></div>
+        <div ng-if="appValues" class="c-e6">{{appValues[item.order_state].dic_desc}}</div>
+    </div>
+
+    <!--商品图片、name、规格、实付款等信息-->
+    <div class="item-content bg-color-gr">
+        <div ng-if="item.product_list.length > 1" class="w-ull">
+            <ion-scroll lazy-scroll direction="x">
+                <ul class="pic-layout">
+                    <li class="m-l-5" ng-repeat="tt in item.product_list">
+	      							<span class="background-img pic-size h75"
+                                          image-lazy-background-image="true"
+                                          image-lazy-src="{{tt.pimg | baseUrl}}"></span>
+                    </li>
+                </ul>
+            </ion-scroll>
+        </div>
+        <div ng-if="item.product_list.length == 1" class="ub lenghing" ng-repeat="tt in item.product_list">
+            <span class="background-img pic-size h75" image-lazy-background-image="true"
+                  image-lazy-src="{{tt.pimg | baseUrl}}"></span>
+            <div class="write ub-f1">
+                <p class="f-s-28 c-3 line-ellipsis-1">{{tt.product_name}}</p>
+                <p class="f-s-22 c-6 line-ellipsis-1">规格: <i>{{tt.intro}}</i></p>
+                <p class="f-s-22 c-6 line-ellipsis-1">数量: <i>{{tt.num}}</i></p>
+                <p class="f-s-22 c-80">下单时间: <i class="c-80"
+                                                ng-bind='item.order_stime * 1000 | date:"yyyy-MM-dd HH:mm"'></i></p>
+            </div>
+        </div>
+        <div class="mony bg-color-f">
+            <div class="pay-mony">
+                <p class="f-s-26 ufr c-80">实付款:<i class="f-s-32 c-e6" style="padding-left: 1rem;">¥<i
+                        class="f-s-32"></i>{{item.actualprice | number:1}}</i></p>
+                <p class="f-s-26 ufr c-80" style="padding-right: 1rem;">共<i ng-bind="getNum(item.product_list)"></i>件商品
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!--item底部按钮（取消订单，查看物流，确认收货，去评价，去支付）-->
+    <div class="item-bottom-btns f-s-24"
+         ng-if="(item.cencal_able == 'Y')||(item.order_state=='orderstate_indelivery')||(item.iscommon == 'Y')||(item.pay_able == 'Y')">
+        <div ng-if="item.cencal_able == 'Y'" class="gray-btn c-3" on-tap="cancelOrder(item,$event)">取消订单</div>
+
+        <div ng-if="item.order_state=='orderstate_indelivery'" class="red-btn c-e6"
+             on-tap="checkLogistics(item,$event)">查看物流
+        </div>
+
+        <div ng-if="item.order_state=='orderstate_indelivery'" class="red-btn c-e6"
+             on-tap="receiptCommodity(item,$event)">确认收货
+        </div>
+
+        <div ng-if="item.iscommon == 'Y'" class="red-btn c-e6" on-tap="goEvaluate(item,$event)">去评价</div>
+
+        <div ng-if="item.pay_able == 'Y'" class="red-btn c-e6" on-tap="goPay(item,$event)">去支付</div>
+    </div>
+</div>
+
+ 
+      

@@ -1,0 +1,35 @@
+<!--商品订单-->
+<ion-view class="commodity">
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">我的订单</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+
+    <div class="tabbed-slidebox" tab="0">
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp" style="border-bottom: 1px solid #F2F2F2;">
+                <ion-scroll direction="x" class="tsb-hscroll bg-color-f">
+                    <span ng-class="{'active': sortid == 0}" on-tap="categoryOrder(0)">
+						<i class="icon iconfont oa-Inbox ">未支付</i>
+                    </span>
+                    <span ng-class="{'active': sortid == 1}" on-tap="categoryOrder(1)">
+						<i class="icon iconfont oa-Inbox ">未完成</i>
+                    </span>
+                    <span ng-class="{'active': sortid == 2}" on-tap="categoryOrder(2)">
+						<i class="icon iconfont oa-Inbox ">全部</i>
+                    </span>
+                </ion-scroll>
+            </div>
+        </div>
+        <ion-content lazy-scroll ng-class="cssClass" delegate-handle="listScroll">
+            <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+            <!--<mobo-data-loading ng-if="items&&canLoadMoreGoodsList == undefined"></mobo-data-loading>-->
+            <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+            <div ng-include="'apps/modules/my/templates/list.html'"></div>
+            <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                                 distance="1%" immediate-check="false"
+                                 on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+        </ion-content>
+    </div>
+</ion-view>

@@ -1,0 +1,134 @@
+<!--套票预约界面-->
+<ion-view ng-class="{'ticket-order-f' : isShowTip}">
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" ui-sref="my-ticket"></div>
+		<h1 class="bar-title ub-f1">预约</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<div class="out-address" ng-if="isShowTip">您选择的地址不在{{serviceText}}范围内</div>
+	<ion-content id="body-view" lazy-scroll class="ticket-order" style="bottom: 5.4rem;" lazy-scroll>
+		<div class="ticket-order-con">
+			<ul class="m-b-10">
+				<li class="ub">
+					<span>联系人</span>
+					<div class="ub-f1 text-right">
+						<input class="text-right" type="text" ng-model="orderInfo.linkname" />
+					</div>
+				</li>
+				<li class="ub">
+					<span>联系电话</span>
+					<div class="ub-f1 text-right">
+						<input class="text-right" type="tel" ng-model="orderInfo.linkphone" />
+					</div>
+					
+				</li>
+				<li class="ub" on-tap="selectAddres()">
+					<span>{{serviceText}}店面</span>
+					<div class="ub-f1 c-e6 text-right p-r-20 textLong" ng-bind="sname"></div>
+					<!--<div class="ub-f1 c-e6 text-right p-r-20" ng-if="orderInformation.order_type == 'ORDER_ONLINE'" ng-bind="orderInfo.sname"></div>-->
+					<div class="lis-sws ub-img" ng-show="selectShow"></div>
+				</li>
+				<li class="ub" on-tap="selTeachers()">
+					<span>美甲师</span>
+					<div class="ub-f1 c-e6 text-right p-r-20" ng-bind="selBName | cut:true:10:' ...'"></div>
+					<!--<div class='lis-sw ub-img' ng-show="isChose"></div>-->
+					<div class="lis-sws ub-img" ng-show="isChose"></div>
+				</li>
+				<!--<li class="ub" ng-if="orderInformation.order_type == 'ORDER_ONLINE'">
+					<span>详细地址</span>
+					<div class="ub-f1">
+						<input type="text" ng-model="orderInfo.detailaddres" />
+					</div>
+				</li>-->
+			</ul>
+			<div class='uba b-gra c-wh us uc-a money '>
+				<!--<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4' on-tap="selTeacher()">
+					<div class='ub-f1 ut-s order-ub-f1'>{{technicianText}}</div>
+					<div class='res8 photo m-r-1' ng-if="bphoto" image-lazy-background-image="true" image-lazy-src="{{bphoto | baseUrl}}"></div>
+					<div class='tx-r t-blu ulev-1 m-r-1' ng-bind="selBName | cut:true:10:' ...'"></div>
+					<div class='lis-sw ub-img' ng-show="isChose"></div>
+				</div>-->
+				<div class=' ub ubb b-gra t-bla ub-ac lis umh4'>
+					<div class='ub-f1 ut-s order-ub-f1'>{{serviceText}}项目</div>
+					<div class='tx-r t-blu ulev-1 line-ellipsis-1' ng-bind="orderInfo.iname"></div>
+				</div>
+				<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4' on-tap="seltService()">
+					<div class='ub-f1 ut-s order-ub-f1'>附加{{serviceText}}</div>
+					<div class='lis-sw ub-img'></div>
+				</div>
+			</div>
+			<div class="serlist-con" ng-if="bFlag == 'true'">
+				<div class="ub serlists" ng-repeat="item in selExtraService" ng-init="num = selExtraService.length">
+					<div class="background-img ticket-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+					<div class="ub-f1 serlists-item">
+						<h2 class="f-s-20 line-ellipsis-1" ng-bind="item.iname"></h2>
+						<div class="f-s-20 ub time">
+							<div class="ub-f1">
+								<i ng-bind="item.iusetime"></i>分钟
+							</div>
+							<span class="c-e6">¥<i ng-bind="item.nowprice"></i></span>
+						</div>
+						<span class="delser" on-tap="deleItem($index,item)"></span>
+					</div>
+				</div>
+			</div>
+			<div class='uba b-gra c-wh us uc-a '>
+				<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4' on-tap="seltSerTime()" ng-class="{'order-time':bFlag == 'true'}">
+					<div class='ub-f1 ut-s'>预约时间</div>
+					<div class='tx-r t-blu ulev-1 order-time c-e6' ng-bind="serTime"></div>
+					<div class='res8 lis-sw ub-img'></div>
+				</div>
+				<div class='uc-b ub t-bla ub-ac lis umh4 f-s-28 c-3' >
+					<div class='ut-s'>其他需求: </div>
+					<input class="ub-f1" placeholder="还有什么要告诉我们的?" style="display: -webkit-box; margin-right:1rem;margin-left:1rem;padding-top: 0;height: 4rem;line-height: 4rem;" type="text" ng-model="orderInfo.remark" />
+				</div>
+			</div>
+			<!--ng-if="bFlag == 'true'"-->
+			<div ng-if="selExtraService.length > 0">
+				<div class='uba b-gra c-wh us uc-a m-t-10'>
+					<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 f-s-28 c-3'>
+						<div class='ub-f1 ut-s'>{{serviceText}}金额</div>
+						<div class='tx-r t-blu ulev-1 c-e6' style="margin: 0px;">¥<i ng-bind="orderprice"></i></div>
+					</div>
+					<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 noborder f-s-28 c-3'>
+						<div class='ub-f1 ut-s'>实付总计</div>
+						<div class='tx-r t-blu ulev-1 c-e6' style="margin: 0px;">¥<i ng-bind="actualprice"></i></div>
+					</div>
+				</div>
+				<div class='uba b-gra c-wh us uc-a m-t-10 money'>
+					<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 f-s-28 c-3' on-tap="selPayWay(0)">
+						<!--<div class="balance-icon balance-icon-pub"></div>-->
+						<div class='ub-f1 ut-s'>余额支付<i class="c-e6">&nbsp;(当前余额：¥<i class="" ng-bind="balance"></i>)</i>
+						</div>
+						<div class='res8 lis-sw ub-img pay' ng-class="{'active':payWay == 0}" ng-style="noSelect"></div>
+					</div>
+					<div class='uc-t ub b-gra t-bla ub-ac lis umh4 f-s-28 c-3' on-tap="selPayWay(1)">
+						<!--<div class="balance-icon balance-icon-pub paymen"></div>-->
+						<div class='ub-f1 ut-s'>微信支付</div>
+						<div class='res8 lis-sw ub-img pay' ng-class="{'active':payWay == 1}"></div>
+					</div>
+					<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 noborder f-s-28 c-3' ng-if="orderInformation.order_type == 'ORDER_OFFLINE_ONLINE'">
+						<!--<div class="balance-icon balance-icon-pub toshop"></div>-->
+						<div class='ub-f1 ut-s'>到店支付</div>
+						<div class='res8 lis-sw ub-img pay' ng-class="{'active':payWay == 2}" on-tap="selPayWay(2)"></div>
+					</div>
+				</div>
+				<div class="text m-t-10 f-s-24">
+					<p class='f-s-24' style="margin: 0px;">请您下单10分钟内支付</p>
+					<p class='f-s-24' style="margin: 0px;">超时订单将自动取消</p>
+					<p style="margin: 0px;">
+						<span class='f-s-24'>退单、退款等规则详情请见</span>
+						<span class="f-s-24 c-e6" ui-sref="order-order-rule">《下单须知》</span>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
+	</ion-content>
+	<div id="btnBottom" class="f-log-btn ub" on-tap="onOrdered()">
+		<div class="f-btn-submit ub-f1 text-center" ng-bind="submitText"></div>
+	</div>
+
+</ion-view>

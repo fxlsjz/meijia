@@ -1,0 +1,184 @@
+<ion-view class="orderDetail">
+
+    <ion-content id="content" lazy-scroll style="bottom: 5.4rem;">
+        <div class="numbing bg-color-f">
+            <div class="number">
+                <p class="detail f-s-28 c-3 ">订单号</p>
+                <p class="f-s-28 c-3 ">{{iteming.orderno}}</p>
+            </div>
+
+            <div class="number-state">
+                <p class="detail f-s-28 c-3 ">订单状态</p>
+                <p class="f-s-28 c-e6 ">{{orderStatus}}</p>
+            </div>
+
+        </div>
+
+        <!----------套票服务列表------->
+        <div ng-if="iteming.is_package =='Y' && iteming.service_list.length >0" class="list-parent">
+            <p class="buy-service f-s-28 c-3 bg-color-f">{{'购买' + serviceText}}</p>
+
+            <div class="list bg-color-f serlists" ng-repeat="list in iteming.service_list">
+                <div class="ub m-b-10 item-border-bottom">
+                    <div class="ticket-img background-img " image-lazy-background-image="true"
+                         image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                    <div class="ub-f1 serlists-item">
+                        <div class="kuanshi service-name f-s-26 name-h2">{{list.iname}}</div>
+
+                        <p class="f-s-20">{{'共' + list.service_count + '次'}}</p>
+
+                        <div class="f-s-20 ub">
+                            <div class="ub-f1">
+                                <!--<i class="time-ion m-l-0"></i>-->
+                                <i>{{list.iusetime}}</i>分钟
+                            </div>
+                            <span class="c-e6 f-s-28">¥<i>{{list.nowprice}}</i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--我的服务列表-->
+        <div ng-if="iteming.is_package =='N' && iteming.service_list.length >0" class=" bg-color-f">
+            <div class="list-parent">
+                <div class="service-list-padding">
+                    <div class="ub ub-ac technician-layout">
+                        <div class="f-s-28 ub-f1">{{technicianText}}</div>
+                        <!--<div class="technician-head-image" image-lazy-background-image="true"-->
+                        <!--image-lazy-src="{{iteming.beautician.photo_two|baseUrl}}"></div>-->
+                        <div class="f-s-28">{{'&nbsp;&nbsp'+iteming.beautician.nickname}}</div>
+                    </div>
+                </div>
+
+                <div class="list m-t-16 serlists" ng-repeat="list in iteming.service_list">
+                    <div class="ub m-b-10 item-border-bottom">
+                        <div class="ticket-img background-img " image-lazy-background-image="true"
+                             image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                        <div class="ub-f1 serlists-item">
+                            <h2 class="kuanshi service-name f-s-26">{{list.iname}}</h2>
+                            <div class="ub ub-ae distance-name-price">
+                                <div class="ub-f1 f-s-20">
+                                    <!--<i class="time-ion time-ionNew"></i>-->
+                                    <i>{{list.iusetime}}</i>分钟
+                                </div>
+                                <div class="f-s-32">
+                                    <span class="c-e6">¥<i>{{list.nowprice}}</i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--她的服务列表-->
+        <div ng-if="iteming.is_package =='N' && iteming.serviceother_list.length >0" class="list-border-top bg-color-f">
+            <div class="list-parent">
+                <div class="service-list-padding">
+                    <div class="ub ub-ac technician-layout">
+                        <div class="f-s-28 ub-f1">{{'Ta的' + technicianText}}</div>
+                        <div class="technician-head-image" image-lazy-background-image="true"
+                             image-lazy-src="{{iteming.beautician_other.photo_two|baseUrl}}"></div>
+                        <div class="f-s-28">{{'&nbsp;&nbsp'+iteming.beautician_other.nickname}}</div>
+                    </div>
+                </div>
+
+                <div class="list m-t-16 serlists" ng-repeat="list in iteming.serviceother_list">
+                    <div class="ub m-b-10 item-border-bottom">
+                        <div class="ticket-img background-img " image-lazy-background-image="true"
+                             image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                        <div class="ub-f1 serlists-item">
+                            <h2 class="kuanshi f-s-26">{{list.iname}}</h2>
+                            <div class="ub ub-ae distance-name-price">
+
+                                <div class="ub-f1 f-s-20">
+                                    <!--<i class="time-ion"></i>-->
+                                    <i>{{list.iusetime}}</i>分钟
+                                </div>
+                                <div class="f-s-32">
+                                    <span class="c-e6">¥<i>{{list.nowprice}}</i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--联系人+联系电话-->
+        <div class="numbing border-top bg-color-f">
+            <div class="number">
+                <p class="detail f-s-28 c-3 ">联系人</p>
+
+                <p class="f-s-28 c-3 ">{{iteming.order_name}}</p>
+            </div>
+
+            <div class="number-state">
+                <p class="detail f-s-28 c-3 ">联系电话</p>
+
+                <p class="f-s-28 c-3 ">{{iteming.order_phone}}</p>
+            </div>
+
+            <div class="number-state-top" ng-if="showOrderTime">
+                <p class="detail f-s-28 c-3 ">预约时间</p>
+
+                <p class="f-s-28 c-3 ">{{iteming.order_stime}}</p>
+            </div>
+
+            <div class="ub address-layout" ng-if="showOrderAddress">
+                <p class="detail f-s-28 c-3 p-no-padding" ng-bind="addressTxt"></p>
+                <p class="ub-f1 f-s-28 c-3 right-p" style="padding-left: 0.4rem;">{{iteming.order_address}}</p>
+            </div>
+
+        </div>
+
+        <!---------------------留言----------------------->
+        <div class="numbing">
+            <p class="p-t-20 f-s-28 c-3">其他需求</p>
+
+            <p ng-if="iteming.remark" class="words f-s-28 c-3">{{iteming.remark}}</p>
+        </div>
+
+        <!--服务金额+实付总计+下单时间-->
+        <div class="items-frame">
+            <div class="cell ub ">
+                <div class="c-3 ub-f1">{{serviceText + '金额'}}</div>
+                <div class="c-e6">{{'¥' + iteming.orderprice}}</div>
+            </div>
+            <div class="cell_two ub">
+                <div class="c-e6 ub-f1">实付总计：</div>
+                <div class="c-e6 f-s-40">{{'¥' + iteming.actualprice}}</div>
+            </div>
+            <div class="bottom-order-time f-s-20 c-80 ">
+                <p class="ufr" ng-bind='iteming.order_time * 1000 | date:"yyyy-MM-dd HH:mm"'></p>
+                <p class="ufr">下单时间：</p>
+            </div>
+        </div>
+        <!--占位置-->
+        <!--<div class="bottom-null-layout">-->
+
+        </div>
+
+    </ion-content>
+
+    <div class="ub bottom-btns-div">
+        <div class="ub-f1 comment-unselecteds" style="border-top: 1px solid #DEDEDE;" ng-if="showCancel"
+             on-tap="cancelOrder(iteming.oid)">取消
+        </div>
+        <span class="linespan" ng-if="showCancel && btnclick"></span>
+        <div class="ub-f1 comment-unselecteds" ng-if="showPay" on-tap="loadDataPay(iteming.oid)" ng-style="btnclick">
+            去支付(<i
+                ng-bind="TimeFormat" ng-model="TimeFormat"></i>)
+        </div>
+        <div class="ub-f1 comment-unselecteds" ng-if="order_state=='orderstate_complete'&&iteming.iscommon=='Y'"
+             on-tap="evaluateService(iteming)">
+            评价{{serviceText}}
+        </div>
+        <span class="linespan" ng-if="iteming.iscommon=='Y'&& iteming.biscommon=='Y'"></span>
+        <div class="ub-f1 comment-unselecteds" ng-if="order_state=='orderstate_complete'&&iteming.biscommon=='Y'"
+             on-tap="evaluateTechnician(iteming)">
+            评价{{technicianText}}
+        </div>
+    </div>
+</ion-view>

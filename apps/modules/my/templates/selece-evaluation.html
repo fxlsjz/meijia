@@ -1,0 +1,23 @@
+<ion-view>
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">选择评价</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content class="assess" lazy-scroll>
+        <div class="top ub bg-color-f selece" ng-if="item.iscommon == 'Y'" on-tap="goEvaluate(item)"
+             ng-repeat='item in items'>
+            <!--<div class="top ub bg-color-f selece" ng-click="goEvaluatio(item)" ng-repeat='item in items' ng-hide='item.product_id == productId'>-->
+            <span class="u-img background-img u-imgTwo" image-lazy-background-image="true"
+                  image-lazy-src="{{(item.pimg.split(',')[0]) | baseUrl}}" ></span>
+            <div class="right-details ub-f1">
+                <div ng-bind="item.product_name" class="f-s-28 c-3 line-ellipsis-1">一项里应2016夏装息怒啊接</div>
+                <div class="f-s-20 c-6 line-ellipsis-1">规格：{{item.intro}}</div>
+                <div class="f-s-20 c-6">数量：{{item.num}}</div>
+                <div class="ub padding0 c-e6">¥
+                    <span ng-bind="item.price" class="f-s-30 c-e6"></span>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

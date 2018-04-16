@@ -1,0 +1,46 @@
+@charset "utf-8";
+.track-order .order-num{
+    border-bottom: 1px solid #dedede;
+}
+
+/*大红圆*/
+.track-order .detailSend:first-child .process{
+    background: url(../../../images/order/order_track_big_circle.png) no-repeat center;
+    background-size: 100%;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 1.5rem;
+}
+.track-order .detailSend .process{
+    background: url(../../../images/order/order_track_little_circle.png) no-repeat center;
+    background-size: 100%;
+    width: 1.4rem;
+    height: 0.9rem;
+    margin-right: 1.5rem;
+    padding-top: 0.25rem;
+}
+.track-order .detailSend .line{
+    background: url(../../../images/order/order_track_line.png) repeat-y;
+    background-size: 100%;
+    width: 1.4rem;
+    min-height: 6rem;
+    max-height: 10rem;
+    overflow: auto;
+    margin-right: 1.5rem;
+    padding-top: 0.25rem;
+    background-position: 50% 50%;
+
+}
+.track-order .send-date{
+    /*min-height: 6rem;*/
+    max-height: 10rem;
+    line-height: 150%;
+}
+
+.track-order .one-word{
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+
+
+

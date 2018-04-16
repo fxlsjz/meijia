@@ -1,0 +1,89 @@
+<ion-view>
+    <!--<ion-header-bar class="ub ub-ac bar bar-header">
+        <h1 class="bar-title ub-f1">我的</h1>
+    </ion-header-bar>-->
+    <ion-content lazy-scroll class="my_index bg-color-g">
+        <div class="head-portrait">
+            <div class="picture bg-color-f">
+                <div class="u-head">
+                    <div on-tap="ModifyData()" class="bacpicture" image-lazy-background-image="true"
+                         image-lazy-src="{{$_userInfo.user_id ? ($_userInfo.user_img | baseUrl) : ''}}">
+                    </div>
+                </div>
+                <div class="u-head-name">
+                    <div class="c-e6 f-s-32" ng-if="!$_userInfo.user_id" on-tap="contactTo()">登录</div>
+                    <div class="f-s-30 c-e6" ng-bind="$_userInfo.user_name">banner</div>
+
+                </div>
+            </div>
+        </div>
+        <!--//我的列表-->
+        <ion-list class="colars">
+            <ion-item class="ul_list listNew">
+                <div ng-if="isRecharge">
+                    <div class="lists f-s-30 m-b-02 listNewSon" ui-sref="my-wallet">我的钱包
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <!--<div class="lists f-s-30 listNewSon" ui-sref="integral-rule">我的积分
+                    <span class="ufr"></span>
+                </div>-->
+                <div on-tap="my-message" class="listNewSon">
+                    <div class="lists f-s-30" ng-class="{true:'ding',false:'go'[goClass]}" ui-sref="my-message">我的消息
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <div ng-if="isShopO2O" class="listNewSon">
+                    <div class="lists f-s-30 m-b-02" on-tap="goServiceListTwo()">{{serviceText + '订单'}}
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <div ng-if="!(!appValues ||(!appValues.IS_PACKAGE || appValues.IS_PACKAGE.dic_desc == 'N')) "
+                     class="listNewSon">
+                    <div ui-sref="my-ticket">
+                        <div class="lists f-s-30 ding">{{'我的' + packageText}}
+                            <span class="ufr"></span>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+            <!--<ion-item class="ul_list list-text listTwo">
+                <div on-tap="MyCommodity()" ng-if="!isMyItem" class="listTwoSon">
+                    <div class="lists f-s-30">商品订单
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <div on-tap="shopCar()" ng-if="!isMyItem" class="listTwoSon">
+                    <div class="lists f-s-30 " ng-class="{true:'ding',false:'go'[goClass]}">购物车
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <div on-tap="MyCollect()" ng-if="!isMyItem" class="listTwoSon">
+                    <div class="lists f-s-30">商品收藏
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+                <div ng-if="trueOrFalse" class="listTwoSon">
+                    <div class="lists f-s-30" ui-sref="my-scan-it">防伪验证
+                        <span class="ufr"></span>
+                    </div>
+                </div>
+            </ion-item>-->
+            <!--<ion-item>
+                <div ng-repeat="item in items.res_value">
+                    <div ng-if="item.dic_code == 'IS_FAKE'">
+                        <div ng-if="item.dic_desc == 'Y'" ui-sref="my-scan-it"  class="list f-s-30" ng-class="{true:'ding',false:'go'[goClass]}">防伪码
+                            <span class="ufr"></span>
+                        </div>
+                        <div ng-if="item.dic_desc == 'N'"></div>
+                    </div>
+                </div>
+            </ion-item>-->
+            <ion-item class="ul_list list-text m-b-08">
+                <div class="lists f-s-30 ding" ui-sref="my-seeting">设置
+                    <span class="ufr"></span>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

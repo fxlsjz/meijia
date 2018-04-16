@@ -1,0 +1,430 @@
+@charset "utf-8";
+.service-index .bar-title {
+	position: relative;
+}
+
+.service-index .search {
+	position: absolute;
+	top: 1.2rem;
+	right: 0;
+}
+
+.service-index .tabbed-slidebox {
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.service-index .dw {
+	position: absolute;
+	z-index: 1;
+}
+
+.service-index .has-header {
+	top: 8.15rem;
+}
+
+.service-index .list {
+	position: relative;
+	margin-bottom: 0;
+	padding: 1rem 1.5rem 0 1.5rem;
+	background: #fff;
+}
+
+
+/*.service-index .sLists .list:last-child {
+	margin-bottom: 5rem;
+}*/
+
+.service-index .service-img {
+	width: 12.4rem;
+	height: 7rem;
+	margin-right: 1rem;
+	position: relative;
+}
+
+.service-index .service-img span {
+	position: absolute;
+	width: 3.6rem;
+	height: 3.6rem;
+	background-image: url(../../../images/service/recommend-icon.png);
+	background-size: cover;
+}
+
+.service-index .list .clock {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	position: absolute;
+	margin-top: 0.25rem;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	background-size: cover;
+}
+
+.service-index .list .price {
+	text-decoration: line-through;
+}
+
+.service-index .list .list-price {
+	margin-top: .3rem;
+}
+
+.service-index .list .join-car {
+	right: 1.5rem;
+	bottom: 1rem;
+	position: absolute;
+	padding: 0.2rem .6rem;
+	border: 1px solid #e64c65;
+	color: #e64c65;
+	font-size: 1.4rem;
+	border-radius: 15px;
+}
+
+.service-index .list .active {
+	background: #e64c65;
+	color: #fff;
+}
+
+.service-index .list .collection {
+	position: relative;
+	top: 0rem;
+	right: 0rem;
+}
+
+.service-index .list .name {
+	padding-right: 2rem;
+}
+
+.service-index .service-footer {
+	width: 100%;
+	position: fixed;
+	bottom: 5.2rem;
+	height: 4rem;
+	line-height: 4rem;
+}
+
+.service-index .service-single {
+	bottom: 0;
+}
+
+.service-index .next {
+	background: #febf49;
+	width: 8rem;
+	text-align: center;
+}
+
+.time-ion {
+	margin-left: 2rem;
+	display: inline-block;
+	width: 1.3rem;
+	height: 1.3rem;
+	background-image: url(../../../images/public/time_w.png);
+	background-size: cover;
+	vertical-align: middle;
+}
+
+.service-index .service-footer .footer-in {
+	padding-left: 1.5rem;
+}
+
+.service-index .list .list-border {
+	border-bottom: 1px solid #dedede;
+	padding-bottom: 1rem;
+}
+
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	top: 3.75rem
+}
+
+.mask .bottom {
+	color: #333;
+	border-radius: 5px;
+	margin: auto;
+	background: #fff;
+	width: 9.5rem;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	text-align: center;
+	position: relative;
+}
+
+.mask .bottom .triangle {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	position: absolute;
+	top: -8px;
+	right: 5px;
+}
+
+.service-index .tabbed-slidebox .tsb-icons .scroll span {
+	display: inline-block;
+	width: 9rem;
+}
+
+.service-index .tabbed-slidebox .tsb-hscroll.scroll-view .scroll {
+	border: none;
+}
+
+
+/*双人选服务*/
+
+.service-index .classify {
+	text-align: center;
+	height: 3.5rem;
+	border-bottom: 1px solid #DEDEDE;
+	box-sizing: border-box;
+}
+
+.service-index .classify .geiwoxuan {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 3.5rem;
+	line-height: 3.5rem;
+}
+
+.service-index .classify .active {
+	border-bottom: 2px solid #DF3680;
+	color: #DF3680;
+}
+
+
+/*多人服务分类布局*/
+
+.many-people-service-type {
+	text-align: center;
+	height: 3.5rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+
+/*多人服务分类*/
+
+.many-people-service-view {
+	display: inline-block;
+	text-align: center;
+}
+
+
+/*多人服务分类item*/
+
+.many-people-service-type-item {
+	display: inline-block;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	box-sizing: border-box;
+}
+
+
+/*多人服务分类item选中*/
+
+.many-people-service-type-item-selected {
+	color: #e64c65;
+	border-bottom: 2px solid #e64c65;
+}
+
+
+/*多人服务服务列表滑动块*/
+
+.many-people-scroll {
+	padding-top: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+/*多人服务列表item*/
+
+.many-people-list-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: white;
+}
+
+
+/*多人服务列表图片*/
+
+.many-people-list-image {
+	width: 12.5rem;
+	height: 7rem;
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+}
+
+
+/*多人服务推荐图片*/
+
+.many-people-list-tuijian {
+	position: absolute;
+	width: 3.6rem;
+	height: 3.6rem;
+	background-image: url(../../../images/service/recommend-icon.png);
+	background-size: cover;
+}
+
+
+/*多人服务列表右侧内容*/
+
+.many-people-list-content {
+	height: 7rem;
+	padding-right: 1.5rem;
+	position: relative;
+}
+
+
+/*多人服务列表服务名称*/
+
+.many-people-list-name {
+	padding-right: 0.5rem;
+}
+
+
+/*多人服务列表服务时长布局*/
+
+.many-people-list-service-time-view {
+	position: relative;
+	top: -0.75rem;
+}
+
+
+/*多人服务列表服务时长图标*/
+
+.many-people-list-service-time-img {
+	display: inline-block;
+	width: 0.95rem;
+	height: 1rem;
+	margin-right: 0.5rem;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	background-size: cover;
+}
+
+
+/*多人服务列表服务时长*/
+
+.many-people-list-service-time {
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	position: relative;
+	top: -0.1rem;
+}
+
+
+/*多人服务列表服务列表价格人数加入购物车布局*/
+
+.many-people-list-price-and-add {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.many-people-list-price {
+	position: relative;
+	bottom: -0.5rem;
+}
+
+
+/*多人服务列表原价*/
+
+.many-people-list-original-price {
+	text-decoration: line-through;
+}
+
+
+/*加入购物车*/
+
+.many-people-list-join-car {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	right: 1.5rem;
+	border: 1px solid #e64c65;
+	color: #e64c65;
+	border-radius: 1.5rem;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	padding-left: 1.2rem;
+	padding-right: 1.2rem;
+	box-sizing: border-box;
+}
+
+
+/*取消加入购物车*/
+
+.many-people-list-cancel-car {
+	background: #e64c65;
+	color: #fff;
+}
+
+
+/*多人服务列表分割线*/
+
+.many-people-list-line {
+	position: absolute;
+	bottom: -1rem;
+	height: 1px;
+	background-color: #DEDEDE;
+	width: 100%;
+}
+
+
+/*多人服务底部*/
+
+.many-people-bottom {
+	width: 100%;
+	position: fixed;
+	bottom: 0rem;
+	height: 4rem;
+}
+
+.many-people-line-height-80 {
+	line-height: 4rem;
+	height: 4rem;
+}
+
+
+/*多人服务总计时长布局*/
+
+.many-people-bottom-time-view {
+	margin-left: 3.6rem;
+	position: relative;
+}
+
+
+/*多人服务总计时长图标*/
+
+.many-people-bottom-time-ion {
+	display: inline-block;
+	width: 1.4rem;
+	height: 1.4rem;
+	background-image: url(../../../images/public/time_w.png);
+	background-size: cover;
+	top: 50%;
+	margin-top: -0.7rem;
+	position: absolute;
+}
+
+
+/*多人服务总计时长*/
+
+.many-people-bottom-time {
+	margin-left: 1.4rem;
+}
+
+
+/*多人服务去结算按钮*/
+
+.many-people-bottom-next {
+	background: #febf49;
+	width: 8.4rem;
+	text-align: center;
+}

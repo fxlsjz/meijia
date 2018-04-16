@@ -1,0 +1,51 @@
+.tab{
+	width:100%;
+	background-color:#F6F6F6;
+	padding-top:.3em;
+	padding-bottom:.3em;
+}
+.head-tab{
+	width: 64.5%;
+	height: 2em;
+	left: 17.8%;
+	border-color:#e50012;
+}
+input[name=message] + div {
+	background-color: #FFF;
+	color: #e50012;
+}
+input[name=message]:checked + div {
+	background-color: #e50012;
+	color: #FFF;
+}
+.follow-head > img{
+	width:3.5em;
+	height:3.5em;
+}
+.bor-b-f6f6f6{
+	border-bottom:1px solid #F6F6F6;
+}
+.bor-b-cacaca{
+	border-bottom:1px solid #CACACA;
+}
+.privately-num,.notice-num{
+	border-radius:50%;
+	background-color:#e50012;
+	color:#FFF;
+	font-size:.5em;
+	width:1.2em;
+	height:1.2em;
+}
+.privately-num{
+	position:absolute;
+	right:1em;/*<--再算*/
+	z-index:3;
+}
+.notice-num{
+	position:absolute;
+	right:1em;/*<--再算*/
+	z-index:3;
+}
+.priv-block{
+	margin-bottom:1em;
+}

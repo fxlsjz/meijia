@@ -1,0 +1,15 @@
+<!--店面相册-->
+<!--auth:tzb-->
+<ion-view class="storephone">
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goBack()"></div>
+		<h1 class="bar-title ub-f1">店面相册</h1>
+		<div class="num f-s-30 c-f">共{{imgPathNum}}张</div>
+	</ion-header-bar>-->
+
+	<ion-content id="body-view" class="phone" ilazy-scroll >
+		<div class="phone-imag" ng-repeat="item in imgPath" ng-class="{'phone-imag-left':$index%2==1}">
+			<div style="width: {{imageWidth}}px;height: {{imageHeight}}px;" class="background-img" image-lazy-background-image="true" image-lazy-src="{{item|baseUrl}}" image-preview="{{imgPath}}" multiple="true" index="{{$index}}"></div>
+		</div>
+	</ion-content>
+</ion-view>

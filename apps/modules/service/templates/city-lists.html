@@ -1,0 +1,23 @@
+<ion-view class="citys">
+	<!--goback()-->
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="gohome()"></div>
+        <h1 class="bar-title ub-f1">选择城市</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>-->
+    <ion-content scroll="true">
+        <ul>
+        	<li class="city-list" ng-repeat="item in cityitems" on-tap="clickModal(item)">
+        		<h2 class="title" ng-bind="item.city_name"></h2>&nbsp;&nbsp;&nbsp;&nbsp;
+        		<span class="f-s-26 c-e6">
+        			<i ng-if="item.city_has_online == 'SERVICE_HOME_Y'" ng-bind="isHometype"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        			<i ng-if="item.city_has_offline == 'SERVICE_STORE_Y'" ng-bind="isStoretype"></i>
+        		</span>
+        		<div class="ser-area f-s-24 c-9">
+        			<span>服务范围：</span>
+        			<i ng-bind="item.server_circle"></i>
+        		</div>
+        	</li>
+        </ul>
+    </ion-content>
+</ion-view>

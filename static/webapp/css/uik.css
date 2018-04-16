@@ -1,0 +1,289 @@
+@charset "utf-8";
+/* CSS Document */
+
+.gpwd_btn{
+	position: absolute;
+	right: 4px;
+	top: 0.4em;
+	width: 4.3em;
+	height: 2em;
+	line-height:2em;
+	}
+ .icon-order{
+	background-image:url('../images/orderIcon@2x.png');
+	}
+	.icon-zhhu{
+		background-image:url('../images/rechangIcon@2x.png');
+		}
+.icon-xiaom{
+	background-image:url('../images/consumeIcon@2x.png');
+	}
+.icon-gdqjl{
+	background-image:url('../images/personImage@2x.png');
+	}
+.icon-jfjl{
+	background-image:url('../images/creditsRecord@2x.png');
+	}
+.icon-jfdh{
+	background-image:url('../images/creditsExchange@2x.png');
+	}
+	
+.arrowk {
+	position:absolute;
+	right:0.5em;
+	width:1.6em;
+	height:1.6em;
+	background-image:url(../images/arrow@2x.png);
+}
+.uc-a-t{
+	-webkit-border-radius: .6em 0.6em 0 0;
+	border-radius: .6em 0.6em 0 0;
+	}
+.uc-a-v{
+	-webkit-border-radius: 0 0 .6em 0.6em;
+	border-radius: 0 0 .6em 0.6em;
+	}
+.mt-top1{
+	margin-top:1em;
+	}
+	.mt-top0{
+		margin-top:0em;
+		}
+.mt-top04{
+	margin-top:0.4em;
+	}
+.huanying{
+	margin-top:1.5em;
+	padding-left:2em;
+	height:2.5em;
+	/*border:1px solid #C09;*/
+	font-size:0.9em;
+	line-height:2.5em;
+	}		
+.keyongyue{
+	position:absolute;
+	right:4em;
+	z-index:9999;
+	width:4em;
+	height:2em;
+	
+	}
+	
+	
+	/* 修改密码 */
+	
+ .qurenpwd{
+	 margin-top:0.9em;
+	 height:1.5em;
+	 padding-left:0.5em;
+	 }
+.pwd-submit {
+	position: absolute;
+	right: 4px;
+	top: 0.2em;
+	width:5em;
+	/*margin:1em 0em;*/
+	height:2em;
+	line-height:2em;
+}
+.pwd-submit h1 {
+	background-color:#1681F5;
+	border:#0999F8 0.1em solid;
+
+	border-radius:0.5em;
+}
+	 
+	 /* 我的 订单 */
+	 
+	 .order{
+		 font-size:0.5em;
+		 }
+ .order-1
+{
+	min-height:0em;
+	margin:0em;
+}
+
+ .order-color{
+	 border-color:#F90;
+	 }
+
+ /* 订单详情 */
+ 
+ .order-detail1{
+	 padding:1em 0.5em 0em 1em;
+	 margin-left:0.6em;
+	 margin-right:0.6em;
+	 height:5em;
+	 }
+	 
+	 .uc-a-k{
+	-webkit-border-radius: .4em;
+	border-radius: .4em
+}
+.order-detail2{
+	padding:1.5em 1em 1em 1em;
+	margin-top:1em;
+	 margin-left:0.6em;
+	 margin-right:0.6em;
+	 height:22em;
+	 }
+	 
+	.uinn6
+{
+	padding:1em 2em;
+	margin:0;
+}
+
+.lh-22 {
+	line-height:2.2em
+}
+
+	
+.fukuan-btn.cancel{
+	color:#888;
+	background-image: none;
+	}
+/* 更多 */
+
+.icon-zx{
+	background-image:url('../images/creditsExchange@2x.png');
+	}
+	
+.login-submit {
+	margin:1em 0em;
+	height:2.6em;
+	line-height:2.6em;
+}
+.login-submit h1 {
+	background-color:#0B970B;
+	border:#AA9982 0.1em solid;
+
+	border-radius:0.5em;
+}
+
+.outlogin-submit {
+	margin:1em 0em;
+	height:2.6em;
+	line-height:2.6em;
+}
+.outlogin-submit h1 {
+	background-color:rgb(190, 1, 1);
+	border:#AA9982 0.1em solid;
+
+	border-radius:0.5em;
+}
+
+/* 支付 */
+
+ .pay1{
+	 margin-top:1em;
+	 padding:1em 1.5em 0em 1.5em;
+	 margin-left:0.6em;
+	 margin-right:0.6em;
+	 height:5em;
+	 }
+ .pay2{
+	 color:red;
+	 }
+
+/* 账户充值 */
+
+.check1{
+	width:2em;
+	height:2em;
+	margin-right:1em;
+	}
+.uinn7
+{
+	padding:1em  1em 0em 2em;
+	margin:0;
+}
+
+#ck input[type=radio] + div > div.icon-ck{
+	background-image:url('../images/remenberButtonBK@2x.png');
+	}
+	
+#ck input[type=radio]:checked + div > div.icon-ck{
+	background-image:url('../images/remenberButtonSelectedBK@2x.png');
+	}
+	
+	
+	/* 消费明细 */
+	
+  .borders{
+	  border-right: 1px solid #CCC;
+	  }
+	  
+	  
+	  /* 意见反馈 */
+ .bj{
+	 width:5.5em;
+	    height:2.4em;
+	    line-height:2.5em;
+		  background-image:url('../images/2/shareButtonBackGround.png@2x.png');
+		  
+		  }
+ .bjq{
+	    width:5.7em;
+	    height:2.3em;
+	    line-height:2.5em;
+		  background-image:url('../images/2/reservationButtonBackground@2x.png');
+		  
+		  }
+		  
+		  
+	/* 打球成绩 */
+	
+	.balljilu{
+		margin:1.5em 2em 1.5em 2em;
+		}
+.fukuan-btn{
+	width:4em;
+	height:2.2em;
+	line-height:2.2em;
+	background-color:#FF9609;
+	border:#D47A07 0.1em solid;
+	border-radius:0.5em;
+	margin-bottom:0.3em;
+	}
+	
+.fukuan-btn.margin{
+	margin:0 0.5em;
+	}
+	
+	.view-submit {
+		width:5em;
+	margin:1em 0em;
+	height:2.6em;
+	line-height:2.6em;
+}
+.view-submit h1 {
+	background-color:#FF9609;
+	border:#D47A07 0.1em solid;
+
+	border-radius:0.5em;
+}
+.view-submit-gra {
+		width:5em;
+	margin:1em 0em;
+	height:2.6em;
+	line-height:2.6em;
+}
+.view-submit-gra h1 {
+	background-color:#FFFDFA;
+	border:#AFAEAC 0.1em solid;
+
+	border-radius:0.5em;
+}
+  
+  
+  /* 二维码 */
+  
+  .two{
+	  height:10em;
+	  background-image:url(../images/two.jpg);
+	  }
+  
+  
+  

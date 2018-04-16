@@ -1,0 +1,39 @@
+<!--服务时间-->
+<ion-view class="time">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">{{from=='my-ticket-order'?'预约':serviceText}}时间</span></h1>
+		<div class="bar-submit bar-submitNew" on-tap="enter()">确定</div>
+	</ion-header-bar>
+	<!--日期列表-->
+	<div class="date-list" ng-if="items!=null&&items.length>0">
+		<ion-scroll direction="x" style="margin-top: -2px">
+			<div style="width: {{dateItemWidth*items.length}}px" ng-class="{'f-s-b75':width<=320}">
+				<!--日期列表item-->
+				<div style="width:{{dateItemWidth}}px;" class="display-ib" ng-repeat="item in items" on-tap="current($index,item)">
+					<div class="date-item" ng-class="{'date-item-press': $index==position}" class="f-s-28 c-6">
+						<div class="date-item-content">
+							<!--日期文案-->
+							<div class="date-text f-s-24">{{getDateText($index,item.visit_time)}}</div>
+							<div class="date-time f-s-24" ng-bind='item.visit_time * 1000 | date:"yyyy-MM-dd"'></div>
+							<div ng-class="{'date-item-press-line': $index==position}"></div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</ion-scroll>
+	</div>
+	<ion-content class="option-time">
+		<!--时间无数据显示-->
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="listdata"></mobo-no-data>
+		<!--时间选择item-->
+		<div ng-repeat="item in timeItems" class="option-time-item">
+			<div class="option-time-item-routine f-s-24" ng-class="{'option-time-item-no-click': 'N' == item.time_status,'option-time-item-press':selectTime==item}" on-tap="choiceTime(item)">{{item.time_item}}</div>
+			<div class="time-line" ng-class="{'option-time-item-no-click-line': 'N' == item.time_status,'option-time-item-press-line':selectTime==item}"></div>
+		</div>
+		<div class="h5rem"></div>
+	</ion-content>
+
+</ion-view>

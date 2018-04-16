@@ -1,0 +1,59 @@
+<!--服务列表-->
+<div class="list bg-color-f" ng-repeat="item in items">
+    <div class="unpaid f-s-26 c-3 ub" on-tap="goServiceOrderDetail(item.oid)">
+        <div>
+            <p>订单编号：</p>
+            <p>{{item.orderno}}</p>
+        </div>
+        <div class="moshi ufr ub-f1">
+            <p ng-if="appValues" class="c-4c">{{appValues[item.order_state].dic_desc}}</p>
+        </div>
+    </div>
+
+    <!--服务列表-->
+    <div on-tap="goServiceOrderDetail(item.oid)">
+        <div class="w-ull">
+            <ion-scroll lazy-scroll direction="x">
+                <ul class="pic-layout">
+                    <li class="m-l-5" ng-repeat="tt in item.service_list">
+                        <div class="background-img pic-size" image-lazy-background-image="true"
+                             image-lazy-src="{{tt.service_thumpath_two | baseUrl}}"></div>
+                        <p class="service_name f-s-24 c-3 ">{{tt.iname}}</p>
+                    </li>
+                </ul>
+            </ion-scroll>
+        </div>
+    </div>
+
+    <!--购买时间or服务时间-->
+    <div class="order-time ub" style="border-bottom: 1px solid #DEDEDE;" on-tap="goServiceOrderDetail(item.oid)">
+        <p class="f-s-22 c-80 ">{{getOrderTimeText(item.is_package)+':'}}</p>
+        <p ng-if="item.is_package == 'N'" class="f-s-22 c-80 " ng-bind='item.order_stime'></p>
+        <p ng-if="item.is_package == 'Y'" class="f-s-22 c-80 "
+           ng-bind='item.order_time * 1000 | date:"yyyy-MM-dd HH:mm"'></p>
+        <div class="f-s-40 c-e6 ub-f1" style="text-align: right;">
+            <p>{{'¥' + item.actualprice}}</p>
+        </div>
+    </div>
+
+    <!--实付款+底部按钮-->
+
+    <div class="btn-p ub ub-ae" style="text-align: center;margin-top: 1.1rem;margin-right: 1.5rem;">
+        <!--<div class="paid bg-color-f">-->
+        <div class="ub-f1 comment-unselecteds" on-tap="cancel(item.oid)" ng-if="item.cencal_able=='Y' ">取消</div>
+        <span class="linespan" ng-if="item.pay_able=='Y' &&  item.cencal_able=='Y'"></span>
+        <div class="ub-f1 comment-unselecteds" ng-if="item.pay_able=='Y'"
+             on-tap="loadDataPay(item.oid,item.actualprice,item.is_package)">去支付
+        </div>
+        <div class="ub-f1 comment-unselecteds" ng-if="item.order_state=='orderstate_complete'&&item.iscommon=='Y'"
+             on-tap="evaluateService(item)">
+            评价{{serviceText}}
+        </div>
+        <span class="linespan" ng-if="item.iscommon=='Y'&& item.biscommon=='Y'"></span>
+        <div class="ub-f1 comment-unselecteds" ng-if="item.order_state=='orderstate_complete'&&item.biscommon=='Y'"
+             on-tap="evaluateTechnician(item)">评价{{technicianText}}
+        </div>
+        <!--</div>-->
+    </div>
+
+</div>

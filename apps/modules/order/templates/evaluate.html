@@ -1,0 +1,79 @@
+<ion-view class="evaluate">
+        <!--服务信息-->
+        <div class="top ub bg-color-f" style="height:{{bgHeight}}px;" ng-if="isService">
+        <span class="u-img background-img u-imgTwo" image-lazy-background-image="true"
+              image-lazy-src="{{(evainfo.service_thumpath_two.split(',')[0]) | baseUrl}}"></span>
+            <div class="right-details ub-f1">
+                <div ng-bind="evainfo.iname" class="f-s-28 c-3 line-ellipsis-1" style="height: 1.5rem;">6516</div>
+                <div class="ub padding0" style="padding-top: 3.4rem;height: 1.5rem;">
+                    <span ng-bind='iusetime * 1000 | date:"yyyy-MM-dd HH:mm"'
+                          class="span-block ub-f1 c-80  "></span>
+                    <span class="f-s-30 c-e6 span-block ">¥<span ng-bind="evainfo.nowprice"></span></span>
+                </div>
+            </div>
+        </div>
+        <!--技师数据-->
+        <div class="evaluatebg" style="height:{{bgHeight}}px;" ng-if="!isService">
+            <div class="background-img technician-headerimg" image-lazy-src="{{evainfo.photo_two | baseUrl}}"
+                 image-lazy-background-image="true"></div>
+            <div style="margin-top: 1rem;color: #FFFFFF;">{{evainfo.nickname}}</div>
+        </div>
+        <!--星级-->
+        <div class="u-stars-box m-t-10">
+            <div class="ub star-box ub-ac">
+                <span style="margin-right: 1rem;margin-left: 1.5rem;">评分:</span>
+                <div class="star-rating ">
+                    <li style="width: {{mark* 20}}%"></li>
+                    <div class="empty-box ub">
+                        <div ng-repeat="a in [1,2,3,4,5]" class="ub-f1 " on-tap="courseClick($index+1)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="Img" type="file" name="file" ng-model="chk" onchange="angular.element(this).scope().upload(this)"
+               style="display: none" accept="image/*" multiple="multiple">
+        <!--总体评价-->
+        <div class="assess-tab bg-color-f">
+            <span style="margin-right: 1rem;margin-left: 1.5rem;">评价:</span>
+            <span class="unselected" on-tap="evatype(1)" ng-class="{'selected': type == 1}">好评</span>
+            <span class="unselected" on-tap="evatype(2)" ng-class="{'selected': type == 2}">中评</span>
+            <span class="unselected" on-tap="evatype(3)" ng-class="{'selected': type == 3}">差评</span>
+        </div>
+
+
+        <div class="content">
+            <div style="margin-left: 1.5rem">评论:</div>
+            <div class="content-in">
+                <div class="evaluate">
+                    <textarea ng-keydown="textlength()" class="f-s-26 c-6 u-text" ng-model="inut.text"
+                              placeholder="写下购买体会和使用感受来帮助其他伙伴"></textarea>
+                </div>
+                <div ng-if="inut.text.length < 10" class="f-s-24 c-80" style="text-align: right">字数不少于10个字</div>
+                <div ng-if="inut.text.length >= 10" class="f-s-24 c-80"><i ng-bind="inut.text.length"></i>/500字
+                </div>
+            </div>
+            <div class="img-box">
+                <div class="img-content" ng-repeat="img in thumbnail track by $index">
+                    <span class="delete" on-tap="remove($index);$event.stopPropagation();"></span>
+                    <li class="background-img " image-lazy-background-image="true"
+                        image-lazy-src="{{img.src}}"></li>
+                    <!--<li class="background-img" style="background-image: url('{{img.src}}')" image-preview="{{thumbnail}}" multiple="true" index="{{$index}}"></li>-->
+                </div>
+                <div class="add-img" ratio-scale="1:1" on-tap="uploadImg()" ng-hide="imgs.length >= 6">
+
+                </div>
+            </div>
+            <div class="ub" style="margin-left: 1.5rem;">
+                <div class="ub-f1 f-s-24 c-80">添加照片（最多6张）</div>
+            </div>
+            <!--是否匿名-->
+            <div class="f-s-26 c-4c u-anonymous" on-tap="anSwitch()">
+                <span ng-class="{true: 'anonymous', false: ''}[AnoIsNo]"></span>
+                匿名评价
+            </div>
+        </div>
+    </ion-content>
+    <div class="f-log-btn" on-tap="submit()">
+        <span class="button button-block f-btn-submit f-s-30" style="margin: 0;">提交</span>
+    </div>
+</ion-view>

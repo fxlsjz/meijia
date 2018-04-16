@@ -1,0 +1,45 @@
+<!--查看地图-->
+<!--auth: tzb-->
+<ion-view class="map">
+	<!--头部-->
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">-->
+		<!--<div class="go-back-btn" on-tap="goback()"></div>
+		<div class="ub-f1 wrap-search" ng-if="!isFromList">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索店面名称" ng-keyup="search($event)" ng-model="searchTxt.text" />
+		</div>
+		<h1 class="bar-title ub-f1" ng-if="isFromList">店面详情</h1>-->
+		<!--切换列表页面-->
+		<!--<div class="location-ion" on-tap="goMapBack()" ng-if="!isFromList"></div>-->
+
+	<!--</ion-header-bar>-->
+
+	<!--viewpage-->
+	<!--<ion-slide-box class="loctiondata" on-slide-changed="nextStore()" on-tap="goDetail(locationInfoList[index],$event)">-->
+		<!--店面列表item-->
+		<!--<ion-slide class="locationInfo" ng-repeat="item in locationInfoList">-->
+			<!--名称和距离-->
+			<!--<div class="ub location" on-tap="goDetail(item,$event)">
+				<div class="f-s-32 ub-f1" ng-bind="item.sname"></div>
+				<div class="c-e6 f-s-22">{{item.store_dis&&item.store_dis!=''?item.store_dis+' km':'0 km'}}</div>
+			</div>
+			<div class="adress c-e6 f-s-24" ng-bind="item.adress">
+			</div>-->
+		<!--</ion-slide>-->
+	<!--</ion-slide-box>-->
+
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qZdG1GvH8lOmYBZEHzXbOjFfjkvAjdNb"></script>
+	<div id="container"></div>
+	
+	<!--店面列表item-->
+	<div class="locationInfoNew" ng-repeat="item in locationInfoList" >
+		<!--名称和距离-->
+		<div class="ub location" on-tap="goDetail(item,$event)">
+			<div class="f-s-32 ub-f1" ng-bind="item.sname"></div>
+			<div class=" f-s-22" style="color: #DF3680;">{{item.store_dis&&item.store_dis!=''?item.store_dis+' km':'0 km'}}</div>
+		</div>
+		<div class="adress f-s-24" ng-bind="item.adress">
+		</div>
+	</div>
+	
+</ion-view>

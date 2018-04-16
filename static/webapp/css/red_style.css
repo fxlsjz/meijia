@@ -1,0 +1,426 @@
+@charset "utf-8";
+/* CSS Document */
+
+.red_bg {
+	background-image: url(../images/red_bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.red_bottom {
+	width: 100%;
+	height: 2em;
+	background-size: 100% 100%;
+	background-image: url(../images/red_logo.png);
+	background-repeat: no-repeat;
+	margin-top: .8em;
+}
+.share_bg {
+	background-image: url(../images/share_bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.share_btn {
+	width: 15.28125em;
+	height: 2.40625em;
+	background-image: url(../images/share_icon.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+	margin: 1em auto 0;
+}
+.icon-red {
+	width: 5.3em;
+	height: 5.3em;
+	background: url(../images/red_icon.jpg) no-repeat center center;
+	background-size: 100%;
+	margin: auto;
+}
+.tx-red h3, .tx-red h4 {
+	line-height: 1.8em;
+	text-align: center;
+}
+.margin2 {
+	margin: 2em;
+}
+.red-con .mobile {
+	border: 1px solid #a40182;
+}
+.mobile input, .receive input {
+	width: 100%;
+	height: 100%;
+}
+.red-con .receive {
+	background-color: #a40182;
+	color: #fff100;
+}
+.padding-1 {
+	padding: 1em;
+}
+.c-B91D21 {
+	color: #B91D21;
+}
+.vouchers {
+	width: 14.50625em;
+	height: 6.53125em;
+	background: url(../images/vouchers.png) no-repeat center center;
+	background-size: 100%;
+	margin: auto;
+}
+.vouchers .rmb {
+	width: 10.5em;
+	height: 4.5em;
+}
+.tx-vouchers {
+	width: 3.5em;
+	text-align: center;
+	padding-top: 1em;
+}
+.vouchers h1 {
+	font-weight: normal;
+}
+.red-con .share {
+	background-color: #FD7801;
+}
+.xf_active {
+	height: 5.9em;
+	width: 4.15em;
+	background-image: url(../images/xf_active.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	position: absolute;
+	bottom: 3%;
+	right: 2%;
+	z-index: 99;
+}
+.red_bgs {
+	background: url(../images/red_bgs.png) no-repeat;
+	background-size: 100% 100%;
+}
+.red_header {
+	color: #daba82;
+	/*font-size: 2em;*/
+	padding-top: 30%;
+}
+.red_headers {
+	color: #daba82;
+	font-size: 2em;
+	padding-top: 20%;
+}
+.mobiles {
+	border: 1px solid #daba82;
+	margin-top: 2em;
+	margin-left: 2em;
+	margin-right: 2em;
+}
+.mobiles input, .receives input {
+	width: 100%;
+	height: 100%;
+}
+.receives {
+	background-color: #daba82;
+	color: #694c3c;
+	margin-left: 2em;
+	margin-right: 2em;
+	font-weight: bold;
+}
+.red_bottoms {
+	width: 10.55em;
+	height: 4.95em;
+	background-size: 100% 100%;
+	background-image: url(../images/red_logos.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: .5em;
+	left: 50%;
+	margin-left: -5em;
+}
+.red_quan {
+	margin-top: 1em;
+	background-image: url(../images/red_money.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 0 auto;
+	width: 13.5em;
+	height: 5.5em;
+	position: relative;
+	top: 1em;
+}
+.red_use {
+	width: 35%;
+	height: 2em;
+	background-color: #daba82;
+	margin: 0 auto;
+	color: #170305;
+	position: relative;
+	top: 9%;
+	font-size: 1.2em;
+	font-family: "微软雅黑";
+}
+.follow-wechat {
+	text-align: center;
+	color: #daba82;
+	text-decoration: underline;
+	display: block;
+	position: relative;
+	top: 20%;
+}
+.cunf, .cunfs {
+	text-align: center;
+	color: #aa8546;
+	padding-top: 1em;
+}
+@font-face {
+	font-family: 'MyNewFont';
+	src: url(../ttf/FZLTCXHJW.TTF);
+}
+.xiadan {
+	text-align: center;
+	color: #daba82;
+	margin-top: 2em;
+}
+.content_text {
+	width: 80%;
+	background-color: #fff;
+	z-index: 1001;
+	word-wrap: break-word;
+}
+.content_text p, .content_text h3 {
+	margin-bottom: .5em;
+}
+/*普通红包*/
+#wrapper_red {
+	position: relative;
+	width: 100%;
+	height: 11em;
+	overflow: hidden;
+	/* Prevent native touch events on Windows */
+	-ms-touch-action: none;
+	/* Prevent the callout on tap-hold and text selection */
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* Prevent text resize on orientation change, useful for web-apps */
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+#scroller_red {
+	width: 100%;
+	position: absolute;
+	/* Prevent elements to be highlighted on tap */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	/* Put the scroller into the HW Compositing layer right from the start */
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.ordinary-bg {
+	background-image: url(../images/ordinary_bg.png);
+}
+.ordinary-item {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: 0% 200%;
+	max-width: 100%;
+	max-height: 100%;
+}
+.ordinary-detail-bg {
+/*background-image: url(../images/ordinary_detail_bg.png);*/
+}
+.ordinary-detail-bg .padd-ord {
+	padding: 8% 15% 3%;
+}
+.ordinary-text {
+	width: 10em;
+	height: 11.88889em;
+	background-size: 100% 100%;
+	padding: 40% 0;
+	margin: auto;
+	color: #fff;
+}
+.ordinary-add {
+	width: 100%;
+	position: absolute;
+	bottom: 3em;
+}
+.ordinary-add .item {
+	width: 80%;
+	height: 3em;
+	line-height: 3em;
+	margin: .5em 10%;
+	background-color: rgba(255,255,255,.4);
+}
+.ordinary-add input {
+	width: 100%;
+}
+.red-block {
+	width: 100%;
+	background-color: #EF2D36;
+	border-radius: 1em;
+	padding-top: 1em;
+	margin-bottom: 2em;
+	z-index: 9;
+}
+.red-block .btn-con {
+	padding: 0 2em 1em;
+}
+.red-block p {
+	line-height: 3.5em;
+	color: #fff;
+	text-align: center;
+	font-size: .8em
+}
+.red-block .btn-red {
+	width: 100%;
+	height: 2.5em;
+	line-height: 2.5em;
+	text-align: center;
+	background-color: #F1E1CA;
+	margin-bottom: .7em;
+	color: #EF2D36;
+}
+.red-money {
+	width: 100%;
+	background-size: 100% 100%;
+	text-align: center;
+	color: #fff;
+}
+.red-money .tx-money {
+	padding-top: 1.5em;
+}
+.red-list .list-block {
+	/*background-color: rgba(255,255,255,.3);*/
+	color: #FFF;
+	background-color: #B86738;
+	opacity: .5;
+	margin-bottom: .2em;
+}
+.photo {
+	width: 2.5em;
+	height: 2.5em;
+	background-image: url(../images/default_head.png);
+	background-size: 100% 100%;
+	border-radius: 50%;
+	margin-right: .8em;
+	float: left;
+}
+.list-block span {
+	line-height: 2.5em;
+}
+/*密令红包*/
+.c-615142 {
+	color: #615142;
+}
+.order-bg {
+	background-image: url(../images/order_bg.png);
+}
+.order-detail-bg {
+	/*background-image: url(../images/order_detail_bg.png);*/
+	padding: 10% 13% 3%;
+}
+.order-add {
+	width: 54%;
+	height: 12em;
+	position: absolute;
+	bottom: 9%;
+	left: 23%;
+}
+.order-title {
+	width: 10.111em;
+	height: 1.66669em;
+	margin: 1em auto .8em;
+	background-image: url(../images/order_title.png);
+	background-size: 100% 100%;
+}
+.order-title p {
+	line-height: 2.17em;
+}
+.order-con {
+	width: 100%;
+	height: 2.5em;
+	line-height: 2.5em;
+	margin: .5em auto 0;
+	background-image: url(../images/order_con.png);
+	background-size: 100% 100%;
+}
+.order-con input {
+	width: 60%;
+	height: 2.93333em;
+	line-height: 2.93333em;
+	text-align: center
+}
+.cirl-left {
+	width: 30%em;
+	height: 4em;
+	background-image: url(../images/red_left.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.cirl-money {
+	width: 6.2em;
+	height: 6.2em;
+	border: .5em solid #ffcb08;
+	border-radius: 50%;
+}
+.cirl-right {
+	width: 30%em;
+	height: 4em;
+	background-image: url(../images/red_right.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.order-con ::-webkit-input-placeholder { /* WebKit browsers */
+ color:    #615142;
+}
+.order-con :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:    #615142;
+}
+.order-con ::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:    #615142;
+}
+.order-con :-ms-input-placeholder { /* Internet Explorer 10+ */
+ color:    #615142;
+}
+.order-list .list-block {
+	/*background-color: rgba(255,255,255,.5);*/
+	background-color: #F5E1CA;
+	opacity: .7;
+	color: #9a6325;
+	margin-bottom: .2em;
+}
+.order-detail-bg .order-y {
+	width: 5.27em;
+	height: 5.13em;
+	background-image: url(../images/order_y.png);
+	background-size: 100% 100%;
+	position: absolute;
+	left: 0;
+	top: 8.8em;
+	z-index: 99;
+}
+.elcp {
+	width: 8em;
+	overflow: hidden; /*自动隐藏文字*/
+	text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+	white-space: nowrap;/*强制不换行*/
+	display: block !important;
+}
+.share_wechat {
+	background-image: url(../images/common/share_wechat.png);
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+.store-inputs {
+	width: 100%;
+	background-color: #282828;
+	line-height: 2.8em;
+	height: 2.8em;
+	font-size: 1em;
+}

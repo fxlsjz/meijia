@@ -1,0 +1,19 @@
+<!--修改手机号-->
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+		<h1 class="bar-title ub-f1">修改手机号</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content class="modify-phone">
+		<div class="ub">
+			<input class="ub-f1 tel public" type="tel" placeholder="请输入手机号" ng-class="{active:isLine == true}" ng-focus="isLine=true" ng-blur="isLine = false" ng-model="phone.key" />
+			<div class="check-code" 　 ng-bind="verCon" on-tap="verification()"></div>
+		</div>
+		<input type="text" placeholder=" 输入验证码" class="public" ng-class="{active:isLine1 == true}" ng-focus="isLine1=true" ng-blur="isLine1 = false" ng-model="se_code.key" />
+	</ion-content>
+	
+	<div class="f-log-btn ub">
+		<div class="f-btn-submit ub-f1 text-center" on-tap="ok()">确定</div>
+	</div>
+</ion-view>

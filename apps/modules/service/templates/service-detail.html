@@ -1,0 +1,105 @@
+<ion-view class="service-detail">
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="detailBack()"></div>
+		<h1 class="bar-title ub-f1">{{serviceText}}详情</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content id="body-view" lazy-scroll>
+		<div class="ub p-l-30 p-r-30 p-b-10 p-t-20 bg-color-f">
+			<div class="ub-f1 f-s-30 p-r-30" ng-bind="service.iname"></div>
+			<span class="f-s-30 c-e6">¥<span ng-bind="service.nowprice"></span></span>
+		</div>
+		<div class="p-l-30 p-b-10">
+			<span class="f-s-26 c-9"><span ng-bind="service.iusetime"></span>分钟 <span ng-bind="service.iusecount" class="p-l-20"></span>人购买</span>
+		</div>
+		<div style="margin:0 1rem;background: #fff;position: relative;">
+			<div class="background-img service-detail-img" style="height: {{imageHeight}}px;" image-lazy-background-image="true" image-lazy-src="{{service.service_imgpath_two | baseUrl}}"></div>
+			<!--心-->
+			<div class="u-cancel-collect collection newCollection" ng-if="service.iscollection == 'N'" on-tap="goodsCollection(service)"></div>
+			<div class="u-collect collection newCollection" ng-if="service.iscollection == 'Y'" on-tap="goodsCollectionDel(service)"></div>
+			<!--心-->
+		</div>
+		<!--<div class="f-s-22 c-3 p-l-30 p-r-30 bg-color-f line-ellipsis-1">
+			<i class="service-detail-clock"></i>
+			<span ng-bind="service.iusetime"></span>分钟
+		</div>-->
+		<!--<div class="p-l-30 p-r-30 bg-color-f ">-->
+			<!--套票-->
+			<!--<div class="money ub" ng-if="isStampDetail">
+				<div class="ub-f1">
+					<span class="f-s-30 c-e6">¥<span ng-bind="service.nowprice"></span></span>
+				</div>
+				<span class="f-s-24 c-9"><span ng-bind="service.service_count"></span>次 <span ng-bind="service.iusecount"></span>人购买</span>
+			</div>-->
+			<!--单次-->
+			<!--<div class="money ub" ng-if='!isStampDetail'>
+				<div class="ub-f1">
+					<span class="f-s-30 c-e6">¥<span ng-bind="service.nowprice"></span></span>
+					<span ng-hide="hideOldPrice" class="f-s-20 c-3 oldprice">¥<span
+                            ng-bind="service.oldprice"></span></span>
+				</div>
+				<span class="f-s-24 c-9"><span ng-bind="service.iusecount"></span>人购买</span>
+			</div>-->
+		<!--</div>-->
+		<div class="bg-color-f">
+			<!--<div class="line"></div>-->
+			<div class="title f-s-28 c-e6">{{serviceText}}介绍</div>
+			<div ng-if="service.service_iswoman == 'Y'" class="c-e6 p-l-30 f-s-24 ">(目前只服务女性用户)</div>
+			<div ng-bind="service.iintro" class="p-l-30 p-r-30 c-6 f-s-24 p-b-15 p-t-15">
+			</div>
+		</div>
+		<!--<div class="bg-color-f m-t-10" ng-if="isStampDetail">
+			<div class="p-l-30 p-r-30 c-6 f-s-24 p-t-40">
+				使用期限：<span ng-bind="service.useperiod"></span>
+			</div>
+			<div class="p-l-30 p-r-30 c-6 f-s-24 p-b-30">
+				使用时间：<span ng-bind="service.usetime"></span>
+			</div>
+		</div>-->
+		<div class="yi">一</div>
+		<div class="bg-color-f">
+			<!--<div class="line"></div>-->
+			<div class="title f-s-28 c-e6">{{serviceText}}内容</div>
+			<ion-scroll lazy-scroll direction="x" delegate-handle="courseScroll" class="p-l-30 p-r-30 c-6 f-s-24 p-b-15 p-t-15">
+				<div ng-style="contentWidth">
+					<div class="service-content" ng-repeat="item in content">
+						<div image-lazy-background-image="true" image-lazy-src="{{item.fpath_two | baseUrl}}" class="service-content-img background-img"></div>
+						<div class="service-content-text">
+							<span>{{$index + 1}}</span>
+							<div class="c-e6 line-ellipsis-1" ng-bind="item.ftitle"></div>
+							<div ng-bind="item.fcontent" style="height: 15rem; overflow: hidden;"></div>
+						</div>
+					</div>
+				</div>
+			</ion-scroll>
+		</div>
+		<div class="yi">一</div>
+		<div class="bg-color-f">
+			<!--<div class="line"></div>-->
+			<div class="title f-s-28 c-e6">产品清单</div>
+			<ion-scroll lazy-scroll direction="x" class="p-l-30 p-r-30 c-6 f-s-24 p-b-15 p-t-15" delegate-handle="productScroll">
+				<div ng-style="productidWidth">
+					<div class="service-content productListImg" ng-repeat="item in productid">
+						<!--on-tap="goGoodsDetail(item.productid)"-->
+						<div  image-lazy-background-image="true" image-lazy-src="{{item.pimg_two | baseUrl}}" class="background-img service-content-img"></div>
+						<div class="c-e6 line-ellipsis-1" ng-bind="item.name" style="text-align: center;"></div>
+						<!--<div on-tap="goGoodsDetail(item.productid)" class="service-content-text">
+							<div class="c-e6 line-ellipsis-1" ng-bind="item.name"></div>
+							<div ng-bind="item.intro"></div>
+						</div>-->
+					</div>
+				</div>
+			</ion-scroll>
+		</div>
+		<div class="yi">一</div>
+		<div class="bg-color-f p-b-99">
+			<!--<div class="line"></div>-->
+			<div class="title f-s-28 c-e6">温馨提示</div>
+			<div class="p-l-30 p-r-30 c-6 f-s-24 p-t-15" ng-bind-html="prompt"></div>
+		</div>
+	</ion-content>
+	<div id="btnBottom" class="service-footer ub " ng-if="orderNext">
+		<div ng-bind="cartext" class="join-car" on-tap="backCar()"></div>
+		<div class="next ub-f1" on-tap="next()">立即下单</div>
+	</div>
+</ion-view>

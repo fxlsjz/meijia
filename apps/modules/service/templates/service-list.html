@@ -1,0 +1,31 @@
+<div class="sLists">
+	<div class="list ub" ng-repeat="item in items">
+		<div class="background-img service-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}" on-tap="goDetail(item,item.itemid,item.selected)">
+			<span ng-if="item.isrecommend == 'Y'"></span>
+		</div>
+		<div class="ub-f1 list-border" on-tap="goDetail(item,item.itemid,item.selected)">
+			<div class="f-s-28 c-3 line-ellipsis-1 name" ng-bind="item.iname"></div>
+			<div class="f-s-20 c-3 ub-ac" style="display: inline-block;height: 1.6rem;line-height: 1.6rem;"><span class="clock"></span><span ng-bind="item.iusetime" style="margin-left: 1.5rem;"></span>分钟</div>
+
+			<div class="list-price">
+				<span class="c-e6">¥</span><span class="c-e6 f-s-28" ng-bind="item.nowprice"></span>
+				<span class="f-s-18 c-6" ng-if="oldPrice">¥</span><i class="price f-s-18 c-6" ng-bind="item.oldprice" ng-if="oldPrice"></i>
+				<span class="f-s-20 c-6" ng-if="!oldPrice">/</span><i class="f-s-20 c-6" ng-bind="item.service_count" ng-if="!oldPrice"></i><span class="f-s-20 c-6" ng-if="!oldPrice">次</span>
+			</div>
+			<div class="f-s-16 c-9 ">
+				<div class="line-ellipsis-1" ng-bind="item.iusecount+'人购买'"></div>
+			</div>
+		</div>
+		<div class="list-border">
+			<div class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></div>
+			<div class="u-collect collection" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></div>
+			<div class="join-car" ng-class="{active:item.selected == true}" on-tap="joinCar($event,item)" ng-bind="item.text"></div>
+		</div>
+	</div>
+</div>
+<!--无数据显示-->
+<mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+<!--下拉刷新-->
+<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+<!--上拉加载-->
+<ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>

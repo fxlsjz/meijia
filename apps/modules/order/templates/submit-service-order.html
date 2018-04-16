@@ -1,0 +1,196 @@
+<!--020提交订单界面-->
+<ion-view class="submit-order">
+
+    <mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="x" ng-if="isShowNoData"></mobo-no-data>
+
+    <!--内容-->
+    <ion-content id="body-view" class="content" ng-show="isShowView" lazy-scroll>
+        <div class="user-info c-3 f-s-28">
+
+            <div class="ub user-name-height dividing-line">
+                <div class="user-name-width line-ellipsis-1">联系人</div>
+                <input class="ub-f1 user-name-content" type="text" ng-model="userName.text" placeholder="请输入联系人姓名"/>
+            </div>
+
+            <div class="ub user-name-height" ng-class="{'dividing-line':from!=4}">
+                <div class="user-name-width line-ellipsis-1" >联系电话</div>
+                <input class="ub-f1 user-name-content line-ellipsis-1" type="text" ng-model="userMobile.text" placeholder="请输入联系人电话"/>
+            </div>
+
+            <div class="ub user-name-height dividing-line" ng-if="from==1||from==2||from==3" on-tap="selectStroe()">
+                <div class="user-name-width">{{serviceText+'店面'}}</div>
+                <div class="ub-f1 user-name-content c-e6 line-ellipsis-1">{{orderInfo.serAddress}}</div>
+                <div class='res8 lis-sw ub-img'></div>
+            </div>
+            <div class="ub user-name-height dividing-line" ng-if="from==1||from==2" on-tap="selectTime()">
+                <div class="user-name-width ">预约时间</div>
+                <div class="ub-f1 user-name-content c-e6 line-ellipsis-1" ng-bind="serTime"></div>
+                <div class='res8 lis-sw ub-img'></div>
+            </div>
+            <!--技师显示-->
+            <div class="ub user-name-height f-s-28 c-3" on-tap="selectTeach()">
+                <div class="ub-f1">{{technicianText}}</div>
+                <!--<div class="technician-head-image" image-lazy-background-image="true" image-lazy-src="{{selectTechnician.my_beaticain.photo_two|baseUrl}}"></div>-->
+                <div class="m-l-20 line-ellipsis-1 c-e6 " style="margin-right: 0.5rem;">
+                    {{nickname}}
+                </div>
+                <div class='res8 lis-sw ub-img'></div>
+            </div>
+        </div>
+        <div style="height: 0.25rem; background-color: #F7F7F7;width: 100%;"></div>
+
+        <!--套票+给我选服务+给他选服务3个列表-->
+        <!----------套票服务列表------->
+        <div ng-if="from==3||from==4" class="bg-color-f m-t-10">
+            <div class="buy-service f-s-28 c-3 bg-color-f">购买{{serviceText}}</div>
+
+            <!--我的套票列表-->
+            <div class="submit-order-service-list ub" ng-repeat="list in singleServiceSelectData.selectedData">
+                <div class="submit-order-ticket-img background-img" image-lazy-background-image="true"
+                     image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                <div class="ub-f1 submit-order-service-content h7rem">
+                    <!--服务名称-->
+                    <div class="f-s-26 c-3 line-ellipsis-1">{{list.iname}}</div>
+                    <!--时间布局-->
+                    <div class="submit-order-service-time">
+                        <!--<div class="submit-order-service-time-icon"></div>-->
+                        <div class="submit-order-service-time-text f-s-20 c-3">{{list.iusetime}}分钟</div>
+                    </div>
+                    <!--服务列表价格布局-->
+                    <div class="c-e6 submit-order-service-price">
+                        <div class="display-ib f-s-28">¥</div>
+                        <div class="display-ib f-s-34">{{list.nowprice}}</div>
+                    </div>
+                    <div class="delete-service" on-tap="delete($index,list)"
+                         ng-if="singleServiceSelectData.selectedData.length>1"></div>
+                    <!--服务列表分割线-->
+                    <div ng-if="$index!=singleServiceSelectData.selectedData.length-1"
+                         class="submit-order-service-line"></div>
+                </div>
+            </div>
+        </div>
+        <!--我的服务列表-->
+        <div ng-if="from==1||from==2" class="bg-color-f m-t-10">
+
+            <!--<div class="buy-service f-s-28 c-3 bg-color-f">购买{{serviceText}}</div>-->
+            <!--我的服务列表-->
+            <div class="submit-order-service-list ub" ng-repeat="list in singleServiceSelectData.selectedData">
+                <div class="submit-order-ticket-img background-img" image-lazy-background-image="true"
+                     image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                <div class="ub-f1 submit-order-service-content">
+                    <!--服务名称-->
+                    <div class="f-s-26 c-3 line-ellipsis-1">{{list.iname}}</div>
+                    <!--时间布局-->
+                    <div class="submit-order-service-time">
+                        <!--<div class="submit-order-service-time-icon"></div>-->
+                        <div class="submit-order-service-time-text f-s-20 c-3">{{list.iusetime}}分钟</div>
+                    </div>
+                    <!--服务列表价格布局-->
+                    <div class="c-e6 submit-order-service-price">
+                        <div class="display-ib f-s-28">¥</div>
+                        <div class="display-ib f-s-34">{{list.nowprice}}</div>
+                    </div>
+                    <!--服务列表分割线-->
+                    <div ng-if="$index!=singleServiceSelectData.selectedData.length-1"
+                         class="submit-order-service-line"></div>
+                </div>
+
+            </div>
+        </div>
+        <!--她的服务列表-->
+        <div ng-if="roomType=='STORE_TYPE_DOUBLE_A'||roomType=='STORE_TYPE_DOUBLE_T'" class="m-t-10 bg-color-f">
+            <div class="user-info">
+                <div class="ub user-name-height dividing-line f-s-28 c-3">
+                    <div class="ub-f1">Ta的{{technicianText}}</div>
+                    <div class="technician-head-image" image-lazy-background-image="true"
+                         image-lazy-src="{{selectTechnician.her_beaticain.photo_two|baseUrl}}"></div>
+                    <div class="m-l-20 line-ellipsis-1">{{selectTechnician.her_beaticain.nickname}}</div>
+                </div>
+            </div>
+            <!--他的服务列表-->
+            <div class="submit-order-service-list ub" ng-repeat="list in singleServiceSelectData.selectedDataHer">
+                <div class="submit-order-ticket-img background-img" image-lazy-background-image="true"
+                     image-lazy-src="{{list.service_thumpath_two | baseUrl}}"></div>
+                <div class="ub-f1 submit-order-service-content">
+                    <!--服务名称-->
+                    <div class="f-s-26 c-3 line-ellipsis-1">{{list.iname}}</div>
+                    <!--时间布局-->
+                    <div class="submit-order-service-time">
+                        <!--<div class="submit-order-service-time-icon"></div>-->
+                        <div class="submit-order-service-time-text f-s-20 c-3">{{list.iusetime}}分钟</div>
+                    </div>
+                    <!--服务列表价格布局-->
+                    <div class="c-e6 submit-order-service-price">
+                        <div class="display-ib f-s-28">¥</div>
+                        <div class="display-ib f-s-34">{{list.nowprice}}</div>
+                    </div>
+                    <!--服务列表分割线-->
+                    <div ng-if="$index!=singleServiceSelectData.selectedDataHer.length-1"
+                         class="submit-order-service-line"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <!--备注-->
+        <div class="submit-order-remark ub bg-color-f m-t-10">
+            <div class="submit-order-remark-text f-s-28 c-3">其他需求</div>
+            <input class="f-s-28 c-3 align-right ub-f1" id="a" on-tap="a()" maxlength="45" type="text"
+                   ng-model="remark.text" placeholder="还有什么要告诉我们的？"/>
+        </div>
+        <div style="height: 0.25rem;background-color: #F7F7F7;width: 100%;"></div>
+        <!--服务金额 + 应付金额-->
+        <div class="user-info">
+            <!--服务金额-->
+            <div class="ub user-name-height c-3 f-s-28 dividing-line">
+                <div class="user-name-width">服务金额</div>
+                <div class="c-e6 align-right ub-f1">{{'¥'+orderprice}}</div>
+            </div>
+            <div class="ub user-name-height c-3 f-s-28">
+                <div class="user-name-width">实付总计</div>
+                <div class="c-e6 align-right ub-f1">
+                    <span class="f-s-30">¥</span><span class="f-s-30">{{actualprice}}</span>
+                </div>
+            </div>
+        </div>
+        <!--支付方式-->
+        <div class="user-info m-t-10 f-s-28 c-3">
+            <div class="ub user-name-height dividing-line" on-tap="selectBalance()">
+                <!--<div class="pay-type-icon-view">
+                    <div class="balance-icon"></div>
+                </div>-->
+                <div class="ub-f1">余额支付<i class="c-e6">(当前余额: ¥{{balance}})</i>
+                </div>
+                <div ng-class="{true:'select-active',false:'select-inactive'}[payType=='PAYTYPE_PRICE']"></div>
+            </div>
+            <div class="ub user-name-height" on-tap="selectWeChat()" ng-class="{'dividing-line':from==1}">
+                <!--<div class="pay-type-icon-view">
+                    <div class="wechat-icon"></div>
+                </div>-->
+                <div class="ub-f1">微信支付</div>
+                <div ng-class="{true:'select-active',false:'select-inactive'}[payType=='PAYTYPE_WECHATWEB']"></div>
+            </div>
+
+            <!--<div class="ub user-name-height" ng-if="from==1" on-tap="selectStorePay()">
+                <div class="pay-type-icon-view">
+                    <div class="store-icon"></div>
+                </div>
+                <div class="ub-f1">到店支付</div>
+                <div ng-class="{true:'select-active',false:'select-inactive'}[payType=='']"></div>
+            </div>-->
+        </div>
+        <!--下单须知 -->
+        <div class="order-rule f-s-24 c-9" style="background-color: #F7F7F7;">
+            <div>请您在下单后10分钟内进行支付，</div>
+            <div>超时订单将自动取消。</div>
+            <div>退单、退款等规则详情请见 <span class="c-e6" ui-sref="order-order-rule">《下单须知》</span></div>
+        </div>
+
+        <div class="order-bottom-divider"></div>
+    </ion-content>
+
+    <!--底部按钮-->
+    <div id="btnBottom" class="f-log-btn ub" ng-if="isShowView">
+        <span type="button" class="button-block f-btn-submit f-s-30 ub-f1 align-center " on-tap="verify()">{{payType==''?'确定提交':'确认支付'}}</span>
+    </div>
+</ion-view>

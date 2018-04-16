@@ -1,0 +1,30 @@
+<!--020追踪订单界面-->
+<ion-view class="track-order">
+    <!--头-->
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">订单追踪</h1>
+        <div class="header-right"></div>
+    </ion-header-bar>
+
+    <!--内容-->
+    <ion-content>
+        <div class="bg-color-f m-t-10 p-l-30 p-r-30 p-t-30 p-b-30">
+            <mobo-no-data text="暂时还没有数据哦！" layout="Y"
+                          ng-if="data.realorder_info && data.realorder_info.length == 0"></mobo-no-data>
+            <div class="detailSend" ng-repeat="item in data.realorder_info">
+                <div class="ub">
+                    <div class="">
+                        <div class="process"></div>
+                        <div class="line"
+                             ng-hide="data.realorder_info.length==1 ||($index == (data.realorder_info.length - 1))"></div>
+                    </div>
+                    <div class="ub-f1">
+                        <div class="one-word c-3" ng-bind='item.realorder_time * 1000 | date:"yyyy-MM-dd HH:mm"'></div>
+                        <div class="send-date f-s-24 c-6" ng-bind="item.realorder_content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

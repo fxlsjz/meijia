@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+/*----------020单次套票提交订单-----------*/
+
+
+/*内容*/
+
+.submit-order .content {
+	background-color: #F7F7F7;
+	bottom: 5.4rem;
+}
+
+
+/*用户信息布局*/
+
+.submit-order .user-info {
+	padding: 0 1.5rem;
+	background-color: #fff;
+}
+
+
+/*联系人文本宽度*/
+
+.submit-order .user-name-width {
+	width: 7.7rem;
+}
+
+.submit-order .user-name-content {
+	margin-right: 0.5rem;
+	text-align: right;
+}
+
+
+/*联系人布局高度*/
+
+.submit-order .user-name-height {
+	height: 4.4rem;
+	line-height: 4.4rem;
+}
+
+.submit-order .lineHeight4 {
+	line-height: 4.4rem;
+}
+
+.submit-order .address-layout {
+	padding: 1.3rem 0;
+}
+
+
+/*分割线*/
+
+.submit-order .dividing-line {
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.submit-order .dividing {
+	height: 0.5rem;
+	background-color: #f7f7f7;
+}
+
+.submit-order input[type=text],
+.submit-order input[type=tel] {
+	height: 4.2rem;
+	margin-top: 0.1rem;
+}
+
+
+/*购买服务文案*/
+
+.submit-order .buy-service {
+	padding-top: 1rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.submit-order .service-name-right {
+	margin-right: 4rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/*服务列表item*/
+
+.submit-order-service-list {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+
+/*服务列表图片*/
+
+.submit-order-ticket-img {
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+	width: 12.5rem;
+	height: 7rem;
+}
+
+
+/*服务列表右侧内容*/
+
+.submit-order-service-content {
+	margin-right: 1.5rem;
+	position: relative;
+	height: 7rem;
+}
+
+
+/*服务列表时间布局*/
+
+.submit-order-service-time {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+}
+
+
+/*服务列表时间图标*/
+
+.submit-order-service-time-icon {
+	display: inline-block;
+	/*margin-top:1.3rem;*/
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	width: 0.95rem;
+	height: 1rem;
+	background-size: cover;
+	margin-right: 0.5rem;
+	display: inline-block;
+}
+
+
+/*服务列表时间文字*/
+
+.submit-order-service-time-text {
+	line-height: 1rem;
+	display: inline-block;
+}
+
+
+/*服务列表价格*/
+
+.submit-order-service-price {
+	bottom: 0;
+	right: 0;
+	position: absolute;
+}
+
+.submit-order .delete-service {
+	position: absolute;
+	top: 0;
+	right: -1.5rem;
+	width: 3.8rem;
+	height: 3.8rem;
+	background-image: url(../../../images/my/dd_shanchudingdan_btn.png);
+	background-size: cover;
+}
+
+
+/*备注布局*/
+
+.submit-order-remark {
+	padding: 0 1.5rem;
+	height: 4.4rem;
+}
+
+
+/*备注文案*/
+
+.submit-order-remark-text {
+	line-height: 4.5rem;
+	width: 7.7rem;
+}
+
+
+/*服务列表分割线*/
+
+.submit-order-service-line {
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #DEDEDE;
+	bottom: -1rem;
+}
+
+.submit-order .delser {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-top: -1.0rem;
+	width: 3.8rem;
+	height: 3.8rem;
+	background-image: url(../../../images/my/dd_shanchudingdan_btn.png);
+	background-size: cover;
+}
+
+
+/*技师头像*/
+
+.technician-head-image {
+	height: 3rem;
+	width: 3rem;
+	margin-top: 0.7rem;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.submit-order .align-right {
+	text-align: right;
+}
+
+.submit-order .align-center {
+	text-align: center;
+}
+
+
+/*支付方式*/
+
+.submit-order .select-active {
+	margin-top: ;
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 1.45rem;
+	background-size: cover;
+	background-image: url(../../../images/public/choice_y.png);
+}
+
+.submit-order .select-inactive {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 1.45rem;
+	background-size: cover;
+	background-image: url(../../../images/public/choice_n.png);
+}
+
+
+/*下单须知布局*/
+
+.submit-order .order-rule {
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+}
+
+.submit-order .order-rule p {
+	line-height: 150%;
+}
+
+
+/*支付方式图标外框*/
+
+.submit-order .pay-type-icon-view {
+	height: 100%;
+	width: 5rem;
+}
+
+
+/*余额支付图标*/
+
+.submit-order .balance-icon {
+	background: url(../../../images/public/com_yuezhifu_icon1.png);
+	width: 4rem;
+	height: 2.5rem;
+	background-size: cover;
+	margin-top: 0.95rem;
+	margin-left: 0.5rem;
+}
+
+
+/*微信支付图标*/
+
+.submit-order .wechat-icon {
+	background: url(../../../images/my/com_wenxinzhifu_icon.png);
+	width: 4rem;
+	height: 2.5rem;
+	background-size: cover;
+	margin-top: 0.95rem;
+	margin-left: 0.5rem;
+}
+
+
+/*到店支付图标*/
+
+.submit-order .store-icon {
+	background: url(../../../images/my/com_daodianzhifu_icon.png);
+	width: 2.05rem;
+	height: 1.95rem;
+	background-size: cover;
+	margin-left: 1.475rem;
+	margin-top: 1.225rem;
+}
+
+.submit-order .check-box-ion {
+	margin-top: 0;
+}
+
+.submit-order .check-box-ion:after {
+	left: 4%;
+	top: 18%;
+}
+
+.submit-order .popup-buttons .button:last-child {
+	margin-right: 0;
+	color: #e64c65;
+}
+
+.submit-order .lis-sw {
+	background-image: url(../../../images/my/right_inst.png);
+	width: 0.7rem;
+	height: 1.4rem;
+	margin-top: 1.4rem;
+	background-size: cover;
+}

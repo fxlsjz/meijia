@@ -1,0 +1,405 @@
+@charset "utf-8";
+
+/*通用*/
+
+
+/*auth: tzb*/
+
+
+/*店面列表*/
+
+.store {
+	background-color: #FFF;
+}
+
+.store .store-seach-title {}
+
+
+/*地址图标*/
+
+.store .location-ion {
+	width: 3.75rem;
+	height: 3.75rem;
+	background-image: url(../../../images/public/com_dingweicon.png);
+	background-position: center !important;
+	background-repeat: no-repeat !important;
+	background-size: 1.51875rem, 1.8rem;
+}
+
+
+/*顶部排序标签总布局*/
+
+.store .lable {
+	border-bottom: none;
+	height: 3.3rem;
+	box-sizing: border-box;
+	background-color: white;
+	z-index: 99;
+}
+
+
+/*顶部排序标签布局*/
+
+.store .lable .lable_body {
+	height: 100%;
+	text-align: center;
+}
+
+
+/*顶部排序标签*/
+
+.store .lable .lable_body .lable-info {
+	display: inline-block;
+	line-height: 3.3rem;
+	height: 3.3rem;
+	box-sizing: border-box;
+}
+
+
+/*顶部排序标签点击*/
+
+.store .lable .lable-info-press {
+	/*border-bottom: 2px solid #e64c65;*/
+	color: #DF3680;
+}
+
+
+/*列表*/
+
+.store .scrollcon {
+	margin-top: 4.3rem;
+	top: 3.7rem;
+}
+
+
+/*item布局*/
+
+.store .scrollcon .storelist-item {
+	padding: 1rem 0;
+}
+
+
+/*图片*/
+
+.store .scrollcon .storelist-item .imag {
+	width: 12.5rem;
+	height: 7rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+}
+
+
+/*店面右侧内容布局*/
+
+.store .scrollcon .storelist-item .store-order-line {
+	height: 7rem;
+}
+
+
+/*店面名字*/
+
+.store .scrollcon .storelist-item .store-order-line .store-name-info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 0.25rem;
+}
+
+
+/*收藏图标*/
+
+.store .scrollcon .storelist-item .store-order-line .collect-btn {
+	height: 1.45rem;
+	width: 1.7rem;
+	margin-right: 1.5rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(../../../images/public/shoucang_btn.png);
+}
+
+
+/*取消收藏图标*/
+
+.store .scrollcon .storelist-item .store-order-line .collect-btn-press {
+	background-image: url(../../../images/public/shoucang_btn_pressed.png);
+}
+
+
+/*空的星星*/
+
+.store .commont-start {
+	background-image: url(../../../images/public/com_zero_icon.png);
+	width: 8.653846153846154rem;
+	height: 1.5rem;
+	display: inline-block;
+	margin-top: 0.4rem;
+}
+
+
+/*评分星星*/
+
+.store .commont-start li {
+	background-image: url(../../../images/public/com_five_icon.png);
+	width: 8.653846153846154rem;
+	height: 1.5rem;
+	display: inline-block;
+	background-position: left top;
+	background-size: auto 100%;
+}
+
+
+/*距离*/
+
+.store .scrollcon .storelist-item .store-order-line .distance {
+	position: absolute;
+	bottom: -0.4rem;
+}
+
+
+/*分割线*/
+
+.store .scrollcon .storelist-item .store-order-line .dividing-line {
+	height: 1px;
+	width: 100%;
+	background-color: #DEDEDE;
+	position: absolute;
+	bottom: -1rem;
+}
+
+
+/*最后一个item的分割线*/
+
+.store .scrollcon .dividing-line-long {
+	height: 1px;
+	width: 100%;
+	background-color: #DEDEDE;
+}
+
+.store .item {
+	border: none;
+}
+
+
+/*店面相册*/
+.storephone ion-content{
+	background: #fff;
+	padding: 0;
+	padding-left: 0.5rem;
+	margin-top: 0.5rem;
+}
+.storephone .num {
+	line-height: 3.75rem;
+}
+
+/*.storephone .phone {
+	padding: 4px;
+}*/
+
+.storephone .phone-imag {
+	display: inline-block;
+}
+
+.storephone .phone-imag-left {
+	margin-left: 4px;
+}
+
+
+/*套票店面详情 服务列表*/
+
+
+/*切换+滚动*/
+
+.details .content {
+	background-color: #FFFFFF;
+	margin-bottom: 4rem;
+}
+
+.details .search-icons {
+	height: 1.3rem;
+	width: 1.8rem;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_sousuo_btn.png);
+}
+
+.details .content .scrollc {
+	height: 3.1rem;
+	line-height: 3.1rem;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+.details .content .scrollc .service-name {
+	height: 3.1rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.details .content .scrollc .service-name .nameinfo {
+	padding-bottom: 0.5rem;
+}
+
+.details .content .scrollc .service-name .nameinfopress {
+	color: #E64C65;
+	border-bottom: 2px solid #E64C65;
+}
+
+.details .scrollc {
+	height: 3.1rem;
+	line-height: 3.1rem;
+	border-bottom: 1px solid #DEDEDE;
+	background-color: #FFFFFF;
+}
+
+.details .scrollc .service-name {
+	height: 3rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.details .scrollc .service-name .nameinfo {
+	padding-bottom: 0.5rem;
+}
+
+.details .scrollc .service-name .nameinfopress {
+	color: #E64C65;
+	border-bottom: 2px solid #E64C65;
+}
+
+
+/*套票店面详情服务列表*/
+
+.details .content .store-service-list {
+	height: 35%;
+	width: 100%;
+}
+
+.details .content .store-service-list .service-list-item {}
+
+.details .content .store-service-list .service-list-item .imag {
+	width: 11.43rem;
+	height: 6.4rem;
+	background-size: cover;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.details .content .store-service-list .service-list-item .imag .imag-up {
+	width: 4rem;
+	height: 4rem;
+	background-image: url(../../../images/service/recommend-icon.png);
+	background-size: cover;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line {
+	border-bottom: 1px solid #DEDEDE;
+	margin-bottom: -9px;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .store-name {
+	height: 1.4rem;
+	line-height: 1.4rem;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .store-name .store-name-info {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.4rem;
+	padding-bottom: 21px
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .store-name .collect-btn {
+	height: 1.8rem;
+	width: 2.1rem;
+	background-size: cover;
+	background-image: url(../../../images/public/shoucang_btn.png);
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .store-name .collect-btn-press {
+	background-image: url(../../../images/public/shoucang_btn_pressed.png);
+}
+
+.details .item {
+	border: none;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .service-time {
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+
+/*时间显示*/
+
+.details .content .store-service-list .service-list-item .store-order-line .service-time .img {
+	background-size: cover;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	height: 1.2rem;
+	width: 1.1rem;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .service-time .time-text {
+	height: 1.2rem;
+	line-height: 1.5rem;
+	margin-left: 0.5rem;
+}
+
+
+/*店面名字*/
+
+.details .content .store-service-list .service-list-item .store-order-line .storename {
+	height: 1.5rem;
+	margin-top: 1rem;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .shopcar {
+	height: 2rem;
+	border: 1px solid #E64C65;
+	border-radius: 1rem;
+	padding: 0.1rem 0.5rem;
+	text-align: center;
+	margin-top: 2rem;
+}
+
+.details .content .store-service-list .service-list-item .store-order-line .shopcarpress {
+	background-color: #E64C65;
+	color: #FFFFFF;
+}
+
+
+/*去结算*/
+
+.details .paynumbershow {
+	height: 5rem;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	color: #FFFFFF;
+	padding-top: 1rem;
+}
+
+.details .paynumbershow .goPay {
+	background-color: #E64C65;
+}
+
+.details .paynumbershow .goPay .money {
+	margin: 15px 20px;
+}
+
+.details .paynumbershow .goPay .time-phone {
+	height: 1.5rem;
+	width: 1.5rem;
+	margin: 15px 5px;
+	background-image: url(../../../images/public/fw_shijian_icon.png);
+	background-size: cover;
+}
+
+.details .paynumbershow .goPay .time-sum {
+	margin: 15px 0px;
+}
+
+.details .paynumbershow .pay-n {
+	padding: 15px 20px;
+	background-color: #febf49;
+}

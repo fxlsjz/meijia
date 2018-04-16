@@ -1,0 +1,88 @@
+@charset "utf-8";
+.payMethod .money-all {
+	padding: 0 1.5rem;
+}
+
+.payMethod .shop-m {
+	/*border-bottom: 1px solid #dedede;*/
+	height: 4.5rem;
+	line-height: 4.5rem;
+}
+
+.payMethod .with-m {
+	height: 4.5rem;
+	line-height: 4.5rem;
+}
+
+
+/*支付方式 */
+
+.payMethod .pay-method {
+	padding: 0rem 1.5rem 0 1.5rem;
+	margin-bottom: 5.2rem;
+}
+
+.payMethod .pay-title {
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.payMethod .balance-icon {
+	background: url(../../../images/public/com_yuezhifu_icon1.png);
+	background-size: 120%;
+	width: 2rem;
+	height: 1.5rem;
+	/*margin-right: 0.5rem;*/
+	margin-top: 0.2rem;
+}
+
+.payMethod .pay-balance {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.payMethod .wechat-icon {
+	background: url(../../../images/my/com_wenxinzhifu_icon.png);
+	background-size: 120%;
+	width: 2rem;
+	height: 1.5rem;
+	margin-right: 0.5rem;
+}
+
+.payMethod .pay-wechat {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+.payMethod .check-box-ion {
+	margin-top: 0;
+}
+
+.payMethod .check-box-ion:after {
+	left: 17%;
+	top: 22%;
+}
+
+.payMethod .umh5 {
+	min-height: 0;
+}
+
+
+/*底部按钮*/
+
+.payMethod .f-btn-pay {
+	height: 5.4rem;
+	line-height: 5.4rem;
+	margin: 0 !important;
+	border-radius: 0;
+	background-color: #e64d65;
+	color: #fff!important;
+	border: none;
+	min-height: 0;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	text-align: center;
+	font-size: 1.7rem;
+}

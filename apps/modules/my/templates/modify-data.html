@@ -1,0 +1,50 @@
+<!--个人资料-->
+<ion-view>
+    <!--<ion-header-bar class="ub ub-ac bar bar-header">
+        <h1 class="bar-title ub-f1">编辑个人资料</h1>
+    </ion-header-bar>-->
+    <ion-content lazy-scroll class="my_index bg-color-f">
+    <div class="head-portrait">
+        <div class="picture bg-color-f">
+            <div class="u-head">
+                <div class="bacpicture" image-lazy-background-image="true"
+                     image-lazy-src="{{$_userInfo.user_id ? ($_userInfo.user_img | baseUrl) : ''}}">
+                </div>
+            </div>
+			<div class="userinfo">
+                <p class="u-frequency c-3">完善用户资料</p>
+            </div>
+            
+        </div>
+    </div>
+    <div>
+        <ul class="m-b-10">
+            <li class="ub ub-ac">
+                <span>昵称</span>
+                <input class="ub-f1" type="text" ng-model="userName.key"/>
+                <div class='lis-sw ub-img'></div>
+            </li>
+            <li class="ub ub-ac" ng-click="show()">
+                <span>性别</span>
+                <div class="ub-f1 tx-r" ng-bind="gender_value"></div>
+                <div class='lis-sw ub-img'></div>
+            </li>
+            <li class="ub ub-ac" on-tap="changePhone()" >
+                <span>手机号</span>
+                <div class="ub-f1 tx-r" ng-bind="userMobile.key"></div>
+                <div class='lis-sw ub-img'></div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    </ion-content>
+    <!--modal.hide()-->
+    <ion-footer-bar class="bar-footer backimg-none">
+        <div class="disable-user-behavior noImg c-de" on-tap="onBackPressed()">取&nbsp;&nbsp;消</div>
+        <div class="footerline"></div>
+        <div class="bar-submit bar-submitAlone bar-submitNew footersave c-e6" on-tap="onSave()">保&nbsp;&nbsp;存</div>
+    </ion-footer-bar>
+
+</ion-view>

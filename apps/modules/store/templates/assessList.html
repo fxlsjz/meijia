@@ -1,0 +1,118 @@
+<ion-view class="assessList">
+    <!--头部-->
+    <ion-header-bar class="ub ub-ac bar bar-header title">
+        <div class="go-back-btn go-back-btn-white h44 disable-user-behavior" on-tap="goBackList()"></div>
+        <!--标签-->
+        
+    </ion-header-bar>
+
+    <!--内容-->
+    <ion-content delegate-handle="cepingSlide" lazy-scroll>
+        <!--评价-->
+        <div >
+            <div class="bar bar-subheader bar-stable">
+                <div class="u-tabs button-bar ub">
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 0}" ng-click="categoryOrder(0)">
+                        <p>全部评价</p>
+                        <p>（{{evaAll}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 1}" ng-click="categoryOrder(1)">
+                        <p>好评</p>
+                        <p>（{{evaUpper}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 2}" ng-click="categoryOrder(2)">
+                        <p>中评</p>
+                        <p>（{{evaMiddle}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 3}" ng-click="categoryOrder(3)">
+                        <p>差评</p>
+                        <p>（{{evaDown}}）</p>
+                    </div>
+                </div>
+                <div style="height: 1rem;width:100%;background-color: #fff;"></div>
+               
+            </div>
+            
+            <!--评价内容-->
+            <ion-content class="bg-color-gr p-t-20 u-top4 u-topNew" lazy-scroll>
+               
+                <!--评价无数据显示-->
+                <!--<mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="x" ng-if="listdata"></mobo-no-data>-->
+                
+                <!--评价列表-->
+                <!--<div class="pinList">-->
+                    <!--<div class="bg-color-f m-t-16 p-t-20 p-r-20 p-l-20 assess" ng-repeat="list in evalList">-->
+                        <!--<div class="ub eval-titleall p-b-20">
+                            <div class="eval-title f-s-28 c-3 ub-f1">
+                                <span ng-if="list.isanonymity == '0'" class="eval-userheader"
+                                      image-lazy-background-image="true"
+                                      image-lazy-src="{{list.uidimg | baseUrl}}"
+                                      ratio-scale="1:1"></span>
+                                <span ng-if="list.isanonymity == '0'">{{list.uname}}</span>
+                                <span ng-if="list.isanonymity == '1'" class="eval-userheader"></span>
+                                <span ng-if="list.isanonymity == '1'">匿名</span>
+                            </div>
+                            <div class="ub-f1 eval-data c-80 f-s-24">{{list.datetime *1000 | date:"yyyy-MM-dd HH:mm"}}
+                            </div>
+                        </div>-->
+                        <!--<div class="eval-content p-t-20 p-b-20">-->
+                            <!--<div class="ub">
+                                <div class="ub-f1 commont-start">
+                                    <li style="width: {{(list.score | star) * 20}}%;"></li>
+                                </div>
+                                <div class="ub-f1 c-3 f-s-28 commont-author ng-binding"
+                                     ng-bind="commentList.nickname"></div>
+                            </div>-->
+                            <!--<div ng-bind="list.content" class="p-t-20 c-3 f-s-26"></div>-->
+                            <!--评论图片-->
+                            <!--<div class="comment-imgall comment-imgallNew">
+                                <div class="comment-img" ng-repeat="cimg in list.comment_img" ratio-scale="1:1">
+                                    <i image-lazy-src="{{cimg.cimg | baseUrl}}" image-preview="{{getLargePicArray(list.comment_img)}}"
+                                       multiple="true" index="{{$index}}" image-lazy-background-image="true"
+                                       class="background-img" >
+                                    </i>
+                                </div>
+                            </div>-->
+                            <!--商家回复-->
+                            <!--<div class="storeall storeallTwo" ng-if="list.seller_replay!=''">
+                                <span class="storea f-s-20 c-e6 storeaTwo">商家回复</span><span class="c-3 f-s-26 line-ellipsis-2 replyContent"
+                                                                                  ng-bind="list.seller_replay"></span>
+                            </div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                
+                <div class="pinListNews">
+                	<div class="assessList p-t-30">
+						<div class="ub">
+							<div class="ub-f1 c-6" style="padding-left: 5rem;">
+								<span class="actorHead"></span>
+								<p class="m-b-0 c-6 f-s-30">爱美甲的兔子</p>
+								<p class="m-b-0 p-t-10 c-9 f-s-26">2017-04-13</p>
+							</div>
+							<div class=" text-right">
+								<div class="commont-start">
+									<li></li>
+									<!--<li style="width:{{(item.grade | star) * 20;}}%"></li>-->
+								</div>
+							</div>
+						</div>
+						<div class="ub c-e6 p-t-10">指尖镶钻{{}}</div>
+						<div class="ub p-t-10 assess">
+							这家美甲店棒棒的，服务态度很好，手法很专业！下次还来
+						</div>
+					</div>
+                </div>
+                
+                
+                <!--评价上拉加载-->
+                <ion-infinite-scroll class="u-loading-ion" ng-if="canLoadMoreGoodsList" distance="1%"
+                                     immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+                <!--评价下拉刷新-->
+                <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+                <div class=" bottomHeight" style="height: 7rem;"></div>
+        </div>
+    </ion-content>
+    
+
+</ion-view>

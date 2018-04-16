@@ -1,0 +1,79 @@
+<!--使用记录-->
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="stampback()"></div>
+		<h1 class="bar-title ub-f1">使用记录</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content class="ticket-use-log" lazy-scroll>
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="items && counts"></mobo-no-data>
+		<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+		<mobo-data-loading ng-if="items && canLoadMore == undefined"></mobo-data-loading>
+		<!--<div class="use-log-con" ng-repeat="item in items" ng-class="{'active':isShowSkins(item.state)}" on-tap="toLink(item)">
+			<div class="ub use-log-circle">
+				<span class="background-img circle"></span>
+				<div class="ub-f1">
+					<h2 class="f-s-28 ub">
+						<span class="ub-f1 line-ellipsis-1" ng-bind="item.iname"></span>
+						<span class="c-e6" ng-bind="!item.state ? '' : appValues[item.state].dic_desc"></span>
+					</h2>
+				</div>
+			</div>
+			<div class="ub use-date">
+				<div class="date c-e6">
+					<i ng-bind="item.book_time*1000 | pridate"></i>/<i ng-bind="item.book_time*1000 | month"></i>
+				</div>
+				<div class="c-e6 f-s-24 ub-f1 ser-con line-ellipsis-1" ng-if="item.itemlist.length > 0">
+					购买{{serviceText}}：<i ng-bind="item.itemlist" class=""></i>
+				</div>
+			</div>
+			<div class="use-detail f-s-24">
+				<div>
+					{{serviceText}}地址：<i ng-bind="item.address"></i>
+				</div>
+				<div>
+					{{serviceText}}时间：<i ng-bind="item.usetime"></i>
+				</div>
+				<div class="submit-time">
+					<i>提交时间:</i>
+					<i ng-bind="item.book_time*1000 | date:'yyyy-MM-dd HH:mm'"></i>
+				</div>
+				<div class="btns">
+					<span class="comment-unselected bg-color-r" ng-if="item.cancel_able == 'Y'" on-tap="cancelOrder(item.orid,$event)">取消预约</span>
+					<span class="comment-unselected bg-color-r" on-tap="topay(item,$event)" ng-if="item.pay_able == 'Y'">去支付</span>
+					<span class="comment-unselected bg-color-r" on-tap="onSlot(item,$event)" ng-if="slotText(item.state)" ng-bind="slotText(item.state)"></span>
+					<!--<span class="comment-unselected bg-color-r" ng-if="isShowBtn(item.state) == 1 || isShowBtn(item.state) == 2" on-tap="cancelOrder(item.orid,$event)">取消预约</span>
+					<span class="comment-unselected bg-color-r" on-tap="topay(item,$event)"
+						ng-if="isShowBtn(item.state) == 2"
+						>去支付</span>-->
+				<!--</div>
+				<div class="pri-line"></div>
+			</div>
+		</div>-->
+		
+		
+		
+		
+		<!--修改使用记录-->
+		<div class="bg-user-img clearfix" ng-repeat="item in items" ng-class="{'active':isShowSkins(item.state)}" >
+			<div class="c-f user-left" on-tap="toLink(item)">
+				<p class="f-s-32 p-t-30 m-b-0  line-ellipsis-1" ng-bind="item.iname">中国红20次套票</p>
+				<p class="p-b-22 f-s-20 m-b-10" ng-bind="item.usetime">2016-05-05 16:00 至 16:30</p>
+				<p class="f-s-24 m-b-10" ng-if="item.itemlist.length == 0">购买{{serviceText}}：<span>--</span></p>
+				<p class="f-s-24 m-b-10 textLong" ng-if="item.itemlist.length > 0">购买{{serviceText}}：<span ng-repeat="iname in item.itemlist">{{iname.iname}}&nbsp;&nbsp;</span></p>
+				<p class="f-s-24 m-b-0">提交时间：<span ng-bind="item.book_time*1000 | date:'yyyy-MM-dd HH:mm'">2016-05-03 14:00</span></p>
+				<p class="p-b-20 f-s-26" ng-bind="item.address">魏公村店</p>
+			</div>
+			<div class="c-f user-right">
+				<p class="f-s-32 p-t-30" ng-bind="!item.state ? '' : appValues[item.state].dic_desc">未支付</p>
+				<p class="p-b-24"><i ng-bind="item.book_time*1000 | pridate">4</i>/<i ng-bind="item.book_time*1000 | month">20</i></p>
+				<p class="paybut" on-tap="topay(item,$event)" ng-if="item.pay_able == 'Y'">去支付</p>
+				<p class="paybut" ng-if="item.cancel_able == 'Y'" on-tap="cancelOrder(item.orid,$event)">取消预约</p>
+				<!--<p class="paybut" on-tap="onSlot(item,$event)" ng-if="slotText(item.state)" ng-bind="slotText(item.state)"></p>-->
+				<p class="paybut" ng-if="item.iscommon == 'Y'" on-tap="evaluateService(item)">评价{{serviceText}}</p>
+				<p class="paybut" ng-if="item.biscommon == 'Y'" on-tap="evaluateTechnician(item)">评价{{technicianText}}</p>
+			</div>
+		</div>
+		<ion-infinite-scroll ng-class="{'u-loading-ion':canLoadMore == true}" ng-if="canLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreData(v)"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

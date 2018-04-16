@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+.lis , .lis-m div
+{ 
+	padding:0.4em;
+}
+
+
+.lis2
+{ 
+	padding:0.4em 0.6em;
+}
+
+.lis3
+{ 
+	padding:0.8em;
+}
+
+.lis-06 div
+{ 
+	padding:0.6em;
+}
+
+.lis-1 div
+{ 
+	padding:1em;
+}
+
+.lis-icon
+{ 
+	width:2em;
+	height:2em;
+	margin-right:0.4em;
+}
+.lis-th{
+	width:4em;
+	margin:0em 0.4em 0em 0px;
+	min-height:4em;
+}
+.lis-sw
+{
+	width:0.6em;
+	height:1em;
+	margin-left:0.4em;
+}	

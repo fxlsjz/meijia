@@ -1,0 +1,100 @@
+/*right arrow*/
+.arrow-right{
+    width: 3em;
+    background: url(../images/return-right.png) no-repeat center;
+    background-size: 25%;
+    margin-top: -0.5em;
+}
+/*index*/
+.follow-num{
+	width: 100%;
+	height: 2.75em;
+	color:#000;
+	background-color:#F6F6F6;
+}
+.follow-head > img{
+	width:3.5em;
+	height:3.5em;
+}
+.bor-b-f6f6f6{
+	border-bottom:1px solid #F6F6F6;
+}
+/*detail*/
+.follow-top{
+	height:6em;
+	background:url(../images/background/user-bg.png);
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+}
+.defriending{
+	position:absolute;
+	right:.5em;
+	top:0;
+	line-height:2.75em;
+	color:#FFF;
+	font-size: 1em;
+    font-family: Arial, Verdana, Sans-serif;
+	font-weight: bold;
+}
+.friends{
+	background-color:rgba(253,238,217,.5);
+	padding:.2em;
+}
+.fans{
+	background-color:rgba(252,100,18,.5);
+	padding:.2em;
+}
+.today{
+	margin-top:2em;
+}
+.picmood{
+	border-top-left-radius:5em;
+	border-bottom-left-radius:5em;
+}
+.picmood > img{
+	border-top-left-radius:1em;
+	border-bottom-left-radius:1em;
+	border-top:1px solid #CACACA;
+	border-bottom:1px solid #CACACA;
+	border-left:1px solid #CACACA;
+	height:3.84375em;/*<--再算*/
+}
+.content{
+	padding:.2em;
+	background-color:#FFF;
+	border-top:1px solid #CACACA;
+	border-bottom:1px solid #CACACA;
+	height:3.84375em;/*<--再算*/
+}
+.mooddate{
+	background-color:#FFF;
+	border-top:1px solid #CACACA;
+	border-bottom:1px solid #CACACA;
+	height:3.84375em;/*<--再算*/
+	width:3.84375em;/*<--再算*/
+	text-align:center;
+}
+.pubpriv{
+	width:80%;
+	height:75%;
+	background-color:#e50012;
+	color:#FFF;
+	/*letter-spacing:1em;*/
+}
+#header-search .input-txt {
+	margin: .35em 3em;
+	padding: 0em 1em 0em 2em;
+	background-image: url(../images/search_icon.png);
+	-webkit-background-size: auto 70%;
+	background-size: auto 70%;
+	background-repeat: no-repeat;
+	background-position: .5em center;
+	height:2.05em;
+	line-height:2.05em;
+	background-color:#FFF;
+	text-align: left;
+}
+.search-user{
+	padding-top:.5em;
+	padding-bottom:.5em;
+}

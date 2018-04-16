@@ -1,0 +1,40 @@
+<ion-view class="compile">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">编辑收货地址</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content ng-class="cssClass">
+		<div class="kuai bg-color-f t1">
+			<div class="name f-s-28 c-3">
+				<p>收货人</p>
+				<input type="text" name="name" id="name" ng-model="receiver.text" />
+			</div>
+			<div class="phone f-s-28 c-3">
+				<p>联系方式</p>
+				<input type="text" name="phone" id="phone" ng-model="mobile.text" />
+			</div>
+			<div class="addres f-s-28 c-3">
+				<p>所在地区</p>
+				<select  ng-model="province.id" ng-change="loadDataCity(province.id)" ng-options="item.id as item.name for item in provinceItem"><option value="">省</option>  
+				</select>
+				<!--市区-->
+				<select ng-model="city.id" ng-change="loadDataCounty(city.id)" ng-options="item.id as item.name for item in cityItem"><option value="">市区</option> </select>
+				<!--县-->
+                <select ng-model="county.id" ng-change="loadDataId(county.id)"  ng-options="item.id as item.name for item in countyItem"><option value="">县</option> </select>
+			</div>
+			<div class="addresing f-s-28 c-3">
+				<p>详细地址</p>
+				<input type="text" name="addressing" id="addressing" ng-model="addressinfo.text" />
+			</div>
+			
+		</div>
+    </ion-content>
+    
+   <div class="f-log-btn">
+		<span class="button button-block f-btn-submit f-s-30" on-tap="submitAdd()">保存并使用</span>
+	</div>
+	<script language="javascript">
+       
+    </script>
+</ion-view>

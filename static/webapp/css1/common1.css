@@ -1,0 +1,168 @@
+@charset "utf-8";
+    /*@import url("ui-media.css");*/
+ 
+
+#footer{
+    background:#fff;
+}
+
+header{
+    background-color: #E64D65;
+    border-bottom: 1px solid #E64C65;
+    color:#fff;
+}
+header h1{
+    color:#fff;
+}
+.choose-service{
+    color:#fff;
+}
+
+#submit-bot1 {
+    width: 100%;
+    height: 3.375em;
+    position: fixed;
+    bottom: 0;
+    background-color: #E64C65;
+}
+.c1-E64C65{
+    color:#E64C65;
+}
+.c-#E64C65{
+    color: #E64C65;
+}
+.c-E64C65{
+    color: #E64C65;
+}
+
+.c-e #submit{
+    background: #E64C65;
+}
+.c-e #submit{
+    background: #E64C65;
+}
+.page #wechat-submit{
+    background: #E64C65;
+}
+.ti3{
+    text-indent: 3em;
+}
+.margin-t-05{
+    margin-top: 0.5em;
+}
+.margin-t-06{
+    margin-top: 0.6em;
+}
+.bag-e{
+    background: #eee;
+}
+.m-t-1{
+    margin-top: 1em;
+}
+.flr{
+    float: right;
+}
+.mt-02{
+    margin-top: 0.2em;
+}
+.tx-r{
+    text-align: right;
+}
+.div-separate {
+    background-color: #f7f7f7;
+}
+.m-r-03{
+    margin-right: 0.3em;
+}
+.b-c-f7f7f7{
+    background-color: #f7f7f7;
+}
+
+.p-lr-12{
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+    height:auto;
+}
+.p-t-12{
+    padding-top: 1.2em;
+}
+.h22,.h-2{
+	padding: 1em 0 20em 0;
+    width: 100%;
+    background-color: #fff;
+    color:#999;
+    text-indent: 1em;
+}
+.h-2{
+    height:2.5em;
+    margin-top: 1em;
+    text-indent: 1em;
+}
+.op-sub{
+    float:right;
+    margin-right:10px;
+    position: absolute;
+    top:0;
+    right: 10px;
+}
+
+.bg-E64D65,#bg-E64D65{
+    background-color: #E64D65;
+}
+.contentss {
+    top: 37%;
+    width: 100%;
+    height: 25%;
+    top: 38%;
+}
+.b-b-BDBEC2{
+    border-bottom: 1px solid #BDBEC2;
+}
+.p-l-0{
+    padding-left: 0;
+}
+.p-l-1{
+    padding-left: 1em;
+}
+.m-t-05{
+    margin-top:0.5em;
+}
+.p-b-0{
+     padding-bottom:0;
+}
+.c-666{
+    color:#666;
+}
+.c-333{
+    color:#333;
+}
+    
+    /* 推荐 */
+.tuijians{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 3em;
+    height:3em;
+    background-image: url(../images1/tuijian.png);
+    background-size:cover;
+}
+.service-list .serviceImg .tuijians img{
+    width: 4em;
+    height:4em;
+}
+
+#alert_info {
+    width: 90%;
+    margin-left: 5%;
+}
+.lineh-3{
+	line-height: 3em!important;
+}
+.c-3e3a39{
+	color: #3e3a39;
+}
+.b-b-bcbfbf{
+	border-bottom: 1px solid #bcbfbf;
+}
+.margin-t-1

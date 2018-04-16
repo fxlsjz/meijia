@@ -1,0 +1,548 @@
+@charset "utf-8";
+
+img{width: 100%;}
+/*搜索*/
+.home{
+
+}
+.home .search {
+	position: absolute;
+	left: 50%;
+	top: 2rem;
+	width: 11.5rem;
+	height: 2rem;
+	line-height: 2rem;
+	margin-left: -5.8rem;
+	border-radius: 1rem;
+	background-color: rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	text-align: center;
+	color: #fff;
+}
+
+/*----轮播图 start----*/
+
+.home .mb_banner {
+	height: 22.5rem;
+	width: 100%;
+	/*height:22.5em;*/
+	position: relative;
+	overflow: hidden;
+}
+
+.home .mb_banner li {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+}
+
+.home .ion-record:before {
+	content: '';
+	width: 1.2rem;
+	height: 0.2rem;
+	background-color: #fff;
+	display: none;
+}
+
+.home .slider-pager .slider-pager-page.active .ion-record:before {
+	background-color: #DF3680;
+	display: none;
+}
+
+.home .slider-pager .slider-pager-page {
+	margin: 0 0.3rem;
+	bottom: 1rem;
+}
+
+.home .slider-pager {
+	bottom: 3.5rem;
+}
+
+.home .full-screen-indicators{
+	position: absolute;
+	top: 21rem;
+	z-index: 1;
+	width: 100%;
+	height: 0.2rem;
+	display: flex;
+	justify-content: center;
+
+}
+
+.home .full-screen-indicators .indicator-active{
+	width: 1.2rem;
+	height: 0.2rem;
+	background-color: #DF3680;
+	margin-right: 1rem;
+
+}
+
+.home .full-screen-indicators .indicator-inactive{
+	width: 1.2rem;
+	height: 0.2rem;
+	background-color: #fff;
+	margin-right: 1rem;
+}
+
+.home .half-screen-indicators{
+	position: absolute;
+	bottom: 3.5rem;
+	z-index: 1;
+	width: 100%;
+	height: 0.2rem;
+	display: flex;
+	justify-content: center;
+}
+
+.home .half-screen-indicators .indicator-active{
+	width: 1.2rem;
+	height: 0.2rem;
+	background-color: #DF3680;
+	margin-right: 1rem;
+}
+
+.home .half-screen-indicators .indicator-inactive{
+	width: 1.2rem;
+	height: 0.2rem;
+	background-color: #fff;
+	margin-right: 1rem;
+}
+
+/*----轮播图 end----*/
+
+/*  美甲首页 start*/
+.home .recommend{
+	background-color: #ffffff;
+}
+.home .recommend-content{
+	padding:1.5rem 2rem;
+}
+.home .recommendImgContent{
+	width: 100%;
+	/*height: 0rem;*/
+	padding-bottom: 1rem;
+}
+.home .recommend-img-public{
+	margin-left:calc((100% - 4.55rem)/2.0);
+	/*margin-top:calc((100% - 4.55rem)/2.0);*/
+	width: 4.55rem;
+	height: 4.55rem;
+	background-size: cover;
+}
+/*本月推荐*/
+.home .recommendImg{
+	background-image: url(../../../images/home/home_benyuetuijian_btn.png);
+}
+.home .recommendImg.active{
+	background-image: url(../../../images/home/home_benyuetuijian_btn_pressed.png);
+}
+/*服务套餐*/
+.home .serverImg{
+	background-image: url(../../../images/home/home_fuwutaocan_btn.png);
+}
+.home .serverImg.active{
+	background-image: url(../../../images/home/home_fuwutaocan_btn_pressed.png);
+}
+/*会员套票*/
+.home .packageImg{
+	background-image: url(../../../images/home/home_huiyuantaopiao_btn.png);
+}
+.home .packageImg.active{
+	background-image: url(../../../images/home/home_huiyuantaopiao_btn_pressed.png);
+}
+.home .space-line{
+	margin-top: 40px;
+	width: 0.1rem;
+	height: 4rem;
+	background-color: #dedede;
+}
+.home .left-content{
+	position: relative;
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+	padding-bottom: 1rem;
+
+}
+.home .recommend-text{
+	left: 1rem;
+	top: 1rem;
+	position: absolute;
+	color: #ffffff;
+	font-weight:bold;
+	font-size: 1.5rem;
+}
+.home .recommend-text-english{
+	left: 1rem;
+	top: 2.5rem;
+	position: absolute;
+	color: #ffffff;
+	font-weight:bold;
+	font-size: 1.1rem;
+}
+.home .left-btn{
+	padding-bottom: 100%;
+	width: 100%;
+	height: 0;
+	background-size: cover;
+	background-image: url(../../../images/home/home_chaoliushishang_btn.png);
+
+}
+.home .left-btn.active{
+	padding-bottom: 100%;
+	width: 100%;
+	height: 0;
+	background-size: cover;
+	background-image: url(../../../images/home/home_chaoliushishang_btn_pressed.png);
+
+}
+.home .right-content{
+	padding-right: 0.5rem;
+	padding-bottom: 1rem;
+}
+.home .top-btn{
+	position: relative;
+	padding-bottom: calc(50% - 0.25rem);
+	margin-bottom: 0.5rem;
+	width: 100%;
+	height: 0rem;
+	background-size: cover;
+	background-image: url(../../../images/home/home_yuyuemeijia_btn.png);
+}
+.home .top-btn.active{
+	position: relative;
+	padding-bottom: calc(50% - 0.25rem);
+	margin-bottom: 0.5rem;
+	width: 100%;
+	height: 0rem;
+	background-size: cover;
+	background-image: url(../../../images/home/home_yuyuemeijia_btn_pressed.png);
+}
+.home .bottom-btn{
+	position: relative;
+	padding-bottom: calc(50% - 0.25rem);
+	width: 100%;
+	height: 0rem;
+	background-size: cover;
+	background-image: url(../../../images/home/home_yuyuemeijie_btn.png);
+}
+.home .bottom-btn.active{
+	position: relative;
+	padding-bottom: calc(50% - 0.25rem);
+	width: 100%;
+	height: 0rem;
+	background-size: cover;
+	background-image: url(../../../images/home/home_yuyuemeijie_btn_pressed.png);
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar{
+	width:0rem;
+}
+/*是否显示附近店铺*/
+.home .arrow-store-show{
+	display: block;
+}
+.home .arrow-store-hidden{
+	display: none;
+}
+.home .arrow-content{
+	position: relative;
+}
+.home .arrow-btn{
+	height: 6rem;
+	width: 100%;
+	background-size: cover;
+	background-image: url(../../../images/home/home_fujindianpu_btn.png);
+}
+.home .arrow-btn.active{
+	height: 6rem;
+	width: 100%;
+	background-size: cover;
+	background-image: url(../../../images/home/home_fujindianpu_btn_pressed.png);
+}
+.home .arrow-name{
+	left: 1.5rem;
+	top: 1.3rem;
+	position: absolute;
+	color: #ffffff;
+	font-weight:bold;
+	font-size: 1.3rem;
+}
+.home .arrow-address{
+	left: 1.5rem;
+	top: 3.5rem;
+	position: absolute;
+	color: #ffffff;
+	font-weight:bold;
+	font-size: 1rem;
+}
+.home .arrow-distance{
+	right: 1rem;
+	bottom: 0.7rem;
+	position: absolute;
+	color: #ffffff;
+	font-weight:bold;
+	font-size: 1rem;
+}
+.home .m-15{
+	margin: 1rem 1.5rem;
+}
+.home .p-r-15{
+	padding-right: 1.5rem;
+}
+.home .p-l-15{
+	padding-left: 1.5rem;
+}
+
+.home .hot-content{
+	margin: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+.home .hot-list{
+	margin-top: 1rem;
+	background-color: #ffffff;
+}
+.home .tab-footer {
+	color: #333333;
+	font-size: 1.6rem;
+}
+/*ion-content {
+	background-color: #ffffff;
+}*/
+.home ion-content {
+	background-color: #ffffff;
+}
+.home .list-item{
+	border: 1px solid #dedede;
+	height: 13.5rem;
+	position: relative;
+	margin-bottom: 1rem;
+}
+.home .list-class{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+/*690 390:300 1.76923077:2.3*/
+/*奇数列表比例  上:57.5:42.5 下 62:38*/
+/*690 300:390*/
+/*偶数列表比例  2.3:上:57.5:42.5 下 62:38*/
+.home .hot-list-img{
+	-webkit-clip-path:polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+.home .hot-list-img-even{
+	-webkit-clip-path:polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+	clip-path: polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+.home .hot-list-content{
+	background-color: #ffffff;
+	-webkit-clip-path:polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+	clip-path: polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+.home .hot-list-content-even{
+	background-color: #ffffff;
+	-webkit-clip-path:polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+	clip-path: polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+
+}
+.home .list-recommend-img{
+	position: absolute;
+	left: 0;
+	width: 3.6rem;
+	height: 3.6rem;
+	background-image: url(../../../images/service/recommend-icon.png);
+	background-size: cover;
+}
+.home .list-recommend-img-even{
+	position: absolute;
+	right: 0;
+	width: 3.6rem;
+	height: 3.6rem;
+	background-image: url(../../../images/service/recommend-iconyou.png);
+	background-size: cover;
+}
+
+.home .hot-name{
+	font-size: 1.4rem;
+	color: #333333;
+	text-align: center;
+}
+.home .hot-right-content{
+	width: 40%;
+	height: 100%;
+	padding: 1rem 0;
+	position: absolute;
+	right: 0;
+}
+.home .hot-right-content-even{
+	width: 40%;
+	height: 100%;
+	padding: 1rem 0;
+	position: absolute;
+	left: 0;
+}
+.home .u-collect {
+	background: url(../../../images/home/home_shoucang_pressed.png) no-repeat center;
+	width: 2.05rem;
+	height: 1.8rem;
+	display: inline-block;
+	background-size: 100%;
+	margin-left: calc((100% - 2.05rem)/2.0);
+	position: absolute;
+	bottom: 1.5rem;
+
+}
+.home .u-cancel-collect {
+	background: url(../../../images/home/home_shoucang.png) no-repeat center;
+	width: 2.05rem;
+	height: 1.8rem;
+	display: inline-block;
+	background-size: 100%;
+	margin-left: calc((100% - 2.05rem)/2.0);
+	position: absolute;
+	bottom: 1.5rem;
+}
+.home .m-t-20{
+	margin-top: 1rem;
+}
+/* 美甲首页 end*/
+
+/*商品*/
+
+.home .list {
+	padding: 0.5rem 1.5rem 0rem 1.5rem;
+	margin-top: 0.5rem;
+	margin-bottom: 0;
+	background-color: #fff;
+	position: relative;
+}
+
+.home .list-bg {
+	display: block;
+	width: 100%;
+	height: 21.1rem;
+}
+
+.home .list-title {
+	margin: 1rem 0;
+}
+
+.home .scroll .uba {
+	border: none;
+	background-color: transparent;
+}
+
+
+/*混合*/
+
+.home .city {
+	padding-left: 1.5rem;
+	line-height: 3.75rem;
+	font-size: 1.5rem;
+}
+
+.home .arrow {
+	display: inline-block;
+	width: 0.8rem;
+	height: 0.6rem;
+	/*background-image: url(../../../images/home/home_xiala_btn.png);*/
+	background-size: cover;
+}
+
+.home .bar-header .bar-submit {
+	min-width: 1.5rem !important;
+	height: 100%;
+	text-align: center;
+	line-height: 0.44rem !important;
+	border: none;
+	background-color: #e64c66;
+	color: #fff;
+	font-size: 0.15rem;
+}
+
+.home a {
+	display: block;
+}
+.home a.phones{
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+}
+.home a.leftManicurist{
+	position: absolute;
+	top: 1.5rem;
+	left: 1.5rem;
+}
+.home .bar-header {
+	width: 100%;
+	height: 3.75rem;
+	background-color: #ffffff;
+	position: relative;
+	opacity:0;
+}
+.home .my {
+	background-image: url(../../../images/my/wd_weidenglutouxiang_bg2.png);
+	width: 3rem;
+	height: 3rem;
+	background-size: cover;
+	z-index: 9999;
+	border-radius: 1.5rem;
+}
+
+.home .mb_banner .slide-img {
+	width: 100%;
+	height: 22.5rem;
+}
+
+.home .orderone {
+	bottom: 10.4rem;
+}
+
+.home .home-order div {
+	margin: 0 0.5rem;
+}
+
+.home .home-title-bar {
+	width: 100%;
+	height: 3.75rem;
+	z-index: 10;
+	background-color: #e64c66;
+	position: fixed;
+}
+
+.home .home-header-layout {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	width: 100%;
+	height: 3.75rem;
+	position: fixed;
+}
+
+.home .home-header-title {
+	width: 11.5rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	border-radius: 1rem;
+	;
+	background-color: rgba(0, 0, 0, 0.4);
+	text-align: center;
+	color: #fff;
+	font-size: 1.7rem;
+}

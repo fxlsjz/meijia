@@ -1,0 +1,20 @@
+<div class="mall-con" id="mall-search-pb0" ng-repeat="item in items">
+		<div class="ub c-gra uba b-bla umh5 mall-con-wrap" on-tap="goGoodsDetail(item.product_id)">
+			<div class="mall-con-img background-img"  image-lazy-background-image="true"
+				image-lazy-src="{{item.img | baseUrl}}"></div>
+			<div class="ub-f1 mall-con-detail">
+				<h2 ng-bind="item.name" class="line-ellipsis-2"></h2>
+				<i class="c-e6 f-s-24 m-price m-t-10">¥<span ng-bind="item.price"></span></i>
+				<p class="f-s-20">
+					<i ng-bind="item.commentcount"></i>人评论
+					<i ng-bind="item.goodradio"></i>%好评率
+				</p>
+			</div>
+		</div>
+		<i class="collect-com collect" 
+       				ng-if="item.iscollection == 'Y'" 
+       				on-tap="goodsCollectionDel(item);"></i>
+		<i class="collect-com uncollect" 
+			ng-if="item.iscollection == 'N'" 
+			on-tap="goodsCollection(item);"></i>
+</div>

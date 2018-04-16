@@ -1,0 +1,47 @@
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">我的消息</h1>
+		<div class="bar-submit"></div>
+	</ion-header-bar>-->
+	<ion-content class="message">
+		<!--<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+		<mobo-data-loading ng-if="items == undefined"></mobo-data-loading>
+		<mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="x" ng-if="counts == 0"></mobo-no-data>
+		<ion-list>-->
+			<!--列表-->
+			<!--<ion-item ng-repeat="item in items">-->
+				<!--<div><span style="color: #e64c66;font-size: 2.2rem;">{{item.message_title? item.message_title :' ';}}</span></div>-->
+				<!--<div class="itemdiv p-t-20 p-b-20 ">
+					<span ng-if="!item.message_title==''" class="mtitle">{{item.message_title}}</span>
+					<span ng-if="item.message_title==''" class="mtitle">&nbsp;</span>
+					<span class="mtime" ng-bind = 'item.message_time* 1000 | date:"yyyy-MM-dd HH:mm"'></span>
+				</div>
+				<div class="itemdiv p-t-20 p-b-20"><span class="mcontent">{{item.message_content}}</span></div>-->
+
+				<!--删除按钮-->
+				<!--<ion-option-button ng-click="deleteItem($index)" class="button_del">删除</ion-option-button>
+			</ion-item>
+			<ion-infinite-scroll class="u-loading-ion" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+		</ion-list>-->
+		
+		<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+		<mobo-data-loading ng-if="items == undefined"></mobo-data-loading>
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="counts == 0"></mobo-no-data>
+		<ion-list>
+			<!--列表-->
+			<ion-item ng-repeat="item in items">
+				<div class="itemdiv p-t-20 p-b-20 ">
+					<span class="mtitle" ng-if="!item.message_title==''">{{item.message_title}}</span>
+					<span class="mtitle" ng-if="item.message_title==''">&nbsp;</span>
+					<span class="mtime" ng-bind = 'item.message_time* 1000 | date:"yyyy-MM-dd HH:mm"'>2017-03-02 16:00</span>
+				</div>				
+				<div class="itemdiv p-t-20 p-b-20"><span class="mcontent">{{item.message_content}}</span></div>
+				<!--删除按钮-->
+				<ion-option-button ng-click="deleteItem($index)" class="button_del">删除</ion-option-button>
+			</ion-item>
+			<ion-infinite-scroll class="u-loading-ion" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+		</ion-list>
+		
+	</ion-content>
+</ion-view>

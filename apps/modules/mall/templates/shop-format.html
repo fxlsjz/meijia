@@ -1,0 +1,41 @@
+<div class="product-format bg-color-f">
+    <div>
+        <div class="ub">
+            <div class="product-img ub-img">
+                <i class="background-img" image-lazy-src="{{productImg | baseUrl}}"
+                   image-lazy-background-image="true"></i>
+            </div>
+            <div class="ub-f3">
+                <div class="product-title c-3 f-s-24" ng-bind="shopDetails.name"></div>
+                <div class="product-isprice c-e6 f-s-24" ng-if="productIsstock==1">¥{{productPrice}}</div>
+                <span class="product-noprice c-80 f-s-24" ng-if="productIsstock==0">¥<span class="c-80"
+                                                                                           ng-bind="productPrice"></span><span
+                        class="c-e6 p-l-10">(无货)</span></span>
+            </div>
+        </div>
+        <div class="format-size">
+            <div class="f-s-28 c-3">规格</div>
+            <ion-scroll>
+                <div class="standard-all">
+                    <div class="standard-detail" ng-repeat="item in formatName"
+                         ng-class="{true:'standard-select',false:'standard-detail'}[formatId==item.formatid ]"
+                         on-tap="formatfun(item.formatid,item.formatname)" ng-if="item.isstock==1">
+                        <i class="f-s-24 line-ellipsis-1" ng-bind="item.formatname"></i>
+                    </div>
+                    <div class="standard-detail" ng-repeat="item in formatName"
+                         ng-class="{true:'standard-selectno',false:'standard-detailno'}[formatId==item.formatid ]"
+                         ng-if="item.isstock==0" on-tap="formatfun(item.formatid,item.formatname)">
+                        <i class="f-s-24 line-ellipsis-1" ng-bind="item.formatname"></i>
+                    </div>
+
+                </div>
+            </ion-scroll>
+        </div>
+    </div>
+    <div class="format-number" ng-if="productIsstock==1">
+        <div class="f-s-28 c-3 p-b-20">数量</div>
+        <span class="btn-num" ng-style="noPoint" on-tap="cutNum()">-</span>
+        <span class="numbers" ng-bind="numbers"></span>
+        <span class="btn-num" on-tap="addNum()">+</span>
+    </div>
+</div>

@@ -1,0 +1,248 @@
+@charset "utf-8";
+.submit-order .shop-address{
+	padding:1.65rem 1.5rem;
+}
+/*选择地址*/
+
+/*收件人电话*/
+.submit-order .phone{
+	text-align: right;
+}
+.submit-order .locations{
+	padding-top: 1.65rem;
+}
+/*定位图标*/
+.submit-order .addres-icon{
+	background: url(../../../images/my/dd_dingwei.png) no-repeat;
+	width: 1.35rem;
+	height: 1.6rem;
+	background-size:  100%;
+	margin-right: 0.5rem;
+}
+/*底部边框图*/
+.submit-order .border-line{
+	background: url(../../../images/my/ddtx_huabian_bg.png);
+	height: 0.1rem;
+}
+/*订单商品列表*/
+.submit-order .order-list{
+	padding:0 1.5rem;
+}
+/*商品图片*/
+.submit-order .order-img{
+	width: 12.5rem;
+	height: 7rem;
+	margin-right: 0.5rem;
+}
+.submit-order .order-img i{
+	width: 12.5rem;
+	height: 7rem;
+}
+.submit-order .order-detail{
+	padding: 1rem 0;
+	border-bottom: #DEDEDE solid 1px;
+}
+.submit-order .order-detail:last-child{
+	padding: 1rem 0;
+	border-bottom: #DEDEDE solid 0px;
+}
+
+.submit-order .order-detail .goods-content{
+	display: flex;
+	flex-direction: column;
+}
+.submit-order .order-detail .goods-content .one-line{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+
+.submit-order .order-detail .goods-content .name-height{
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.submit-order .order-detail .goods-content .line-divider{
+	margin-top: 0.73rem;
+}
+
+
+
+
+.submit-order .m-t-4{
+	margin-top: 0.2rem;
+}
+/*商品费用*/
+.submit-order .costs{
+	padding: 0 1.5rem;;
+}
+.submit-order .shop-money{
+	border-bottom: 1px solid #dedede;
+	height: 4.5rem;
+	line-height: 4.5rem;
+}
+.submit-order .shop-money div:nth-child(2){
+	text-align: right;
+}
+/*运费*/
+.submit-order .transport{
+	border-bottom: 1px solid #dedede;
+	height: 4.5rem;
+	line-height: 4.5rem;
+}
+.submit-order .transport div:nth-child(2){
+	text-align: right;
+}
+/*选填项*/
+.submit-order .input-content{
+	height: 4.5rem;
+	line-height: 4.5rem;
+	padding-top: 0.4rem;
+}
+.submit-order .shop-word input{
+	width: 100%;
+}
+.submit-order .btn-word-cancle{
+	width: 1.5rem;
+	height: 1.5rem;
+	margin-top: 0.8rem;
+	background: url(../../../images/my/ddtx_delete_btn.png);
+	background-size: 100%;
+}
+/*支付方式*/
+.submit-order .bottom-height{
+	width: 100%;
+	height: 6rem;
+}
+.submit-order .pay-method{
+	padding:1.65rem 1.5rem 0 1.5rem;
+}
+.submit-order .pay-title{
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #dedede;
+}
+.submit-order .balance-icon{
+	background:url(../../../images/public/com_yuezhifu_icon1.png);
+	background-size: 100%;
+	width: 4rem;
+	height: 2.5rem;
+}
+.submit-order .pay-balance{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.submit-order .pay-balance .balance-text{
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.submit-order .pay-balance .circle-div{
+	height: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.submit-order .wechat-icon{
+	background:url(../../../images/my/com_wenxinzhifu_icon.png);
+	background-size: 100%;
+	width: 4rem;
+	height: 2.5rem;
+	margin-right: 0.5rem;
+}
+.submit-order .pay-wechat{
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.submit-order .pay-wechat .circle-div{
+	height: 1.6rem;
+	line-height: 1.6rem;
+}
+
+.submit-order .pay-wechat .pay-text{
+	height: 1.2rem;
+	line-height: 1.2rem;
+}
+
+.submit-order .check-box-ion{
+	margin-top: 0;
+}
+.submit-order .check-box-ion:after{
+	left:15%;
+	top: 18%;
+}
+.submit-order .umh5{
+	min-height: 0;
+}
+
+.submit-order .integral{
+	display: flex;
+	align-items: center;
+	padding: 1rem 0;
+	border-top: #DEDEDE solid 1px;
+}
+
+.submit-order .integral .integral-icon{
+	background:url(../../../images/public/integral_icon.png);
+	background-size: 100%;
+	width: 4.4rem;
+	height: 2.2rem;
+}
+
+.submit-order .integral .integral-active{
+	background:url(../../../images/public/jifenkaiguan_btn_pressed.png);
+	background-size: 100%;
+	width: 5.1rem;
+	height: 2.8rem;
+}
+
+.submit-order .integral .integral-inactive{
+	background:url(../../../images/public/jifenkaiguan_btn.png);
+	background-size: 100%;
+	width: 5.1rem;
+	height: 2.8rem;
+}
+
+
+.submit-order .integral .one-grow{
+	flex-grow: 1;
+}
+
+
+/*底部按钮*/
+.submit-order .btn-footer{
+	position: absolute;
+	height: 5rem;
+	width: 100%;
+	bottom: 0;
+	border-top:1px solid #dedede;
+}
+
+.submit-order .pay-botton{
+	width: 12rem;
+}
+.submit-order .btn-alls div:nth-child(1){
+	height: 5rem;
+	line-height: 5rem;
+	text-align: right;
+	padding-right: 0.5rem;
+}
+.submit-order .btn-alls div:nth-child(2){
+	height: 5rem;
+	line-height: 5rem;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

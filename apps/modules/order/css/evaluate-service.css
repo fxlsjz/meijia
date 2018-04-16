@@ -1,0 +1,289 @@
+.evaluate-service .packageImg {
+    background-image: url(../../../images/home/home_huiyuantaopiao_btn.png);
+}
+
+.evaluate-service .packageImg.active {
+    background-image: url(../../../images/home/home_huiyuantaopiao_btn_pressed.png);
+}
+
+.evaluate-service .space-line {
+    margin-top: 40px;
+    width: 0.1rem;
+    height: 4rem;
+    background-color: #dedede;
+}
+
+.evaluate-service .left-content {
+    position: relative;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    padding-bottom: 1rem;
+
+}
+
+.evaluate-service .recommend-text {
+    left: 1rem;
+    top: 1rem;
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.evaluate-service .recommend-text-english {
+    left: 1rem;
+    top: 2.5rem;
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.evaluate-service .left-btn {
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    background-size: cover;
+    background-image: url(../../../images/home/home_chaoliushishang_btn.png);
+
+}
+
+.evaluate-service .left-btn.active {
+    padding-bottom: 100%;
+    width: 100%;
+    height: 0;
+    background-size: cover;
+    background-image: url(../../../images/home/home_chaoliushishang_btn_pressed.png);
+
+}
+
+.evaluate-service .right-content {
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+}
+
+.evaluate-service .top-btn {
+    position: relative;
+    padding-bottom: calc(50% - 0.25rem);
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 0rem;
+    background-size: cover;
+    background-image: url(../../../images/home/home_yuyuemeijia_btn.png);
+}
+
+.evaluate-service .top-btn.active {
+    position: relative;
+    padding-bottom: calc(50% - 0.25rem);
+    margin-bottom: 0.5rem;
+    width: 100%;
+    height: 0rem;
+    background-size: cover;
+    background-image: url(../../../images/home/home_yuyuemeijia_btn_pressed.png);
+}
+
+.evaluate-service .bottom-btn {
+    position: relative;
+    padding-bottom: calc(50% - 0.25rem);
+    width: 100%;
+    height: 0rem;
+    background-size: cover;
+    background-image: url(../../../images/home/home_yuyuemeijie_btn.png);
+}
+
+.evaluate-service .bottom-btn.active {
+    position: relative;
+    padding-bottom: calc(50% - 0.25rem);
+    width: 100%;
+    height: 0rem;
+    background-size: cover;
+    background-image: url(../../../images/home/home_yuyuemeijie_btn_pressed.png);
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+    width: 0rem;
+}
+
+.evaluate-service .arrow-content {
+    position: relative;
+}
+
+.evaluate-service .arrow-btn {
+    height: 6rem;
+    width: 100%;
+    background-size: cover;
+    background-image: url(../../../images/home/home_fujindianpu_btn.png);
+}
+
+.evaluate-service .arrow-btn.active {
+    height: 6rem;
+    width: 100%;
+    background-size: cover;
+    background-image: url(../../../images/home/home_fujindianpu_btn_pressed.png);
+}
+
+.evaluate-service .arrow-name {
+    left: 1.5rem;
+    top: 1.3rem;
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.evaluate-service .arrow-address {
+    left: 1.5rem;
+    top: 3.5rem;
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.evaluate-service .arrow-distance {
+    right: 1rem;
+    bottom: 0.7rem;
+    position: absolute;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.evaluate-service .m-15 {
+    margin: 1rem 1.5rem;
+}
+
+.evaluate-service .p-r-15 {
+    padding-right: 1.5rem;
+}
+
+.evaluate-service .p-l-15 {
+    padding-left: 1.5rem;
+}
+
+.evaluate-service .hot-content {
+    margin: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.evaluate-service .hot-list {
+    margin-top: 1rem;
+    background-color: #ffffff;
+}
+
+.evaluate-service .tab-footer {
+    color: #333333;
+    font-size: 1.6rem;
+}
+
+/*ion-content {
+	background-color: #ffffff;
+}*/
+.evaluate-service ion-content {
+    background-color: #ffffff;
+}
+
+.evaluate-service .list-item {
+    border: 1px solid #dedede;
+    height: 13.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.evaluate-service .list-class {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+/*690 390:300 1.76923077:2.3*/
+/*奇数列表比例  上:57.5:42.5 下 62:38*/
+/*690 300:390*/
+/*偶数列表比例  2.3:上:57.5:42.5 下 62:38*/
+.evaluate-service .hot-list-img {
+    -webkit-clip-path: polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.evaluate-service .hot-list-img-even {
+    -webkit-clip-path: polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    clip-path: polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.evaluate-service .hot-list-content {
+    background-color: #ffffff;
+    -webkit-clip-path: polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    clip-path: polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.evaluate-service .hot-list-content-even {
+    background-color: #ffffff;
+    -webkit-clip-path: polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+
+.evaluate-service .hot-name {
+    font-size: 1.4rem;
+    color: #333333;
+    text-align: center;
+}
+
+.evaluate-service .hot-right-content {
+    width: 40%;
+    height: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    right: 0;
+}
+
+.evaluate-service .hot-right-content-even {
+    width: 40%;
+    height: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    left: 0;
+}
+
+.evaluate-service .u-collect {
+    background: url(../../../images/home/home_shoucang_pressed.png) no-repeat center;
+    width: 2.05rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+    margin-left: calc((100% - 2.05rem) / 2.0);
+    position: absolute;
+    bottom: 1.5rem;
+
+}
+
+.evaluate-service .u-cancel-collect {
+    background: url(../../../images/home/home_shoucang.png) no-repeat center;
+    width: 2.05rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+    margin-left: calc((100% - 2.05rem) / 2.0);
+    position: absolute;
+    bottom: 1.5rem;
+}
+
+.evaluate-service .m-t-20 {
+    margin-top: 1rem;
+}

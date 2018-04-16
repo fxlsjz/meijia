@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+/*tab服务页面*/
+
+
+/*预约到店按钮黑色背景*/
+
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	top: 3.75rem
+}
+
+
+/*预约到店按钮*/
+
+.mask .bottom {
+	color: #333;
+	border-radius: 5px;
+	margin: auto;
+	background: #fff;
+	width: 9.5rem;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	text-align: center;
+	position: relative;
+}
+
+
+/*预约到店按钮三角*/
+
+.mask .bottom .triangle {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	position: absolute;
+	top: -8px;
+	right: 5px;
+}
+
+
+/*标题*/
+
+.service-index .bar-title {
+	position: relative;
+}
+
+
+/*搜索*/
+
+.service-index .search {
+	position: absolute;
+	top: 1.2rem;
+	right: 0;
+}
+
+
+/*服务分类布局*/
+
+.service-index .service-type {
+	text-align: center;
+	height: 3.5rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #DEDEDE;
+}
+
+
+/*服务分类item*/
+
+.service-index .service-view {
+	display: inline-block;
+	text-align: center;
+}
+
+
+/*多人服务分类item文字*/
+
+.service-index .service-type-item {
+	display: inline-block;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	box-sizing: border-box;
+}
+
+
+/*多人服务分类item文字选中*/
+
+.service-index .service-type-item-selected {
+	color: #e64c65;
+	border-bottom: 2px solid #e64c65;
+}
+
+
+/*多人服务服务列表滑动块*/
+
+.service-index .scroll {
+	padding-top: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+
+/*多人服务列表item*/
+
+.service-index .list-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	background-color: white;
+}
+
+
+/*多人服务列表图片*/
+
+.service-index .list-image {
+	width: 12.5rem;
+	height: 7rem;
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+}
+
+
+/*多人服务推荐图片*/
+
+.service-index .list-tuijian {
+	position: absolute;
+	width: 3.6rem;
+	height: 3.6rem;
+	background-image: url(../../../images/service/recommend-icon.png);
+	background-size: cover;
+}
+
+
+/*多人服务列表右侧内容*/
+
+.service-index .list-content {
+	height: 7rem;
+	padding-right: 1.5rem;
+	position: relative;
+}
+
+
+/*多人服务列表服务名称*/
+
+.service-index .list-name {
+	padding-right: 0.5rem;
+	height: 1.8rem;
+}
+
+
+/*多人服务列表服务时长布局*/
+
+.service-index .list-service-time-view {
+	position: relative;
+	top: -0.75rem;
+}
+
+
+/*多人服务列表服务时长图标*/
+
+.service-index .list-service-time-img {
+	display: inline-block;
+	width: 0.95rem;
+	height: 1rem;
+	margin-right: 0.5rem;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	background-size: cover;
+}
+
+
+/*多人服务列表服务时长*/
+
+.service-index .list-service-time {
+	display: inline-block;
+	height: 1rem;
+	line-height: 1rem;
+	position: relative;
+	top: -0.1rem;
+}
+
+
+/*多人服务列表服务列表价格人数加入购物车布局*/
+
+.service-index .list-price-and-add {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.service-index .list-price {
+	position: relative;
+	bottom: -0.5rem;
+}
+
+
+/*多人服务列表原价*/
+
+.service-index .list-original-price {
+	text-decoration: line-through;
+}
+
+
+/*加入购物车*/
+
+.service-index .list-join-car {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	right: 1.5rem;
+	border: 1px solid #e64c65;
+	color: #e64c65;
+	border-radius: 1.5rem;
+	height: 2.4rem;
+	line-height: 2.4rem;
+	padding-left: 1.2rem;
+	padding-right: 1.2rem;
+	box-sizing: border-box;
+}
+
+
+/*取消加入购物车*/
+
+.service-index .list-cancel-car {
+	background: #e64c65;
+	color: #fff;
+}
+
+
+/*多人服务列表分割线*/
+
+.service-index .list-line {
+	position: absolute;
+	bottom: -1rem;
+	height: 1px;
+	background-color: #DEDEDE;
+	width: 100%;
+}
+
+
+/*多人服务底部*/
+
+.service-index .bottom {
+	width: 100%;
+	position: fixed;
+	bottom: 5.2rem;
+	height: 4rem;
+}
+
+.service-index .line-height-80 {
+	line-height: 4rem;
+	height: 4rem;
+}
+
+
+/*多人服务总计时长布局*/
+
+.service-index .bottom-time-view {
+	margin-left: 3.6rem;
+	position: relative;
+}
+
+
+/*多人服务总计时长图标*/
+
+.service-index .bottom-time-ion {
+	display: inline-block;
+	width: 1.4rem;
+	height: 1.4rem;
+	background-image: url(../../../images/public/time_w.png);
+	background-size: cover;
+	top: 50%;
+	margin-top: -0.7rem;
+	position: absolute;
+}
+
+
+/*多人服务总计时长*/
+
+.service-index .bottom-time {
+	margin-left: 1.4rem;
+}
+
+
+/*多人服务去结算按钮*/
+
+.service-index .bottom-next {
+	background: #febf49;
+	width: 8.4rem;
+	text-align: center;
+}

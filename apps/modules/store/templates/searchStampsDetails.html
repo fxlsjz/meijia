@@ -1,0 +1,63 @@
+<!--搜索服务-->
+<!--auth:tzb-->
+<ion-view class="details">
+
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<meta name="format-detection" content="telephone=no" />
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1" ng-bind="searcht"></h1>
+		<div id="empty-ion">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+
+	<ion-content class="content">
+		<!--服务列表-->
+		<div class="store-service-list">
+			<ion-refresher class="u-loading-ion" on-refresh="stroeDoRefresh()"></ion-refresher>
+
+			<!--<mobo-data-loading ng-if="items == undefined"></mobo-data-loading>-->
+			<mobo-no-data text="暂无数据!" layout="x" ng-if="listdata"></mobo-no-data>
+			<ion-list>
+
+				<ion-item ng-repeat="item in serviceList">
+					<!-- ui-sref="store-details"-->
+					<div class=" ub service-list-item" on-tap="goServiceDetail(item.itemid)">
+						<div class="imag" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+							<div class="imag-up" ng-show="item.isrecommend=='Y'"></div>
+						</div>
+						<div class="ub-f1 store-order-line">
+							<div class="store-name ub">
+								<div class=" ub-f1 store-name-info f-s-26" ng-bind="item.iname"></div>
+								<div class="collect-btn" ng-class="{true:'collect-btn-press',flase:''}[item.iscollection=='Y']" on-tap="serviceClick($event,item.itemid,item.iscollection)"></div>
+							</div>
+							<div class="ub service-time">
+								<div class="img"></div>
+								<div class="time-text f-s-14" ng-bind="item.iusetime+'分钟'"></div>
+							</div>
+							<div class="ub">
+								<div class="ub-f1 storename">
+									<span class="f-s-32 c-e6" ng-bind="'¥'+item.nowprice"></span>
+									<span class="f-s-14" ng-bind="'/'+item.service_count+'次'"></span>
+									<div class="f-s-14">{{item.iusecount}}人购买</div>
+								</div>
+								<div class="shopcar f-s-26 c-e6" ng-class="{true:'shopcarpress',false:''}[item.addScuse==true]" on-tap="addShopCarStamps($event,item.itemid)" ng-bind="item.addScuseName">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</ion-item>
+				<ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="storeLoadMoreGoodsList()">
+				</ion-infinite-scroll>
+			</ion-list>
+		</div>
+	</ion-content>
+	<!--去结算-->
+	<div class="ub paynumbershow">
+		<div class="ub ub-f1 goPay">
+			<div class="money" ng-bind="'¥'+moneySubNum"></div>
+			<div class="time-phone"></div>
+			<div class="time-sum" ng-bind="serviceTimeSum+'分钟'"></div>
+		</div>
+		<div class="pay-n">去结算</div>
+	</div>
+</ion-view>

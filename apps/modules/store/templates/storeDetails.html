@@ -1,0 +1,220 @@
+<!--单次服务店面详情-->
+<!--auth:tzb-->
+<ion-view class="details">
+	<!--标题-->
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<meta name="format-detection" content="telephone=no" />
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">店面详情</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content class="content" lazy-scroll>
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="isShowNoData"></mobo-no-data>
+		<div ng-if="storeInfo!=undefined" style="margin-bottom: 2rem;">
+
+			<!--店面图片-->
+			<div class="background-img imag" style="height: {{imageHeight}}px" image-lazy-background-image="true" image-lazy-src="{{imgPath[0]|baseUrl}}" ui-sref="store-album({list:bgImag,storeId:storeId,isStamp:isStamp})"></div>
+			<!--店面信息布局-->
+			<div class=" p-l-30 p-r-30 f-s-30 p-t-30">活动信息</div>
+			<div class=" p-l-30 p-r-30 f-s-26 p-t-10">{{storeInfo.activity_content}}</div>
+			<div class="yi">一</div>
+			<div class=" p-l-30 p-r-30">
+				<!--店面名称-->
+				<div class="f-s-34 c-3 name">{{storeInfo.sname}}</div>
+				<!--店面地址-->
+				<div class="ub adress" on-tap="goMap()">
+					<!--<div class="adress-loction"></div>-->
+					<div class="adress-name ub-f1 f-s-28  ub-ac">地址：{{storeInfo.adress}}</div>
+				</div>
+				<!--电话-->
+				<div class="ub adress">
+					<!--<div class="phone"></div>-->
+					电话：<div class="ub-f1 f-s-28 c-e6 ub-ac">{{storeInfo.telephone}}</div>
+				</div>
+				<!--分割线-->
+				<div class="" ng-if="storeInfo.commentcount != 0">一</div>
+				<!--<div class="line"></div>-->
+				<!--房间类型选择-->
+				<!--<div class="roomType ub" ng-show="!roomTypeTre">
+					<div class="roomDiv ub-f1" ng-repeat="item in roomTypeList">
+						<div class="oneByOut">
+							<div class="cirByIn" ng-class="{true:'cirByInpress',flase:''}[roomTypename==item.type]" on-tap="roomSelctor(item)">
+								<div class="roomTypeTex f-s-26" ng-bind="item.value.substring(0,2)"></div>
+								<div class="roomTypeTex f-s-26" ng-if="item.value.substring(2)!=null&&item.value.substring(2)!=''">{{item.value.substring(2)}}</div>
+							</div>
+						</div>
+					</div>
+				</div>-->
+			</div>
+
+			<!--<div class="five_line"></div>-->
+			<!--服务选择-->
+			<!--<div class="ub time" on-tap="getService()">
+				<div class="imag-service"></div>
+				<div class="text f-s-28 c-3">{{serviceText}}</div>
+				<div class="service-name line-ellipsis-1 f-s-28 ub-f1">{{selectServiceName}}</div>
+				<div class="right-jt"></div>
+			</div>-->
+			<!--分割线-->
+			<!--<div class="p-l-30 p-r-30">
+				<div class="line"></div>
+			</div>-->
+			<!--服务时间选择-->
+			<!--<div class="ub time" on-tap="getServiceTime()">
+				<div class="imag-time"></div>
+				<div class="text f-s-28">{{serviceText}}时间</div>
+				<div class="service-name line-ellipsis-1 f-s-28 ub-f1" ng-bind="timeShow"></div>
+				<div class="right-jt"></div>
+			</div>-->
+			<!--分割线-->
+			<!--<div class="p-l-30 p-r-30">
+				<div class="line"></div>
+			</div>-->
+			<!--技师选择-->
+			<!--<div class="ub time" on-tap="selectTechnician()">-->
+				<!--技师图标-->
+				<!--<div class="imag-technician"></div>-->
+				<!--技师文案-->
+				<!--<div class="text f-s-28 line-ellipsis-1">{{technicianText}}</div>-->
+				<!--<div class="ub ub-f1 ub-pe m-l-20">-->
+					<!--给我选技师-->
+					<!--<div class="ub technician-detail" ng-if="technicianData">
+						<div class="background-img imag" image-lazy-background-image="true" image-lazy-src="{{technicianData.my_beaticain.photo_two|baseUrl}}"></div>
+						<div class="ub-f1 tename f-s-28 line-ellipsis-1">{{technicianData.my_beaticain.nickname.length>4&&technicianData.her_beaticain?technicianData.my_beaticain.nickname.substring(0,4)+'...':technicianData.my_beaticain.nickname}}</div>
+					</div>-->
+					<!--给他选技师-->
+					<!--<div class="ub technician-detail m-l-20" ng-if="technicianData&&technicianData.her_beaticain">
+						<div class="background-img imag" image-lazy-background-image="true" image-lazy-src="{{technicianData.her_beaticain.photo_two|baseUrl}}"></div>
+						<div class="ub-f1 tename f-s-28 line-ellipsis-1">{{technicianData.her_beaticain.nickname.length>4?technicianData.her_beaticain.nickname.substring(0,4)+'...':technicianData.her_beaticain.nickname}}</div>
+					</div>-->
+				<!--</div>-->
+				<!--<div class="right-jt"></div>-->
+			<!--</div>-->
+			<!--<div class="line"></div>-->
+			
+			<!--评价列表-->
+			<div class="ub p-l-30 name f-s-32" ng-if="storeInfo.commentcount != 0">
+				评价<span class="c-9 f-s-24">({{storeInfo.commentcount}})</span> 
+				<div class="ub-f1 text-right p-r-30 f-s-28">
+					<p class="m-b-0 p-r-40" on-tap="goAssess(storeInfo.store_id)">好评率{{storeInfo.goodradio}}%<span class="right-jt"></span></p></div>
+			</div>
+			<div class="p-l-30 p-r-30 p-t-10" style="margin-bottom: 5rem;">
+				<div class="assessList p-t-20" ng-repeat="newComments in newComment">
+					<div class="ub">
+						<!--<div class="ub-f1 c-6">{{newComments.uname}}</div>-->
+						<div class="ub-f1 c-6" style="padding-left: 5rem;">
+							<span class="actorHead" image-lazy-background-image="true"
+                                  image-lazy-src="{{newComments.uidimg | baseUrl}}"
+                                  ratio-scale="1:1"></span>
+							<p class="m-b-0 c-6 f-s-26" ng-if="newComments.isanonymity == 1">匿名</p>
+							<p class="m-b-0 c-6 f-s-26" ng-if="newComments.isanonymity == 0">{{newComments.uname}}</p>
+							<p class="m-b-0 p-t-10 c-9 f-s-24">{{newComments.datetime *1000 | date:"yyyy-MM-dd HH:mm"}}</p>
+						</div>
+						<div class="ub-f1 text-right">
+							<div class="commont-start">
+								<!--<li></li>-->
+								<li style="width:{{(newComments.score | star) * 20;}}%"></li>
+							</div>
+						</div>
+					</div>
+					<div class="ub c-e6 p-t-10">{{newComments.iname}}</div>
+					<div class="ub p-t-10 assess">
+						{{newComments.content}}
+					</div>
+					<!--评论图片start-->
+					<!--image-preview="{{newComments}}"-->
+	                <div class="comment-imgall">
+	                    <div class="comment-img"  ng-repeat="cimg in newComments.comment_img.cimg" ratio-scale="1:1">
+	                        <i image-lazy-src="{{cimg | baseUrl}}" 
+	                           multiple="true" index="{{$index}}" image-lazy-background-image="true"
+	                           class="background-img" ratio-scale="1:1">
+	                        </i>
+	                    </div>
+	                </div>
+	                <!--end-->
+	                <!--商家回复start-->
+	                <div class="storeall storeallTwo" ng-if="newComments.seller_replay != ''">
+	                    <span class="storea f-s-20 c-e6 storeaTwo">商家回复</span>
+	                    <span class="c-3 f-s-20 line-ellipsis-3 replyContent">{{newComments.seller_replay}}</span>
+	                </div>
+	                <!--end-->
+				</div>
+			</div>
+			
+		</div>
+	</ion-content>
+	<!--下单按钮-->
+	<div class="order-btn f-s-32 c-e6" on-tap="newOpen()" ng-if="storeInfo">立即下单</div>
+	
+</ion-view>
+<!--ng-class="{true:'tankuag',false:''}[tankuagS == true]"-->
+<div ng-if="tankuag"  class="tankuag"><!--id="tankuag"-->
+	 
+	<div class="tankuagTop"  on-tap="closeNewOpen()"></div>
+		<!--房间类型选择-->
+	<div class="tankuagBottom" >
+		
+			<div>
+				<div class="roomType ub" ng-show="!roomTypeTre">
+					<div class="roomDiv ub-f1" ng-repeat="item in roomTypeList">
+						<div class="oneByOut">
+							<div class="cirByIn" ng-class="{true:'cirByInpress',flase:''}[roomTypename==item.type]" on-tap="roomSelctor(item)">
+								
+								<span class="roomTypeTex f-s-26" ng-bind="item.value.substring(0,2)"></span>
+								<span class="roomTypeTex f-s-26" ng-if="item.value.substring(2)!=null&&item.value.substring(2)!=''">{{item.value.substring(2)}}</span>
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--服务选择-->
+			<div class="ub time" on-tap="getService()">
+				<!--<div class="imag-service"></div>-->
+				<div class="text f-s-28 c-3">{{serviceText}}</div>
+				<div class="service-name line-ellipsis-1 f-s-28 ub-f1 c-9">{{selectServiceName}}</div>
+				<div class="right-jt"></div>
+			</div>
+			<!--分割线-->
+			<div class="p-l-30 p-r-30">
+				<div class="line"></div>
+			</div>
+			<!--服务时间选择-->
+			<div class="ub time" on-tap="getServiceTime()">
+				<div class="imag-time"></div>
+				<div class="text f-s-28">{{serviceText}}时间</div>
+				<div class="service-name line-ellipsis-1 f-s-28 ub-f1 c-9" ng-bind="timeShow"></div>
+				<div class="right-jt"></div>
+			</div>
+			<!--分割线-->
+			<div class="p-l-30 p-r-30">
+				<div class="line"></div>
+			</div>
+			<!--技师选择-->
+			<div class="ub time" on-tap="selectTechnician()">
+				<!--技师图标-->
+				<div class="imag-technician"></div>
+				<!--技师文案-->
+				<div class="text f-s-28 line-ellipsis-1">{{technicianText}}</div>
+				<div class="ub ub-f1 ub-pe m-l-20">
+					<!--给我选技师-->
+					<div class="ub technician-detail" ng-if="technicianData">
+						<div class="background-img imag" image-lazy-background-image="true" image-lazy-src="{{technicianData.my_beaticain.photo_two|baseUrl}}"></div>
+						<div class="ub-f1 tename f-s-28 line-ellipsis-1 c-9">{{technicianData.my_beaticain.nickname.length>4&&technicianData.her_beaticain?technicianData.my_beaticain.nickname.substring(0,4)+'...':technicianData.my_beaticain.nickname}}</div>
+					</div>
+					<!--给他选技师-->
+					<div class="ub technician-detail m-l-20" ng-if="technicianData&&technicianData.her_beaticain">
+						<div class="background-img imag" image-lazy-background-image="true" image-lazy-src="{{technicianData.her_beaticain.photo_two|baseUrl}}"></div>
+						<div class="ub-f1 tename f-s-28 line-ellipsis-1 c-9">{{technicianData.her_beaticain.nickname.length>4?technicianData.her_beaticain.nickname.substring(0,4)+'...':technicianData.her_beaticain.nickname}}</div>
+					</div>
+				<!--</div>-->
+				<div class="right-jt"></div>
+			</div>
+		
+			<div class="line"></div>
+		
+	</div>
+	<div class="order-btn f-s-32 c-e6" on-tap="settlement()" ng-if="storeInfo">立即下单</div>	
+</div>
+</div>

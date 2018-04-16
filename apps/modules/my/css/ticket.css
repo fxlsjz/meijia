@@ -1,0 +1,565 @@
+@charset "utf-8";
+
+/*套票列表*/
+
+.ticket .ticket-con {
+	padding: 1.5rem 1.5rem 1rem;
+	background-color: #fff;
+}
+
+.ticket .ticket-box.ticket-con {
+	padding: 0 1.5rem 1rem;
+}
+
+.ticket .ub.packageno {
+	border-bottom: 1px solid #dedede;
+	height: 4.4rem;
+	line-height: 4.4rem;
+	margin: 0 0 1.5rem;
+}
+
+
+/*过期*/
+
+.ticket .ticket-con-detail.con-expire {
+	color: #c5c5c5;
+}
+
+.ticket .ticket-con-detail.con-expire h2 {
+	color: #c5c5c5;
+}
+
+.ticket .ticket-con-detail.con-expire .c-e6 {
+	color: #c5c5c5;
+}
+
+.ticket .ticket-con-detail.con-expire .time-ion {
+	background-image: url(../../../images/public/dd_shijian_icon-hui.png);
+}
+
+.ticket-order .ticket-img {
+	position: relative;
+	width: 12.4rem;
+	height: 7rem;
+	margin-right: 1rem;
+}
+
+.ticket .storename {
+	height: 1.8rem;
+}
+
+.ticket .tohome {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: #fff;
+	padding: 0.4rem 0.5rem;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 2;
+}
+
+.ticketTohome {
+	position: absolute;
+	bottom: 0;
+	margin-left: 9.4rem;
+	color: #fff;
+	padding: 0.4rem 0.5rem;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 2;
+}
+
+.myticket-img {
+	position: relative;
+	width: 12.4rem;
+	height: 7rem;
+	margin-right: 1rem;
+}
+
+.ticket .expire {
+	z-index: 1;
+}
+
+.ticket .ticket-con-detail {
+	height: 7rem;
+}
+
+.ticket h2 {
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+.ticket-order .time-ion {
+	display: inline-block;
+	margin-left: 0px;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	width: 1rem;
+	height: 1rem;
+	background-size: cover;
+}
+
+.ticket-order .time-ionNew {
+	height: 1.1rem;
+	position: absolute;
+	top: 0.4rem;
+}
+
+.ticket-order i.pl12 {
+	padding-left: 1.4rem;
+}
+
+.time-imgion {
+	display: inline-block;
+	margin-left: 0px;
+	background-image: url(../../../images/public/dd_shijian_icon.png);
+	width: 1rem;
+	height: 1rem;
+	background-size: cover;
+}
+
+.ticket .comment-unselected {
+	color: #fff;
+	border: none;
+}
+
+.ticket .btns {
+	margin-top: 1.5rem;
+	border-top: 1px solid #dedede;
+	padding-top: 1rem;
+}
+
+.f-w-n {
+	font-weight: normal;
+}
+
+
+/*套票预约*/
+
+.ticket-order {}
+
+.ticketOrderNew {
+	margin-bottom: 4rem;
+}
+
+.fourbottom {
+	bottom: 4rem;
+}
+
+.ticket-order-f .has-header {
+	top: 5.75rem;
+}
+
+.ticket-order-f .out-address {
+	position: absolute;
+	top: 3.75rem;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 2rem;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 0.7rem;
+}
+
+.ticket-order-f .f-btn-submit {
+	background-color: #ccc!important;
+	pointerEvents: 'none';
+}
+
+.ticket-order .ubb.noborder {
+	border-top: 1px solid #DEDEDE;
+	border-bottom: none;
+}
+
+.ticket-order .ticket-order-con {}
+
+.ticket-order ul,
+.uba {
+	padding: 0 1.5rem;
+	background-color: #fff;
+}
+
+.ticket-order ul li {
+	height: 4.4rem;
+	line-height: 4.4rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.ticket-order ul li.heightAuto {
+	height: auto;
+}
+
+.ticket-order ul li.heightAuto .ub-f1 {
+	padding-left: 7.3rem;
+}
+
+.ticket-order ul li.heightAuto span {
+	position: absolute;
+}
+
+.uc-a .heightAuto {
+	min-height: 4.4rem;
+	height: auto;
+	line-height: 4.4rem;
+}
+
+.uc-a .heightAuto .ut-s {
+	position: absolute;
+}
+
+.ticket-order ul li span {
+	display: inline-block;
+	width: 7.7rem;
+}
+
+.ticket-order ul li:last-child {
+	border: none;
+}
+
+.ticket-order input[type=text],
+.ticket-order input[type=tel] {
+	display: inline;
+	padding-top: none;
+	vertical-align: inherit;
+	width: 90%;
+}
+
+.ticket-order input[type=text].c-e6 {
+	color: #e64c65;
+}
+
+.remark {
+	position: absolute;
+	right: 0;
+	margin: 1rem auto;
+}
+
+.ticket-order .uc-a {
+	webkit-border-radius: 0em;
+	border-radius: 0em;
+}
+
+.ticket-order .us {
+	webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.ticket-order .umh4 {
+	height: 4.5rem;
+}
+
+.ticket-order .ubb {
+	border-bottom: 1px solid #dedede;
+}
+
+.ticket-order .noline {
+	border-bottom: none;
+}
+
+.ticket-order .ubb.order-time {
+	border-top: 1px solid #dedede;
+}
+
+.ticket-order-con .uc-t {
+	-webkit-border-top-left-radius: 0em;
+	border-top-left-radius: 0em;
+	-webkit-border-top-right-radius: 0em;
+	border-top-right-radius: 0em;
+}
+
+.ticket-order .lis-sw {
+	background-image: url(../../../images/my/right_inst.png);
+	width: 0.7rem;
+	height: 1.4rem;
+	background-size: cover;
+}
+
+.ticket-order .lis-sws {
+	background-image: url(../../../images/my/right_inst.png);
+	width: 0.7rem;
+	height: 1.4rem;
+	background-size: cover;
+	margin-top: 1.5rem;
+}
+
+.ticket-order .tx-r.order-time {
+	margin-right: 5rem;
+}
+
+.ticket-order .tx-r.c-e6 {
+	margin-right: 1rem;
+}
+
+.ticket-order .delser {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 3.8rem;
+	height: 3.8rem;
+	background-image: url(../../../images/my/dd_shanchudingdan_btn.png);
+	background-size: cover;
+}
+
+.ticket-order .money .photo {
+	width: 3rem;
+	height: 3rem;
+	background-size: contain;
+	background-position: center center;
+	border-radius: 50%;
+	margin-right: 1rem;
+}
+
+.ticket-order .m-r-1 {
+	margin-right: 1rem;
+}
+
+.ticket-order .serlist-con {
+	background-color: #fff;
+}
+
+.ticket-order .serlist-con .ser-pay {
+	padding: 1rem;
+}
+
+.ticket-order .serlists .ticket-img {
+	margin: 1rem 1.5rem;
+}
+
+.ticket-order .serlist-con .serlists .serlists-item {
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid #dedede;
+}
+
+.ticket-order .serlist-con .serlists .p-l-18rem {
+	padding-right: 1.8rem;
+}
+
+.ticket-order .serlist-con .serlists:last-child .serlists-item {
+	border-bottom: none;
+}
+
+.ticket-order .serlists .serlists-item .time {
+	margin-top: 4.5rem;
+}
+
+.ticket-order .balance-icon-pub {
+	background-size: cover;
+	width: 4rem;
+	height: 2.5rem;
+}
+
+.ticket-order .balance-icon {
+	background-image: url(../../../images/public/com_yuezhifu_icon1.png);
+}
+
+.ticket-order .balance-icon.paymen {
+	background-image: url(../../../images/public/com_zhifuweixin_icon.png);
+}
+
+.ticket-order .balance-icon.toshop {
+	background: url(../../../images/my/com_daodianzhifu_icon.png);
+	width: 2.05rem;
+	height: 1.95rem;
+	background-size: cover;
+	margin-left: 1.475rem;
+}
+
+.ticket-order .pay.ub-img.active {
+	background-size: cover;
+	width: 2rem;
+	height: 2rem;
+	background-image: url(../../../images/public/com_xuanze_btn_pressed1.png);
+}
+
+.ticket-order .pay.ub-img {
+	background-size: cover;
+	width: 2rem;
+	height: 2rem;
+	background-image: url(../../../images/public/com_xuanze_btn1.png);
+}
+
+.ticket-order .uba.money .ub-f1 {
+	margin-left: 1rem;
+}
+
+.ticket-order .uba.money .ub-f1.order-ub-f1 {
+	margin-left: 0;
+}
+
+.ticket-order .uba.order-detail-list .ub-f1 {
+	margin-left: 0;
+}
+
+.ticket-order .text {
+	color: #999;
+	padding: 1rem 1.5rem;
+	background: #fff;
+}
+
+.ticket-order .f-btn-submit.bg-c-black {
+	background-color: #333!important;
+	color: #FFF!important;
+}
+
+
+/*使用记录*/
+
+.ticket-use-log {
+	padding: 0 1.5rem;
+	background-color: #fff;
+}
+
+.ticket-use-log ion-refresher,
+.ticket-use-log .u-loading-ion,
+.ticket-use-log mobo-data-loading {
+	background-color: #fff;
+}
+
+.ticket-use-log .use-log-con {
+	padding-top: 2rem;
+}
+
+.ticket-use-log .use-log-circle {
+	position: relative;
+}
+
+
+/*未支付、取消预约的状态图*/
+
+.ticket-use-log .use-log-con.active .circle {
+	position: absolute;
+	width: 1.4rem;
+	height: 1.4rem;
+	background-image: url(../../../images/my/wuliu_yidaoda_xiushi.png);
+	background-size: cover;
+	top: 0;
+	left: 0.5rem;
+	left: 0.4rem;
+}
+
+.ticket-use-log .use-log-con.active .use-detail {
+	border-left: 1px solid #e64c66;
+	padding-left: 4.3rem;
+	margin-left: 1rem;
+	/*padding-top:1.3rem;*/
+}
+
+.ticket-use-log .use-log-con .circle {
+	position: absolute;
+	width: 1.4rem;
+	height: 1.4rem;
+	background-image: url(../../../images/my/wuliu_huiyuan_xiushi.png);
+	background-size: cover;
+	top: 0;
+	left: 0.5rem;
+	left: 0.4rem;
+}
+
+.ticket-use-log .use-log-con .c-e6 {
+	color: #b5b5b5;
+}
+
+.ticket-use-log .use-log-con.active .c-e6 {
+	color: #e64c65;
+}
+
+.ticket-use-log .use-log-con .use-detail {
+	border-left: 1px solid #dedede;
+	padding-left: 4.3rem;
+	margin-left: 1rem;
+	/*padding-top:1.3rem;*/
+}
+
+.ticket-use-log .use-log-circle h2 {
+	margin-left: 5.3rem;
+	margin-bottom: 0.5rem;
+}
+
+.ticket-use-log .use-date {
+	position: relative;
+}
+
+.ticket-use-log .date {
+	position: absolute;
+	top: 0;
+	left: -6px;
+	background-color: #fff;
+	padding-bottom: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+.ticket-use-log .ser-con {
+	margin-left: 5.3rem;
+}
+
+.ticket-use-log .pri-line {
+	border-bottom: 1px solid #dedede;
+	margin-top: 1.7rem;
+}
+
+.ticket-use-log .submit-time {
+	color: #b5b5b5;
+}
+
+.ticket-use-log .comment-unselected {
+	color: #fff;
+	border: none;
+}
+
+.ticket-use-log .btns {
+	text-align: right;
+	margin-top: 1rem;
+}
+
+
+/*使用记录详情*/
+
+.bg-color-gray {
+	background-color: #ccc!important;
+}
+
+.confirm-order .service-footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	height: 4rem;
+	line-height: 4rem;
+}
+
+
+/*确认订单*/
+
+.confirm-order .service-footer .footer-in {
+	padding-left: 1.5rem;
+}
+
+.confirm-order .next {
+	background: #febf49;
+	width: 8rem;
+	text-align: center;
+}
+
+.confirm-order .confirm-icon-pub {
+	width: 2.25rem;
+	height: 2.25rem;
+	background-size: cover;
+}
+
+.confirm-order .sertime-icon {
+	background-image: url(../../../images/public/com_fuwushijian_icon.png);
+}
+
+.confirm-order .teacher-icon {
+	background-image: url(../../../images/public/com_jishixuanze_icon.png);
+}
+
+.no-goods-ticket {
+	position: absolute;
+	display: inline-grid;
+	width: 100%;
+	height: 100%;
+	/* margin: 0 0.5rem 0 0.6rem; */
+	background-color: rgba(0, 0, 0, 0.3);
+	top: 0;
+}

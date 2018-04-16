@@ -1,0 +1,20 @@
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">意见反馈</h1>		
+	</ion-header-bar>-->
+	<ion-content>
+		<div style="margin: 1rem;width: 100%;height: 100%;">
+			<textarea class="bg-c-f7" type="text" name="feedback_text" id="feedback_content" value="" style="width: 95%;min-height: 50%;padding: 1rem 1rem; background: #fff;" 
+				placeholder="请输入您的宝贵意见" ng-model="feedbackContent.key"></textarea> 
+		
+			<input type="text" name="feedback_text" id="feedback_contact" value="" style="padding: 2rem 1rem;
+			margin-top: 1rem;width: 95%;" placeholder="请输入您的联系方式" ng-model="feedbackContact.key"/>
+		</div>
+		
+		
+	</ion-content>
+	<div id="btnBottom" class="f-log-btn ub">
+		<div class="f-btn-submit ub-f1 text-center" on-tap="submitFeedback()">提交</div>
+	</div>
+</ion-view>

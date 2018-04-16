@@ -1,0 +1,48 @@
+<ion-view class="compile">
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">新增收货地址</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content ng-class="cssClass">
+        <div class="kuai bg-color-f t1">
+            <div class="name f-s-28 c-3">
+                <p class="p-width">收货人&nbsp;</p>
+                <input type="text" name="name" id="name" ng-model="receiver.text"/>
+            </div>
+            <div class="phone f-s-28 c-3">
+                <p class="p-width">联系方式</p>
+                <input type="tel" name="phone" id="phone" ng-model="mobile.text"/>
+            </div>
+            <div data-tap-disabled="true" class="addres f-s-28 c-3">
+                <p class="p-width">所在地区</p>
+                <!--省-->
+                <select ng-model="curProvinceId.id"
+                        ng-change="provinceChange(curProvinceId.id)"
+                        ng-options="item.id as item.name for item in provinceItems">
+                    <option value="">省份</option>
+                </select>
+                <!--市区-->
+                <select ng-model="curCityId.id"
+                        ng-change="cityChange(curCityId.id)"
+                        ng-options="item.id as item.name for item in cityItems">
+                    <option value="">市区</option>
+                </select>
+                <!--县-->
+                <select ng-model="curCountyId.id"
+                        ng-change="countyChange(curCountyId.id)"
+                        ng-options="item.id as item.name for item in countyItems">
+                    <option value="">县区</option>
+                </select>
+            </div>
+            <div class="addresing f-s-28 c-3">
+                <p class="p-width">详细地址</p>
+                <input type="text" name="addressing" id="addressing" ng-model="addressinfo.text"/>
+            </div>
+        </div>
+    </ion-content>
+
+    <div class="f-log-btn">
+        <span class="button button-block f-btn-submit f-s-30" on-tap="submitAdd()">保存并使用</span>
+    </div>
+</ion-view>

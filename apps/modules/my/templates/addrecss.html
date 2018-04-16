@@ -1,0 +1,59 @@
+<ion-view>
+    <!--<ion-header-bar class="addrecss adds-header bar bar-header">
+        <div class="go-back-btn" on-tap="onBackPressed()"></div>
+        <div class="sss receipt adds-header " ng-if="showGoodsAndServiceAddsTab">
+            <p ng-class="{true:'dao',false:'dao1'}[dao]" on-tap="shopadd(1)"><i>收货地址</i></p>
+            <p ng-class="{true:'lai',false:'lai1'}[!dao]" on-tap="shopadd(2)"><i>{{serviceText + '地址'}}</i></p>
+        </div>-->
+        <!--电商模式下只有收货地址-->
+        <!--<div class="sss receipt adds-header-title" ng-if="showGoodsAddsTab">
+            <span>收货地址</span>
+        </div>-->
+        <!--020模式下只有服务地址-->
+        <!--<div class="sss receipt adds-header-title" ng-if="showServiceAddsTab">
+            <span>{{serviceText + '地址'}}</span>
+        </div>
+        <div class="adds-header-right"></div>
+    </ion-header-bar>-->
+
+    <ion-content class="addrecss">
+        <ion-list >
+            <!--电商收货地址-->
+            <ion-item ng-if="showGoodsAddsList" class="address-list" ng-repeat="item in items">
+                <div class="listes" ng-class="{true:'lists',false:''}[class]" on-tap="selectAddress(item)">
+                    <div class="number f-s-28 c-3">
+                        <p class="name" ng-bind="item.receiver"></p>
+                        <p class="num" ng-bind="item.mobile"></p>
+                        <div class="u-default" ng-if="item.isdefault== 'Y'">
+                            <p class="defor bg-color-r c-f">默认</p>
+                        </div>
+                        <a class="write ufr" on-tap="editAddress(item,$event)"></a>
+                    </div>
+                    <div class="addring f-s-28 c-3 ub">
+                        <div class="addre"></div>
+                        <p class="ub-f1 address-text">{{item.address_text}}{{item.addressinfo}}</p>
+                    </div>
+                </div>
+                <ion-option-button ng-click="defaultItem(item.uaid)" class="button_default">设为默认
+                </ion-option-button>
+                <ion-option-button ng-click="deleteItem($index,item.uaid)" class="button_del">删除
+                </ion-option-button>
+            </ion-item>
+            <!--服务地址-->
+            <ion-item ng-if="showServiceAddsList" class="addres" ng-repeat="item in serviceItems">
+                <div class="service bg-color-f ub" on-tap="selectAddress(item)">
+                    <p class="changyong addre"></p>
+                    <p class="c-80 ub-f1 newAddress">{{item.address}}{{item.addressinfo}}</p>
+                    <p class="images" on-tap="deleteServiceAdds(item.uaid,$event)"></p>
+                </div>
+            </ion-item>
+        </ion-list>
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+
+        <div class="bottom-div"></div>
+    </ion-content>
+    <!--添加地址-->
+    <div class="f-log-btn" on-tap="addNewAddress()">
+        <span class="button button-block f-btn-submit f-s-30">+新增地址</span>
+    </div>
+</ion-view>

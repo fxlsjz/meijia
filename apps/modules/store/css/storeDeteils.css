@@ -1,0 +1,425 @@
+/*店面详情（非套票）*/
+
+.details .actorHead {
+    display: inline-block;
+    position: absolute;
+    background: url(../../../images/public/com_niming_icon.png) no-repeat;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.5rem;
+    background-size: 100%;
+    vertical-align: middle;
+    left: 0;
+}
+
+.details ion-content{
+	background: #fff;
+}
+
+
+/*店面图片*/
+
+.details .content .imag {
+	width: 100%;
+	height: 21rem;
+	background-size: cover;
+}
+
+
+/*店面名称*/
+
+.details .content .name {
+	margin-top: 1rem;
+}
+
+
+/*店面地址*/
+
+.details .content .adress {
+	margin-top: 1.5rem;
+	margin-bottom: 1.75rem;
+}
+
+
+/*店面地址图标*/
+
+.details .content .adress .adress-loction {
+	width: 1.3rem;
+	height: 1.55rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_dingwei_icon.png);
+}
+
+
+/*店面地址文字*/
+
+.details .content .adress .adress-name {
+	line-height: 1.55rem;
+	/*margin-left: 0.5rem;*/
+}
+.details .content .yi {
+    padding-left: 1.5rem;
+    padding-top: 0.75rem;
+}
+
+
+/*电话图标*/
+
+.details .content .adress .phone {
+	width: 1.3rem;
+	height: 1.3rem;
+	background-size: cover;
+	background-image: url(../../../images/store/com_dianhua_icon.png);
+}
+
+
+/*房间选择顶部分割线*/
+
+.details .content .line {
+	height: 1px;
+	background-color: #DEDEDE;
+}
+
+
+/*房间类型选择布局*/
+
+.details .content .roomType {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+
+/*房间选择单个布局*/
+
+.details .content .roomType .roomDiv {
+	height: 5rem;
+	text-align: center;
+}
+
+
+/*房间选择大圆*/
+
+.details .content .roomType .roomDiv .oneByOut {
+	display: inline-block;
+	height: 5rem;
+	width: 5rem;
+	border: 1px solid #e64c65;
+	box-sizing: border-box;
+	border-radius: 50%;
+}
+
+
+/*房间选择小圆*/
+
+.details .content .roomType .roomDiv .cirByIn {
+	border: 1px solid #E64C65;
+	height: 4rem;
+	width: 4rem;
+	margin: 0.4rem;
+	color: #E64C65;
+	border-radius: 50%;
+	box-sizing: border-box;
+	padding-top: 0.55rem;
+}
+
+
+/*房间选择文字*/
+
+.details .content .roomTypeTex {
+	margin: 0 auto;
+	line-height: 1.3rem;
+}
+
+
+/*房间选择小圆圆未选中*/
+
+.details .content .roomType .roomDiv .cirByInpress {
+	background-color: #E64C65;
+	color: #FFFFFF;
+}
+
+.details .content .five_line {
+	height: 0.5rem;
+	background-color: #f7f7f7;
+}
+
+
+/*服务时间布局*/
+
+.details .content .time {
+	height: 4.5rem;
+	line-height: 4.5rem;
+}
+
+
+/*服务图标*/
+
+.details .content .time .imag-service {
+	height: 2.4rem;
+	width: 2.4rem;
+	margin-top: 1.05rem;
+	margin-left: 1.5rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_fuwuxuanze_icon.png);
+}
+
+
+/*服务时间文本*/
+
+.details .content .time .text {
+	margin-left: 1.25rem;
+}
+
+
+/*服务时间*/
+
+.details .content .time .service-name {
+	color: #E64C65;
+	text-align: right;
+	margin-left: 1rem;
+}
+
+
+/*右侧箭头*/
+
+.details .content .time .right-jt {
+	height: 2rem;
+	width: 1.076923076923077rem;
+	margin-left: 1rem;
+	margin-right: 1.5rem;
+	margin-top: 1.25rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_jiantouhongse_icon.png);
+}
+
+
+/*服务时间图标*/
+
+.details .content .time .imag-time {
+	height: 2.4rem;
+	width: 2.4rem;
+	margin-top: 1.05rem;
+	margin-left: 1.5rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_fuwushijian_icon.png);
+}
+
+
+/*技师图标*/
+
+.details .content .time .imag-technician {
+	height: 2.4rem;
+	width: 2.4rem;
+	margin-top: 1.05rem;
+	margin-left: 1.5rem;
+	background-size: cover;
+	background-image: url(../../../images/public/com_jishixuanze_icon.png);
+}
+
+.details .content .time .technician-detail .imag {
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-top: 1rem;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+.details .content .time .technician-detail .tename {
+	height: 4.5rem;
+	line-height: 4.5rem;
+	width: auto;
+	color: #E64C65;
+	margin-left: 1rem;
+}
+
+.details .order-btn {
+	height: 4rem;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    /*color: #000;*/
+    padding-top: 1rem;
+    border-top: 1px solid #dedede;
+    height: 5rem;
+    padding-top: 0;
+    line-height: 5rem;
+    background: #fff;
+}
+.details .right-jt {
+	position: absolute;
+    right: 2rem;
+    top: 0.2rem;
+    height: 1.45rem;
+    width: 0.85rem;
+    margin-left: 1rem;
+    /* margin-right: 1.45rem; */
+    /* margin-top: 1.25rem; */
+    background-size: contain;
+    display: inline-block;
+    /*background-image: url(../../../images/public/com_jiantouhongse_icon.png);*/
+    background-image: url(../../../images/store/dp_jianjiao_icon.png);
+}
+.details .name .m-b-0 {
+    margin-bottom: 0;
+}
+.details .assessList .assess{
+	line-height: 2rem;
+}
+.details .commont-start {
+    background-image: url(../../../images/public/com_zero_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-top: 0.4rem;
+    text-align: left;
+    margin-top: 1.5rem;
+}
+.details .commont-start li {
+    background-image: url(../../../images/public/com_five_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-position: left top;
+    background-size: auto 100%;
+}
+.details .comment-imgall {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+    display: -webkit-flex;
+}
+.details .comment-img {
+   	background-size: 100%;
+   	width: calc((100% - 5rem)/ 6.0);
+	display: inline-block;
+	margin-right: 1rem;
+}
+.details .comment-img:nth-child(6n) {
+	margin-right: 0rem;
+}
+.details .comment-img i {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+
+
+.tankuag{
+	width: 100%;
+	height: 100%;
+	background:#000;
+	position: absolute;
+	z-index: 100;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.tankuagTop{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+	height: 100%;
+}
+.tankuagBottom{
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	opacity: 1;
+	width: 100%;
+	z-index: 100;
+}
+.tankuag .time {
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding-left: 1.5rem;
+}
+.tankuag .time .right-jt {
+    height: 2rem;
+    width: 1.076923076923077rem;
+    margin-left: 1rem;
+    margin-right: 1.45rem;
+    margin-top: 1.25rem;
+    background-size: cover;
+    background-image: url(../../../images/public/com_jiantouhongse_icon.png);
+    background-image: url(../../../images/store/dp_jianjiao_icon.png);
+}
+.tankuag .time .service-name {
+    /*color: #E64C65;*/
+    text-align: right;
+    margin-left: 1rem;
+}
+.tankuag .line {
+    height: 1px;
+    background-color: #DEDEDE;
+}
+.tankuag .order-btn {
+    height: 4rem;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    color: #DF3680;
+    padding-top: 1rem;
+    border-top: 1px solid #dedede;
+    height: 5rem;
+	line-height: 5rem;
+	padding-top: 0;
+}
+/*房间选择顶部分割线*/
+.details .content .line {
+	height: 1px;
+	background-color: #DEDEDE;
+}
+/*房间类型选择布局*/
+.tankuag .roomType {
+	padding-top: 1.5rem;
+	/*padding-bottom: 1.5rem;*/
+}
+/*房间选择单个布局*/
+.tankuag .roomType .roomDiv {
+	height: 5rem;
+	text-align: center;
+}
+/*房间选择大圆*/
+.tankuag .roomType .roomDiv .oneByOut {
+	display: inline-block;
+	/*height: 5rem;*/
+	/*width: 5rem;*/
+	/*border: 1px solid #e64c65;*/
+	box-sizing: border-box;
+	/*border-radius: 50%;*/
+}
+/*房间选择小圆*/
+.tankuag .roomType .roomDiv .cirByIn {
+	border: 1px solid #E64C65;
+	/*height: 4rem;*/
+	/*width: 4rem;*/
+	/*margin: 0.4rem;*/
+	color: #DF3680;
+	border-radius: 5px;
+	box-sizing: border-box;
+	/*padding-top: 0.55rem;*/
+	padding: 0.4rem 1rem;
+}
+/*房间选择文字*/
+.tankuag .roomTypeTex {
+	margin: 0 auto;
+	line-height: 1.3rem;
+}
+/*房间选择小圆圆未选中*/
+.tankuag .roomType .roomDiv .cirByInpress {
+	background-color: #DF3680;
+	color: #FFFFFF;
+}
+.tankuag .five_line {
+	height: 0.5rem;
+	background-color: #f7f7f7;
+}
+/*头像*/
+.tankuag .time .technician-detail .imag {
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-top: 1rem;
+	background-size: cover;
+	border-radius: 50%;
+}

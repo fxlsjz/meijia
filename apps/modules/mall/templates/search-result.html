@@ -1,0 +1,18 @@
+<ion-view class="mall">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <div class="ub-f1 search wrap-search">
+        	<i class="search-icon"></i>
+        	<input ng-keydown="search()" ng-model="searchText.text" placeholder="请输入检索内容" type="text" />
+        </div>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content class="search-mall-top" lazy-scroll style="height:calc(100vh - 3.75rem);">
+    	<mobo-no-data text="暂无数据!" layout="x" ng-if="listdata"></mobo-no-data>
+    	<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+    	<div class="m-t-10"  ng-include="'apps/modules/mall/templates/list.html'"></div>
+    	<ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                                 distance="1%" immediate-check="false"
+                                 on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

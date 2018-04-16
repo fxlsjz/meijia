@@ -1,0 +1,354 @@
+@charset "utf-8";
+.evaluate-technician {
+    background-color: #FFFFFF;
+}
+
+.evaluate-technician .bar-header {
+    width: 100%;
+    height: 4.75rem;
+    background-color: #ffffff;
+    position: relative;
+    border-bottom: 0 solid #ffffff;
+}
+
+.evaluate-technician .search-title {
+    font-size: 2rem;
+    padding: 15px;
+    color: #000000;
+}
+
+.evaluate-technician .bar-title {
+    position: relative;
+}
+
+.evaluate-technician .search {
+    position: absolute;
+    top: 1.2rem;
+    right: 0;
+}
+
+.evaluate-technician .tabs {
+    width: 100%;
+    background: #FFFFFF;
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+}
+
+.evaluate-technician .tabs .active {
+    border-bottom: 2px solid #DF3680;
+}
+
+/*列表图片*/
+.evaluate-technician .technician-list-img {
+    display: inline-block;
+    padding: 1rem;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+}
+
+.evaluate-technician .has-header {
+    top: 9rem;
+    bottom: 0;
+    background-color: #ffffff;
+}
+
+/*列表item*/
+
+.evaluate-technician .list {
+    line-height: 100%;
+    background: #fff;
+    margin-bottom: 0;
+    height: 8rem;
+}
+
+.evaluate-technician .h4rem {
+    height: 4rem;
+}
+
+/*item右侧内容*/
+
+.evaluate-technician .list .list-right {
+    height: 6rem;
+    margin-top: 1rem;
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+/*列表距离*/
+
+.evaluate-technician .list .list-right .technician-list-distance {
+    position: absolute;
+    top: 50%;
+    line-height: 1.4rem;
+    margin-top: -0.7rem;
+}
+
+.evaluate-technician .list .list-right .newKm {
+    margin-top: 0;
+}
+
+/*列表最早可约时间布局*/
+
+.evaluate-technician .list .list-right .technician-list-date {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*列表分割线*/
+
+.evaluate-technician .list .list-right .technician-list-ling {
+    height: 1px;
+    background-color: #DEDEDE;
+    position: absolute;
+    bottom: -1rem;
+    width: 100%;
+    z-index: 99;
+}
+
+.evaluate-technician .u-bottom-footer {
+    height: 4rem;
+    line-height: 4rem;
+    position: fixed;
+    width: 100%;
+    bottom: 5.2rem;
+    background: #DF3680;
+    color: #fff;
+}
+
+.evaluate-technician .search {
+    top: 0 !important;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    /* margin: 0.75rem 0; */
+    background-color: #fff;
+    border-radius: 16px;
+    position: relative;
+}
+
+.evaluate-technician .search-icon {
+    width: 1.15rem;
+    height: 1.35rem;
+    position: absolute;
+    top: 0.88rem;
+    left: 1rem;
+    background-image: url(../../../images/technician/dp_sousuo_icon.png);
+    background-size: cover;
+}
+
+.evaluate-technician input[type=text] {
+    padding-left: 2.6rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #dedede;
+}
+
+.evaluate-technician .wrap-search {
+    height: 3rem;
+    line-height: 3rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 8px;
+    position: relative;
+    margin-right: 1.25rem;
+}
+
+.evaluate-technician .search-btn {
+    margin-right: 1.5rem;
+    width: 1.15rem;
+    height: 1.35rem;
+    background-size: cover;
+    background-image: url(../../../images/technician/dp_sousuo_btn.png);
+
+}
+
+.evaluate-technician .search-btn.active {
+    padding: 0 2rem 0 1rem;
+    width: 2rem;
+    height: 4.3rem;
+    background-image: url(../../../images/technician/dp_sousuo_btn-pressed.png);
+
+}
+
+.evaluate-technician .nickname {
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    top: 3.75rem
+}
+
+.mask .bottom {
+    color: #333;
+    border-radius: 5px;
+    margin: auto;
+    background: #fff;
+    width: 9.5rem;
+    height: 3.3rem;
+    line-height: 3.3rem;
+    text-align: center;
+    position: relative;
+}
+
+.mask .bottom .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    position: absolute;
+    top: -8px;
+    right: 5px;
+}
+
+/*双人选技师*/
+
+.evaluate-technician .classify {
+    text-align: center;
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: .1rem;
+}
+
+.evaluate-technician .classify span {
+    display: inline-block;
+}
+
+.evaluate-technician .classify .active {
+    border-bottom: 2px solid #DF3680;
+    color: #DF3680;
+}
+
+.evaluate-technician .technician-two-content {
+    top: 11.75rem;
+}
+
+.evaluate-technician .list .noselect {
+    border: 1px solid #DF3680;
+    background: #fff;
+    border-radius: 10px;
+    padding: .1rem 1rem;
+    color: #DF3680;
+}
+
+.evaluate-technician .list .select {
+    border: 1px solid #DF3680;
+    background: #DF3680;
+    border-radius: 10px;
+    padding: .1rem 1rem;
+    color: #fff;
+}
+
+/*美甲样式*/
+.evaluate-technician .left-img {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    width: 7.95rem;
+    height: 1.25rem;
+    background-size: cover;
+    background-image: url(../../../images/technician/fashion-me.png);
+}
+
+.evaluate-technician .list-class {
+    float: left;
+    width: calc(100% / 3.0);
+    height: calc(100% / 3.0 + 2rem);
+    position: relative;
+    background-color: #FFFFFF;
+    padding: 1rem;
+}
+
+.evaluate-technician .list-collect {
+    position: absolute;
+    top: calc(50% - 1.5rem);
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #DF3680;
+    border-radius: 2rem;
+}
+
+.evaluate-technician .technician-list-select {
+    border: 1px solid #DF3680;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    width: 5rem;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    background-color: white;
+    color: #DF3680;
+    margin-left: calc((100% - 5rem) / 2.0);
+    font-size: 1.1rem;
+}
+
+.evaluate-technician .u-cancel-collect {
+    background: url(../../../images/public/com_shoucang_btn.png) no-repeat center;
+    width: 1.85rem;
+    height: 1.5rem;
+    margin-top: calc((100% - 1.5rem) / 2.0);
+    margin-left: calc((100% - 1.85rem) / 2.0);
+    display: inline-block;
+    background-size: 100%;
+}
+
+.evaluate-technician .u-collect {
+    background: url(../../../images/public/com_shoucang_btn_pressed.png) no-repeat center;
+    width: 1.85rem;
+    height: 1.5rem;
+    margin-top: calc((100% - 1.5rem) / 2.0);
+    margin-left: calc((100% - 1.85rem) / 2.0);
+    display: inline-block;
+    background-size: 100%;
+}
+
+/*切换+滚动*/
+
+.evaluate-technician .slides {
+    width: 100%;
+}
+
+.evaluate-technician .tsb-hscroll.scroll-view {
+    height: 100%;
+}
+
+.evaluate-technician .tsb-hscroll.scroll-view .scroll {
+    display: -webkit-box;
+}
+
+.evaluate-technician .tag {
+    font-size: 1.2rem;
+    color: #999999;
+}
+
+.evaluate-technician .tag.active {
+    font-size: 1.2rem;
+    color: #DF3680;
+}
+
+.evaluate-technician .u-collect {
+    background: url(../../../images/technician/collect.png) no-repeat center;
+    width: 2.1rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.evaluate-technician .u-cancel-collect {
+    background: url(../../../images/technician/collect_pressed.png) no-repeat center;
+    width: 2.1rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+}

@@ -1,0 +1,103 @@
+
+
+/*发表帖子*/
+.post-publich textarea{
+	border:none;
+	border-bottom:#eee 1px solid;
+	padding:5px;
+	background:none;
+	min-height:10em;
+	
+	}
+.post-publich .upload-progress{
+	height:.2em;
+}
+.post-publich .upload-progress p{
+	width:0;
+	height:100%;
+	background-color:#6B784D
+	}
+
+.post-publich .image-upload{
+	
+	
+	}
+	
+.post-publich .image-upload li{
+	width:4em;
+	height:4em;
+	line-height:4em;
+	text-align:center;
+	margin:.5em;
+	border:#EDEDED 1px solid;
+	/*background-size: cover;*/
+	
+}
+.post-publich .image-upload li.upload{
+	background-color:#EDEDED;
+	background-image:url(../images/upload+.png);
+	background-size:40% 40%;
+}
+.post-publich .image-upload li.upload input{
+	border:0;
+    width:4em;
+	height:4em;
+	opacity:0;
+	display:block;
+	
+}
+.post-publich .image-upload li.upload h1{
+	color:#6B784D;
+	}
+.post-publich .image-upload li a.remove{
+	position:absolute;
+	left:1em;
+	top:1em;
+	display:block;
+	width:1.5em;
+	height:1.5em;
+	line-height:1.2em;
+	background-color:#6B784D;
+	color:#fff;
+	border-radius:50%;
+	}
+input[type=checkbox] {
+	visibility: hidden;
+}
+.checkboxFour {
+	width: .8em;
+	height: .8em;
+	background: #ddd;
+ 	margin-top:;
+	margin-left:3em;
+	border-radius: 100%;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+.checkboxFour label {
+	display: block;
+	width: .7em;
+	height: .7em;
+	border-radius: 100%;
+	position: absolute;
+	top:.1em;
+	left:;
+	z-index: 1;
+ 	background: #FBFBFB;
+}
+.checkboxFour input[type=checkbox]:checked + label {
+	background: #636363;
+}
+.publich{
+	border-radius: 5em;
+	padding:.3em 1.8em .3em 2em;
+	width:7em;
+	margin:2em auto 2em auto;
+	background-color:#6A774B;
+	letter-spacing:.5em;
+}
+.post-publich-upload{
+	background-color:#FAFAFA;
+}

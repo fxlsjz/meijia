@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+.assessList ion-content{
+	background: #fff;
+}
+.assessList .bar-subheader {
+    top: 0;
+    border: none;
+    padding: 0;
+    height: auto;
+}
+.assessList .u-tabs {
+    /* padding: 0 2.2rem; */
+    background: #fff;
+    height: 4.7rem;
+}
+.assessList .u-tabs .tab-in {
+    text-align: center;
+    padding: 0.5rem 0;
+}
+.assessList .u-tabs .tab-in p {
+    margin: 0;
+}
+.assessList .u-tabs .active {
+    color: #DF3680;
+}
+.assessList .pinListNews{
+	padding: 0 2rem;
+	margin-top: 4rem;
+}
+.assessList .commont-start {
+    background-image: url(../../../images/public/com_zero_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+.assessList .commont-start li {
+    background-image: url(../../../images/public/com_five_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-position: left top;
+    background-size: auto 100%;
+}
+.assessList .pinListNews .actorHead{
+	display: inline-block;
+	position: absolute;
+	background: url(../../../images/public/com_niming_icon.png) no-repeat;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.5rem;
+    background-size: 100%;
+    vertical-align: middle;
+    left: 0;
+}
+

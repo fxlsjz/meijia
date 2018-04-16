@@ -1,0 +1,93 @@
+<!--商品提价订单-->
+<ion-view class="submit-order">
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">订单填写</h1>
+        <div class="header-right"></div>
+    </ion-header-bar>
+    <ion-content lazy-scroll id="body-view">
+        <div class="shop-address bg-color-f">
+            <!--<div class="ub choiceaddress" ui-sref="my-addrecss">
+                <div class="ub-img addres-icon"></div>
+                <div class="ub-f1 f-s-28 c-3">请选择地址</div>
+            </div>-->
+            <div class="" on-tap="selectAddress()">
+                <div class="ub">
+                    <div class="ub-f1 addressee f-s-28 c-3" ng-bind="receiver"></div>
+                    <div class="ub-f1 phone f-s-28 c-3" ng-bind="mobile"></div>
+                </div>
+                <div class="ub locations">
+                    <div class="ub-img addres-icon"></div>
+                    <div class="ub-f1 f-s-28 c-3" ng-bind="addressinfo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="border-line"></div>
+        <div class="order-list bg-color-f m-t-10">
+            <div class="ub order-detail" ng-repeat="item in proinfo">
+                <div class="order-img background-img" image-lazy-src="{{item.pimg.split(',')[0] | baseUrl}}"
+                     image-lazy-background-image="true"></div>
+                <div class="ub-f1 goods-content">
+                    <div class="one-line f-s-24 name-height" ng-bind="item.product_name"></div>
+                    <div class="one-line f-s-20 c-b2 name-height line-divider">规格：<i ng-bind="item.intro"></i></div>
+                    <div class="f-s-20 c-b2 name-height line-divider">数量：<i ng-bind="item.num"></i></div>
+                    <div class="f-s-24 c-e6 name-height line-divider">¥<i ng-bind="item.price"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="costs bg-color-f m-t-10">
+            <div class="ub shop-money">
+                <div class="ub-f1 f-s-28 c-3">商品金额</div>
+                <div class="ub-f1 f-s-28 c-e6">¥<i ng-bind="submitlist.nowprice"></i></div>
+            </div>
+            <div class="ub transport">
+                <div class="ub-f1 f-s-28 c-3">运费</div>
+                <div class="ub-f1 f-s-28 c-e6">¥<i ng-bind="submitlist.fare"></i></div>
+            </div>
+            <div class="ub input-content">
+                <div class="ub-f1 shop-word">
+                    <input type="text" maxlength="45" placeholder="选填: 给商家留言（最多45个字）" value="" id="notes"
+                           ng-model="notesText.text"/>
+                </div>
+                <div class="btn-word-cancle" on-tap="cancle()"></div>
+            </div>
+        </div>
+        <div class="pay-method bg-color-f m-t-10">
+            <div class="pay-title f-s-24 c-3">支付方式</div>
+            <div class="ub ub-ac pay-balance"  on-tap="pays(1)">
+                <div class="balance-icon"></div>
+                <div class="ub-f1 f-s-24 c-3 balance-text">&nbsp;余额支付<i class="c-e6">(当前余额：¥<i class=""
+                                                                                               ng-bind="submitlist.balance"></i>)</i>
+                </div>
+                <div class="umh5 circle-div"><span class="check-box-ion" ng-style="balNo"
+                                                   ng-class="{true:'active',false:''}[pay==1]"></span>
+                </div>
+            </div>
+            <div class="ub ub-ac pay-wechat" on-tap="pays(2)">
+                <div class="wechat-icon"></div>
+                <div class="ub-f1 pay-text f-s-24 c-3">微信支付</div>
+                <div class="umh5 circle-div"><span class="check-box-ion" ng-class="{true:'active',false:''}[pay==2]"
+                                                   ></span></div>
+            </div>
+            <div ng-if="showIntegral&&(appValues.BUTTON_SCORE_SHOW.dic_desc == 'Y')" class="integral">
+                <div class="integral-icon"></div>
+                <div class="f-s-24 pay-text c-3">积分</div>
+                <div class="f-s-22 pay-text c-b2 one-grow m-l-5">{{'可用积分' + submitlist.inscore + '(可减¥' +
+                    submitlist.discount + ')'}}
+                </div>
+                <div ng-class="{true:'integral-active',false:'integral-inactive'}[selIntegral]"
+                     on-tap="selectIntegral()"></div>
+            </div>
+        </div>
+        <div class="bottom-height"></div>
+    </ion-content>
+    <div id="btnBottom" class="btn-footer bg-color-f m-t-10">
+        <div class="ub btn-alls">
+            <div class="ub-f1 bg-color-f c-e6 f-s-32">实付款：¥
+                <i ng-if="!selIntegral" class="f-s-40" ng-bind="submitlist.actualprice"></i>
+                <i ng-if="selIntegral" class="f-s-40" ng-bind="submitlist.usescoreprice"></i>
+            </div>
+            <div class="pay-botton bg-color-r c-f f-s-32" on-tap="toPays()">去支付</div>
+        </div>
+    </div>
+</ion-view>

@@ -1,0 +1,57 @@
+<ion-view class="integral-rule">
+	<!--标题-->
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+		<h1 class="bar-title ub-f1">我的积分</h1>
+	</ion-header-bar>-->
+	<div ng-if="integralInfo">
+		<div class="integral-info ub ub-ac">
+			<div class="f-s-32 c-f ub-f1">我的积分</div>
+			<div class="integral-count c-f">{{integralInfo.score}}</div>
+		</div>
+		<ion-content id="scrollContent" style="top: 7.75rem" delegate-handle="scrollContent" class="bg-color-f" on-scroll="onServiceScrollListener()">
+			<!--用来计算高度的元素-->
+			<div id="contentView">
+				<div class="p-30 f-s-32 c-3">收支明细</div>
+				<!--明细列表item-->
+				<!--<div ng-repeat="item in score_list">
+					<div class="line"></div>
+					<div class="p-30 ub ub-ac">
+						<div class="ub-f1">
+							<div class="c-3 f-s-28">{{item.remark}}</div>
+							<div class="c-9 f-s-28 m-t-10">{{item.scoretime*1000 | date : 'yyyy-MM-dd HH:mm'}}</div>
+						</div>
+						<div class="integral-record" ng-class="{true:'c-9',false:'c-e6'}[item.score*1<0]">{{item.score}}</div>
+					</div>
+				</div>-->
+				<div ng-repeat="item in score_list">
+					<div class="line"></div>
+					<div class="p-30 ub ub-ac">
+						<div class="ub-f1">
+							<div class="c-3 f-s-28">{{item.remark}}</div>
+							<div class="c-9 f-s-28 m-t-10">{{item.scoretime*1000 | date : 'yyyy-MM-dd HH:mm'}}</div>
+						</div>
+						<div class="integral-record" ng-if="item.score>0"
+							 ng-class="{true:'c-9',false:'c-e6'}[item.score*1<0]">+{{item.score}}</div>
+						<div class="integral-record" ng-if="item.score<0" ng-class="{true:'c-9',false:'c-e6'}[item.score*1<0]">-{{item.score}}</div>
+					</div>
+				</div>
+				<!--上拉加载-->
+				<ion-infinite-scroll class="u-loading-ion" ng-if="isShowLoadMore" distance="1%" immediate-check="false"></ion-infinite-scroll>
+			</div>
+		</ion-content>
+		<div id="btnBottom" class="f-log-btn" style="height: 5.4rem;">
+			<div class="integral" on-tap="openIntegralRule()">积分规则</div>
+		</div>
+	</div>
+	<mobo-no-data text="暂无数据!" layout="x" ng-if="noData"></mobo-no-data>
+	<!--积分规则弹出框-->
+	<div class="rule-view ub ub-ac" ng-if="isShowDialog">
+		<div class="rule-dialog">
+			<div class="rule-dialog-clean" on-tap="cleanDialog()"></div>
+			<div id="rule-dialog-title" class="rule-dialog-title f-s-34 c-3">积分规则</div>
+			<div style="height: 1px;background-color: #DEDEDE;"></div>
+			<div id="rule-dialog-content" class="rule-dialog-content c-6 f-s-24">{{score_content}}</div>
+		</div>
+	</div>
+</ion-view>

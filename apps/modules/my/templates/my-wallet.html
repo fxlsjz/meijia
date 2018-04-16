@@ -1,0 +1,47 @@
+<!--我的钱包-->
+<!--auth:tzb-->
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<meta name="format-detection" content="telephone=no" />
+		<div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+		<h1 class="bar-title ub-f1">我的钱包</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content id="body-view" class="wallet">
+		<div class="header_mony ub bg-color-r">
+			<p class="my-write ub-f1 f-s-32 ">我的余额</p>
+			<p class="my-mony ub-f3 f-s-60 c-e6">¥</p>
+			<p class="my-mony-num  f-s-60 c-e6" ng-bind="balance"></p>
+		</div>
+		<div class="ut choose">
+			<!--<ion-scroll>-->
+				<p class=" f-s-18 c-80 f-s-22">选择金额（您可以选择¥10至¥10000中间的任何金额）</p>
+				<div class="number c-3 " ng-repeat="item in moneyList" ng-class="{true:'numberperss',false:''}[index==$index]" on-tap="moneySelect(item.money_num,$index)">
+					<i>￥{{item.money_num}}</i>
+				</div>
+
+				<div class="ub ub-ac customize">
+					<i class=" f-s-18 number-own">¥</i>
+					<input id="money" type="text" class="ub-f1 " placeholder="输入自定义金额... " ng-model="submit.key" ng-keyup="myWallet()" />
+					<!--ng-bind="submit.key"-->
+				</div>
+				<!--ng-keyup="keyUpMy($event)"-->
+				<!--onkeyup="value=value.replace(/[^\d]/g,'')"-->
+				<!--充值福利-->
+				<!--<div class="detail ">
+					<i class="f-s-24 c-4c c-b2" ng-bind="wallettype"></i>
+				</div>-->
+				<div class="detail ">
+					<p>充值规则</p>
+					<i class="f-s-24 c-4c c-b2" >
+						{{wallettype}}
+					</i>
+				</div>
+			<!--</ion-scroll>-->
+		</div>
+	</ion-content>
+	<div id="btnBottom" class="f-log-btn" style="height: 5.4rem;">
+		<div class="qb-btn-submit f-s-30 anNiu" on-tap="recharge()">立即充值</div>
+		<!--button button-block-->
+	</div>
+</ion-view>

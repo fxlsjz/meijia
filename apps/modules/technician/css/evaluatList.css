@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+.evaluatList ion-content{
+	background: #fff;
+}
+.evaluatList .bar-subheader {
+    top: 0;
+    border: none;
+    padding: 0;
+    height: 4.2rem;
+}
+.evaluatList .u-tabs {
+    /* padding: 0 2.2rem; */
+    background: #fff;
+    height: 5.2rem;
+}
+.evaluatList .u-tabs .tab-in {
+    text-align: center;
+    padding: 0.5rem 0;
+}
+.evaluatList .u-tabs .tab-in p {
+    margin: 0;
+}
+.evaluatList .u-tabs .active {
+    color: #DF3680;
+}
+.evaluatList .u-tabs .noline {
+    display: none;
+}
+.evaluatList .u-tabs .isline {
+    color: #DF3680;
+    line-height: 4px;
+    display: block;
+}
+
+.evaluatList .pinListNews{
+	padding: 7rem 1.5rem 0;
+	/*margin-top: 4rem;*/
+}
+.evaluatList .commont-start {
+    background-image: url(../../../images/public/com_zero_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-align: left;
+}
+.evaluatList .commont-start li {
+    background-image: url(../../../images/public/com_five_icon.png);
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    display: inline-block;
+    background-position: left top;
+    background-size: auto 100%;
+}
+.evaluatList .pinListNews .actorHead{
+	display: inline-block;
+	position: absolute;
+	background: url(../../../images/public/com_niming_icon.png) no-repeat;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.5rem;
+    background-size: 100%;
+    vertical-align: middle;
+    left: 0;
+}
+/*评论晒图*/
+
+.evaluatList .comment-imgall {
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+    display: -webkit-flex;
+}
+
+.evaluatList .assess:last-child .comment-imgall {
+	width: 100%;
+	height: auto;
+	margin-top: 3rem;
+}
+.evaluatList .assess:last-child .comment-imgallNew {
+	margin-top: 1rem;
+}
+.evaluatList .comment-img {
+	background-size: 100%;
+    width: calc((100% - 5rem)/ 6.0);
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.evaluatList .comment-img:nth-child(6n) {
+	margin-right: 0rem;
+}
+
+.evaluatList .comment-img i {
+    width: 100%;
+    height: 100%;
+	display: inline-block;
+}
+.assessList:first-child{
+	padding-top: 0;
+}

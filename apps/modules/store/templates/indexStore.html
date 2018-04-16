@@ -1,0 +1,138 @@
+<!--预约到店-->
+<!--auth: tzb-->
+<ion-view class="store">
+
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<!--城市按钮-->
+		<div class="ub-f1 p-l-20 c-3 f-s-32">Fashion Me</div>
+		<div class="disable-user-behavior city c-3" on-tap="openModals()">
+			<span class="" ng-bind="selCityInfo.selCity"></span>
+			<i class="arrow"></i>
+		</div>
+		<div class="ub-f1 wrap-search">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索店面名称" ng-keyup="search($event)" ng-model="searchTxt.text" />
+		</div>
+
+		<!--<div class="location-ion" on-tap="goMap()"></div>-->
+
+	</ion-header-bar>
+	<!--标签-->
+	<div class="ub lable">
+		<!--距离最近-->
+		<div class="ub-pc ub-f1 lable_body f-s-28">
+			<div class="lable-info" ng-class="{true:'lable-info-press',flase:''}[storeType=='ORDER_POSITION']" on-tap="selStoreType('ORDER_POSITION')">
+				<div>距离最近</div>
+				<div ng-class="{true:'xiaobian',flase:''}[storeType=='ORDER_POSITION']"></div>
+			</div>
+		</div>
+		<!--收藏最多-->
+		<div class=" ub-pc ub-f1 lable_body f-s-28">
+			<div class="lable-info" ng-class="{true:'lable-info-press',flase:''}[storeType=='ORDER_COLLECTION']" on-tap="selStoreType('ORDER_COLLECTION')">
+				<div>收藏最多</div>
+				<div ng-class="{true:'xiaobian',flase:''}[storeType=='ORDER_COLLECTION']"></div>
+			</div>
+		</div>
+		<!--评价最高-->
+		<div class="ub-pc ub-f1 lable_body f-s-28">
+			<div class="lable-info" ng-class="{true:'lable-info-press',flase:''}[storeType=='ORDER_COMMENT']" on-tap="selStoreType('ORDER_COMMENT')">
+				<div>评价最高</div>
+				<div ng-class="{true:'xiaobian',flase:''}[storeType=='ORDER_COMMENT']"></div>
+			</div>
+		</div>
+	</div>
+	<ion-content class="scrollcon" delegate-handle="scrollContent" lazy-scroll>
+
+		<!--下拉刷新-->
+		<ion-refresher class="u-loading-ion" on-refresh="stroeDoRefresh()"></ion-refresher>
+
+		<!--<mobo-data-loading ng-if="noData"></mobo-data-loading>-->
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="noData"></mobo-no-data>
+		<!--列表-->
+
+		<!--列表item-->
+		<!--<div class="ub storelist-item bg-color-f" on-tap="goDetail(item)" ng-repeat="item in items">-->
+			<!--图片-->
+			<!--<div class=" imag" image-lazy-background-image="true" image-lazy-src="{{item.store_img_two | baseUrl}}">-->
+				<!--收藏按钮-->
+				<!--<div style="" on-tap="collectClick($event,item)">
+					<div class="collect-btn" ng-class="{true:'collect-btn-press',flase:''}[item.iscollection=='Y']" on-tap="collectClick($event,item)"></div>
+				</div>-->
+
+			<!--</div>-->
+			<!--右侧内容-->
+			<!--<div class="ub-f1 store-order-line">-->
+				<!--店面名称和收藏图标布局-->
+				<!--<div class="ub">-->
+					<!--店面名称-->
+					<!--<div class="ub-f1 store-name-info f-s-28" ng-bind="item.sname"></div>-->
+
+				<!--</div>-->
+				<!--距离-->
+				<!--<div class="c-e6 f-s-20 distance">{{item.store_dis&&item.store_dis!=''?item.store_dis+" ":'0 '}}km</div>-->
+				<!--星星-->
+				<!--<div class="commont-start">
+					<li style="width:{{(item.grade | star) * 20;}}%"></li>
+				</div>-->
+
+				<!--分割线-->
+
+				<!--<div class="dividing-line" ng-if="$index!=items.length-1"></div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--最后一个item的分割线-->
+		
+		<!--首页的梯形-->
+		<div class="list-item" ng-repeat="item in items" on-tap="goDetail(item,$index)">
+            <div ng-if="($index+1)%2 != 0" class="list-class">
+                <div class="hot-list-img" image-lazy-background-image="true" image-lazy-src="{{item.store_img_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+                <div class="hot-right-content">
+                    <!--<div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>-->
+                    <div class="ub-f1 m-t-5 c-3 line-ellipsis-1">
+                        <div class=" f-s-28">{{item.sname}}</div>
+                    </div>
+                    <div class="content-times ub-f1 c-9 f-s-20 m-t-5">
+                        {{item.store_dis&&item.store_dis!=''?item.store_dis+" ":'0 '}}km
+                    </div>
+                    <div class="c-e6 line-ellipsis-2 f-s-22">
+                    	{{item.activity_content}}
+                    </div>
+                    <div class="commont-start">
+						<li style="width:{{(item.grade | star) * 20;}}%"></li>
+					</div>
+                </div>
+            </div>
+            <div ng-if="($index+1)%2 == 0" class="list-class">
+                <div class="hot-right-content-even">
+                    <!--<div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>-->
+                    <div class="ub-f1 line-ellipsis-1" style="margin-top: 5px;">
+                        <div class="c-3 f-s-28">{{item.sname}}</div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20" style="margin-top: 5px;">
+                        {{item.store_dis&&item.store_dis!=''?item.store_dis+" ":'0 '}}km
+                    </div>
+                    <div class="c-e6 line-ellipsis-2 f-s-22">
+                    	{{item.activity_content}}
+                    </div>
+                    <div class="commont-start">
+						<li style="width:{{(item.grade | star) * 20;}}%"></li>
+					</div>
+                </div>
+                <div class="hot-list-img-even" image-lazy-background-image="true" image-lazy-src="{{item.store_img_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+            </div>
+        </div>
+		
+		
+		<!--<div class="dividing-line-long" ng-if="items&&items.length>0"></div>-->
+		<!--</ion-item>-->
+		<!--上拉加载-->
+		<ion-infinite-scroll ng-class="{'u-loading-ion': isShowLoadMore}" ng-if="isShowLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+		<!--</ion-list>-->
+	</ion-content>
+
+</ion-view>

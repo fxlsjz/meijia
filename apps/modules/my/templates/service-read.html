@@ -1,0 +1,26 @@
+<ion-view class="serviceRead" ng-controller="ServiceReadCtrl">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">新增地址</h1>
+        <h1 class="bar-title delete f-s-30" >保存</h1>
+    </ion-header-bar>
+    <ion-content>
+		<div class=" bg-color-f">
+			<div class="kuai">
+				<p>到家地址</p>
+				<p class="addrsBtn"></p>
+				<input type="text" />
+			</div>
+		</div>
+		<div class="bg-color-f timses">
+			<div class="lll">
+				<p>详细地址</p>
+				<textarea type="text" placeholder="请输入您的详细地址，例如街道名称，名牌号码，和房间号等信息"></textarea>
+			</div>
+		</div>
+    </ion-content>
+    
+   <div class="f-log-btn">
+		<span class="button button-block f-btn-submit f-s-30" on-tap="baocundizhi()">保存并使用</span>
+	</div>
+</ion-view>

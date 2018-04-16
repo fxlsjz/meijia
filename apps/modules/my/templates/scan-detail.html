@@ -1,0 +1,15 @@
+<ion-view>
+	<!--头部-->
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="scanGoback()"></div>
+			<h1 class="bar-title ub-f1">防伪验证</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<ion-content class="scandet" lazy-scroll >
+			<i image-lazy-src="{{item.pimg | baseUrl}}" image-lazy-background-image="true" class="background-img u-img" ratio-scale="2:1"></i>
+			<div class="p-l-20 p-r-20 lineh f-s-30 m-l-30"><span ng-bind="item.antifake_info"></span></div>
+			<div class="product_details">
+				<p><span class="m-l-30 c-3" ng-bind="item.describe"></span></p>
+			</div>
+	</ion-content>
+</ion-view>

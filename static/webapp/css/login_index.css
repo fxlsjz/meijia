@@ -1,0 +1,151 @@
+html{
+	height:100%;
+}
+.icon-login {
+	color: white;
+	/* text-shadow: 0 -1px 0 rgba(0, 0, 0, .25); */
+	background-color: #EC0000;
+}
+.login-button{
+	width:80%;
+}
+.login-button a {
+	
+	display: inline-block;
+	width: 100%;
+	height: 2.9em;
+	line-height: 2.9em;
+}
+.login-blank{
+	height:6em;
+}
+.defaultlogo{
+	background:url(../images/default.png);
+}
+.logbox > div{
+	border:1px solid #FBEDEE;
+}
+.loginput{
+	height:8.8em;
+}
+.logbox{
+	width:90%;
+}
+.login-content{
+	width:100%;
+	height:100%;
+	background:url(../images/background/bg_index.png) no-repeat;
+	background-size:100%;
+}
+.login-logo{
+	width:85%;
+	height:7.11em;
+}
+.logo-icon img{
+	/* background:url(../images/icon/logo_index.png) no-repeat; */
+	width:11.27em;
+}
+.mgt10{
+	margin-top:.4em;
+}
+.login-tm-name{
+	width:2.5em;
+	height:2em;
+	background:url(../images/icon/icon_user.png) no-repeat center;
+	background-size:auto 80%;
+}
+.login-tm-psw{
+	width:2.5em;
+	height:2em;
+	background:url(../images/icon/icon_pwd.png) no-repeat center;
+	background-size:auto 80%;
+}
+.login-tm1,.login-tm2{
+	height:3em;
+	line-height:3em;
+	background-color:#FFFFFF;
+	border:1px solid #E2E2E2;
+}
+.btn-link li img{
+	width:3.3em;
+	height:3.3em;
+}
+.logintip{
+	width:90%;
+	height:6em;
+	margin-top:0.56em;
+}
+.button-return{
+	position:absolute;
+	width:3em;
+	height:100%;
+	background:url(../images/button/btn-return.png) no-repeat center;
+	background-size:auto 40%;
+	
+}
+.bg-white{
+	background-color:#FFFFFF;
+}
+.updpwd-content{
+	width:100%;
+	height:11em;
+}
+.upduname-content,.updsign-content,.updnum-content{
+	width:100%;
+}
+.updpwd-content ul,.upduname-content ul,.updsign-content ul,.updnum-content ul{
+	width:100%;
+	height:auto;
+}
+.updpwd-content ul li,.updnum-content ul li{
+	border:1px solid #BFBFBF;
+}
+.upduname-content ul li,.updsign-content ul li{
+	border:1px solid #E2E2E2;
+}
+.updpwd-content ul li,.upduname-content ul li,.updnum-content ul li{
+	height:2.6em;
+	line-height:2.6em;
+}
+.updpwd-tit{
+	width:5.7em;
+	background-color:#D9D9D9;
+	border-right:1px solid #BFBFBF;
+}
+#submit{
+	height:2.4em;
+}
+.margin-t-3{
+	margin-top:.3em;
+}
+.margin-t-30{
+	margin-top:3em;
+}
+.margin-top1{
+	margin-top:1.5em;
+}
+.btn-check{
+	/*width:6.58em;*/
+	padding-left:.5em;
+	padding-right:.5em;
+	background-color:#E50012;
+	color:#FFFFFF;
+	border-left:1px solid #BFBFBF;
+}
+.checkflag{
+	width:3.5em;
+	background-color:#FFFFFF;
+}
+.checkflag img{
+	width:1.5em;
+}
+.login-auto{
+	background-image:url(../images/icon/uncheck.png);
+	width:1.3em;
+	height:1.3em;
+}
+.login-auto_checked{
+	background-image:url(../images/icon/check.png);
+	width:1.3em;
+	height:1.3em;
+}

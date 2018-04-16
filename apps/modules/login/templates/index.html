@@ -1,0 +1,16 @@
+<ion-view>
+	<ion-content class="login">
+		<div class="ub tel-content">
+			<input class="ub-f1 tel" type="tel" placeholder="手机号" ng-class="{active:isLine == true}" ng-focus="isLine=true" ng-blur="isLine = false" ng-model="phone.key" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+			<div class="check-code" 　 ng-bind="verCon" on-tap="verification()"></div>
+		</div>
+		<input class="text" type="tel" placeholder="验证码" ng-class="{active:isLine1 == true}" ng-focus="isLine1=true" ng-blur="isLine1 = false" ng-model="verifiCode.key" onkeyup="this.value=this.value.replace(/[^\d]/g,'');" />
+		<div class="agreement">
+			<i class="agree" ng-class="{active:isSelected}" on-tap="agreement()"></i>
+			<a class="protocol-btn" ng-class="{active:!isSelected}" ng-href="/agreement">同意《Fashion ME》用户使用协议</a>
+		</div>
+		<div class="login-btn" ng-class="{active:isSelected == false}" on-tap="login()">登&nbsp;录</div>
+		<div class="wx-login-btn" on-tap="loginAuthor()">微信授权登录</div>
+
+	</ion-content>
+</ion-view>

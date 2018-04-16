@@ -1,0 +1,344 @@
+@charset "utf-8";
+.technician-index{
+
+}
+.technician-index .bar-header {
+	width: 100%;
+	height: 4.75rem;
+	background-color: #ffffff;
+	position: relative;
+	border-bottom: 0 solid #ffffff;
+}
+.technician-index .search-title{
+	font-size: 2rem;
+	padding: 15px;
+	color: #000000;
+}
+
+.technician-index .bar-title {
+	position: relative;
+}
+
+.technician-index .search {
+	position: absolute;
+	top: 1.2rem;
+	right: 0;
+}
+
+.technician-index .tabs {
+	width: 100%;
+	background: #FFFFFF;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+}
+
+.technician-index .tabs .active {
+	border-bottom: 2px solid #DF3680;
+}
+
+
+/*列表图片*/
+.technician-index .technician-list-img {
+	display: inline-block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	border-radius: 50%;
+}
+
+.technician-index .technician-content {
+	top: 8.15rem;
+}
+
+.technician-index .has-header {
+	top: 9rem;
+	bottom: 0;
+	background-color: #ffffff;
+}
+
+/*列表item*/
+
+.technician-index .list {
+	line-height: 100%;
+	background: #fff;
+	margin-bottom: 0;
+	height: 8rem;
+}
+
+.technician-index .h4rem {
+	height: 4rem;
+}
+
+
+/*item右侧内容*/
+
+.technician-index .list .list-right {
+	height: 6rem;
+	margin-top: 1rem;
+	margin-right: 1.5rem;
+	position: relative;
+}
+
+
+/*列表距离*/
+
+.technician-index .list .list-right .technician-list-distance {
+	position: absolute;
+	top: 50%;
+	line-height: 1.4rem;
+	margin-top: -0.7rem;
+}
+
+.technician-index .list .list-right .newKm {
+	margin-top: 0;
+}
+
+
+/*列表最早可约时间布局*/
+
+.technician-index .list .list-right .technician-list-date {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+
+/*列表分割线*/
+
+.technician-index .list .list-right .technician-list-ling {
+	height: 1px;
+	background-color: #DEDEDE;
+	position: absolute;
+	bottom: -1rem;
+	width: 100%;
+	z-index: 99;
+}
+
+.technician-index .u-bottom-footer {
+	height: 4rem;
+	line-height: 4rem;
+	position: fixed;
+	width: 100%;
+	bottom: 5.2rem;
+	background: #DF3680;
+	color: #fff;
+}
+
+.technician-index .search {
+	top: 0 !important;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	/* margin: 0.75rem 0; */
+	background-color: #fff;
+	border-radius: 16px;
+	position: relative;
+}
+
+.technician-index .search-icon {
+	width: 1.15rem;
+	height: 1.35rem;
+	position: absolute;
+	top: 0.88rem;
+	left: 1rem;
+	background-image: url(../../../images/technician/dp_sousuo_icon.png);
+	background-size: cover;
+}
+
+.technician-index input[type=text] {
+	padding-left: 2.6rem;
+	height: 3rem;
+	line-height: 3rem;
+	border-radius: 8px;
+	width: 100%;
+	background-color: #dedede;
+}
+.technician-index .wrap-search {
+	height: 3rem;
+	line-height: 3rem;
+	background-color: rgb(245,245,245);
+	border-radius: 8px;
+	position: relative;
+	margin-right: 1.25rem;
+}
+.technician-index .search-btn {
+	margin-right: 1.5rem;
+	width: 1.15rem;
+	height: 1.35rem;
+	background-size: cover;
+	background-image: url(../../../images/technician/dp_sousuo_btn.png);
+
+}
+
+.technician-index .search-btn.active{
+	padding: 0 2rem 0 1rem;
+	width: 2rem;
+	height: 4.3rem;
+	background-image: url(../../../images/technician/dp_sousuo_btn-pressed.png);
+
+}
+.technician-index .nickname {
+	height: 2rem;
+	line-height: 2rem;
+}
+
+.mask {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 2;
+	top: 3.75rem
+}
+
+.mask .bottom {
+	color: #333;
+	border-radius: 5px;
+	margin: auto;
+	background: #fff;
+	width: 9.5rem;
+	height: 3.3rem;
+	line-height: 3.3rem;
+	text-align: center;
+	position: relative;
+}
+
+.mask .bottom .triangle {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	position: absolute;
+	top: -8px;
+	right: 5px;
+}
+
+
+/*双人选技师*/
+
+.technician-index .classify {
+	text-align: center;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	border-bottom: 1px solid #DEDEDE;
+	margin-bottom: .1rem;
+}
+
+.technician-index .classify span {
+	display: inline-block;
+}
+
+.technician-index .classify .active {
+	border-bottom: 2px solid #DF3680;
+	color: #DF3680;
+}
+
+.technician-index .technician-two-content {
+	top: 11.75rem;
+}
+
+.technician-index .list .noselect {
+	border: 1px solid #DF3680;
+	background: #fff;
+	border-radius: 10px;
+	padding: .1rem 1rem;
+	color: #DF3680;
+}
+
+.technician-index .list .select {
+	border: 1px solid #DF3680;
+	background: #DF3680;
+	border-radius: 10px;
+	padding: .1rem 1rem;
+	color: #fff;
+}
+
+/*美甲样式*/
+.technician-index .left-img{
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+	width: 7.95rem;
+	height: 1.25rem;
+	background-size: cover;
+	background-image: url(../../../images/technician/fashion-me.png);
+}
+.technician-index .list-class{
+	width: calc(100%/3.0);
+	height: calc(100%/3.0 + 2rem);
+	padding: 0 1.5rem 0.5rem 1.5rem;
+	position: relative;
+	margin-bottom: 2rem;
+}
+.technician-index .list-collect{
+	position: absolute;
+	top:calc(50% - 3.5rem);
+	right:1.5rem;
+	width: 2.3rem;
+	height: 2.3rem;
+}
+.technician-index .technician-list-select{
+	border: 1px solid #DF3680;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	width: 5rem;
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 0.5rem;
+	background-color: white;
+	color: #DF3680;
+	margin-left: calc((100% - 5rem)/2.0);
+	font-size: 1.1rem;
+}
+.technician-index .u-cancel-collect {
+	background: url(../../../images/technician/collect_pressed.png) no-repeat center;
+	width: 2.3rem;
+	height: 2.3rem;
+	display: inline-block;
+	background-size: 100%;
+}
+.technician-index .u-collect {
+	background: url(../../../images/technician/collect.png) no-repeat center;
+	width: 2.3rem;
+	height: 2.3rem;
+	display: inline-block;
+	background-size: 100%;
+
+}
+
+/*切换+滚动*/
+
+.technician-index .slides {
+	width: 100%;
+}
+
+.technician-index .tsb-hscroll.scroll-view {
+	height: 100%;
+}
+
+.technician-index .tsb-hscroll.scroll-view .scroll {
+	display: -webkit-box;
+}
+
+.technician-index .tag {
+	font-size: 1.2rem;
+	color: #999999;
+}
+
+.technician-index .tag.active {
+	font-size: 1.2rem;
+	color: #DF3680;
+}
+/*标签上的下划线*/
+.technician-index .slides .scroll div .select-line{
+	display: block;
+	width: 13px;
+	border-bottom: 2px solid #fff;
+	margin: 0 auto;
+}
+.technician-index .slides .scroll div .select-line.active{
+	display: block;
+	width: 13px;
+	border-bottom: 2px solid #df3680;
+	margin: 0 auto;
+}

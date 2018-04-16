@@ -1,0 +1,27 @@
+<!--订单列表（020模式下底部导航栏的订单列表）-->
+
+<ion-view class="order-index">
+    <div class="tabbed-slidebox">
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp ub ">
+                <div ng-if="isShopO2O" class="go-back-btn go-back-btn-white h44 disable-user-behavior"
+                     on-tap="onBackPressed()"></div>
+                <ion-scroll direction="false" paging="false" class="tsb-hscroll ub-f1">
+                    <div class="sss ub ub-pe title-position">
+                        <p ng-class="{true:'dao',false:'dao1'}[isLeft]" on-tap="categoryOrder(0, false)"><i>进行中</i></p>
+                        <p ng-class="{true:'lai',false:'lai1'}[!isLeft]" on-tap="categoryOrder(1, false)"><i>历史订单</i></p>
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+    </div>
+
+    <ion-content class="t-4" lazy-scroll delegate-handle="orderListScroll">
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <div ng-include="'apps/modules/order/templates/order-list.html'"></div>
+        <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                             distance="1%" immediate-check="false"
+                             on-infinite="loadMoreList()"></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

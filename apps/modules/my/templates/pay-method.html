@@ -1,0 +1,52 @@
+<!--支付界面-->
+<ion-view class="payMethod">
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="backbefore()"></div>
+		<h1 class="bar-title ub-f1">支付</h1>
+		<div class="header-right"></div>
+	</ion-header-bar>-->
+	<ion-content class="payMethod ">
+		<div class="bg-color-f money-all" ng-if="isShop">
+			<div class="ub shop-m">
+				<div class="ub-f1 f-s-28 c-3">充值金额</div>
+				<div class="ub-f1 tx-r c-e6">¥<i ng-bind="actualprice"></i></div>
+			</div>
+			<div class="ub with-m">
+				<div class="ub-f1 f-s-28 c-3">应付金额</div>
+				<div class="ub-f1 tx-r c-e6">¥<i ng-bind="actualprice"></i></div>
+			</div>
+		</div>
+		<div class="bg-color-f money-all" ng-if="!isShop">
+			<div class="ub shop-m">
+				<div class="ub-f1 f-s-28 c-3">应付金额</div>
+				<div class="ub-f1 tx-r c-e6">¥<i ng-bind="actualprice"></i></div>
+			</div>
+			<div class="ub with-m" ng-if="isShow">
+				<div class="ub-f1 f-s-28 c-3">账户余额</div>
+				<div class="ub-f1 tx-r c-e6">¥<i ng-bind="balance"></i></div>
+			</div>
+		</div>
+		<div class="pay-method bg-color-f m-t-10">
+			<div class="ub pay-balance" ng-if="isShow" on-tap="pays(1)">
+				<div class="balance-icon"></div>
+				<div class="ub-f1 f-s-24 c-3">&nbsp;余额支付
+					<!--<i class="c-e6">--></div>
+				<div class="umh5"><span class="check-box-ion" ng-style="balNo" ng-class="{true:'active',false:''}[pay==1]"></span></div>
+			</div>
+			<div class="ub pay-wechat" on-tap="pays(2)">
+				<div class="wechat-icon"></div>
+				<div class="ub-f1 f-s-24 c-3">微信支付</div>
+				<div class="umh5"><span class="check-box-ion" ng-class="{true:'active',false:''}[pay==2]"></span></div>
+			</div>
+		</div>
+
+	</ion-content>
+	<div id="btnBottom" class="f-log-btn" style="height: 5.4rem;">
+		<div class="qb-btn-submit f-s-30 anNiu" on-tap="recharge()">立即充值</div>
+		<!--button button-block-->
+	</div>
+	<div id="btnBottom" class="f-log-btn ub">
+		<div class="f-btn-submit ub-f1 text-center" ng-if="isShowT == 1" on-tap="quickPay()" ng-style="btnclick">确认支付(<i ng-bind="TimeFormat" ng-model="TimeFormat"></i>)</div>
+		<div class="f-btn-submit ub-f1 text-center" on-tap="quickPay()" ng-if="isShowT == 2">确认支付</div>
+	</div>
+</ion-view>

@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteBase /
+
+
+RewriteCond %{REQUEST_URI} ^/(app|wechat|site|index)
+RewriteRule  ^(app|wechat|site|index)/(.*)$  /index.php?r=$1/$2&%{QUERY_STRING}  [NC,NE,L]
+
+
+#RewriteRule  ^(.*)$  /index.php?r=$1
+RewriteCond %{REQUEST_URI} ^/index.php
+
+RewriteRule  ^index.php/(.*)/(.*)$  /index.php?r=$1/$2&%{QUERY_STRING}  [NC,NE,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+
+RewriteRule ^(.*)$      /#$1&%{QUERY_STRING}
+#RewriteRule . index.php
+#RewriteRule . index.php  [NC]
+
+
+#RewriteRule ^share/(.*)$      /$1  [NC,R,NE]

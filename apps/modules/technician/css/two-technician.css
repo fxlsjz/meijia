@@ -1,0 +1,211 @@
+@charset "utf-8";
+
+/*双人选技师*/
+.technician-two{
+
+}
+
+/*给我选布局*/
+.technician-two .bar-header {
+	width: 100%;
+	height: 4.75rem;
+	background-color: #ffffff;
+	position: relative;
+	border-bottom: 0 solid #ffffff;
+}
+.technician-two .geiwoxuan {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 3.5rem;
+	line-height: 3.5rem;
+}
+
+.technician-two .left-img{
+	margin-left: 1.5rem;
+	margin-right: 1rem;
+	width: 7.95rem;
+	height: 1.25rem;
+	background-size: cover;
+	background-image: url(../../../images/technician/fashion-me.png);
+}
+/*搜索框*/
+.technician-two .wrap-search {
+	height: 3rem;
+	line-height: 3rem;
+	background-color: rgb(245,245,245);
+	border-radius: 8px;
+	position: relative;
+	margin-right: 1.25rem;
+}
+
+.technician-two input[type=text] {
+	padding-left: 2.6rem;
+	height: 3rem;
+	line-height: 3rem;
+	border-radius: 8px;
+	width: 100%;
+	background-color: #dedede;
+}
+/*搜索按钮*/
+.technician-two .search-btn {
+	margin-right: 1.5rem;
+	width: 1.15rem;
+	height: 1.35rem;
+	background-size: cover;
+	background-image: url(../../../images/technician/dp_sousuo_btn.png);
+
+}
+.technician-two .search-icon {
+	width: 1.15rem;
+	height: 1.35rem;
+	position: absolute;
+	top: 0.88rem;
+	left: 1rem;
+	background-image: url(../../../images/technician/dp_sousuo_icon.png);
+	background-size: cover;
+}
+
+/*给我选给他选布局*/
+
+.technician-two .classify {
+	text-align: center;
+	height: 3.5rem;
+	border-bottom: 1px solid #DEDEDE;
+	box-sizing: border-box;
+}
+
+
+/*给我选给他选选中样式*/
+
+.technician-two .select {
+	border-bottom: 2px solid #DF3680;
+	color: #df3680;
+	background-color: #ffffff;
+}
+
+
+/*列表*/
+
+.technician-two .listcontent {
+	top: 12.75rem;
+	margin-top: 0;
+	background-color: #ffffff;
+}
+
+
+/*技师列表item*/
+
+.technician-two .technician-list-item {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.technician-two .list-class{
+	float: left;
+	width: calc(100%/3.0);
+	height: calc(100%/3.0 + 2rem);
+	padding: 0 1.5rem 0.5rem 1.5rem;
+	position: relative;
+	margin-bottom: 2rem;
+}
+
+/*技师头像*/
+
+.technician-two .technician-list-img {
+	display: inline-block;
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+	border-radius: 50%;
+}
+/*技师内容*/
+.technician-two .list-collect{
+	position: absolute;
+	top:calc(50% - 3.5rem);
+	right:1.5rem;
+	width: 2.3rem;
+	height: 2.3rem;
+}
+.technician-two .technician-list-select{
+	border: 1px solid #DF3680;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	width: 5rem;
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 0.5rem;
+	background-color: white;
+	color: #DF3680;
+	margin-left: calc((100% - 5rem)/2.0);
+	font-size: 1.1rem;
+}
+.technician-two .u-cancel-collect {
+	background: url(../../../images/technician/collect_pressed.png) no-repeat center;
+	width: 2.3rem;
+	height: 2.3rem;
+	display: inline-block;
+	background-size: 100%;
+}
+.technician-two .u-collect {
+	background: url(../../../images/technician/collect.png) no-repeat center;
+	width: 2.3rem;
+	height: 2.3rem;
+	display: inline-block;
+	background-size: 100%;
+
+}
+
+/*技师列表技师标签*/
+
+.technician-two .technician-list-tag {
+	position: absolute;
+	line-height: 1.4rem;
+	height: 1.4rem;
+	top: 50%;
+	margin-top: -0.7rem;
+}
+
+
+/*技师列表已服务次数*/
+
+.technician-two .technician-list-service-num {
+	position: absolute;
+	right: 1.5rem;
+	bottom: 0;
+}
+
+
+/*技师列表选择技师按钮*/
+
+.technician-two .technician-list-select {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border: 1px solid #DF3680;
+	line-height: 1.8rem;
+	height: 2rem;
+	width: 5rem;
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 2rem;
+	background-color: white;
+	color: #DF3680;
+}
+
+
+/*技师列表取消选择技师按钮*/
+
+.technician-two .technician-list-clear-select {
+	background-color: #DF3680;
+	color: white;
+}
+
+
+/*分割线*/
+
+.technician-two .dividing-line {
+	height: 1px;
+	width: 100%;
+	background-color: #DEDEDE;
+	position: absolute;
+	bottom: -1rem;
+}

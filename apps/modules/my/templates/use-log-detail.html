@@ -1,0 +1,119 @@
+<ion-view class="ticket-order">
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="backBefore()"></div>
+		<h1 class="bar-title ub-f1">预约详情</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content id='mainContent' style='bottom: 5.4rem;' lazy-scroll>
+		<div class="ticket-order-con">
+			<ul class="m-b-10">
+				<!--<li class="ub">
+					<span>预约编号</span>
+					<div class="ub-f1">
+						<div ng-bind="tickerInfo.orderno"></div>
+					</div>
+					<div ng-bind="!tickerInfo.dpostate ? '' : appValues[tickerInfo.dpostate].dic_desc"></div>
+				</li>-->
+				<li class="ub">
+					<span>联系人</span>
+					<div class="ub-f1 text-right" >
+						<div ng-bind="tickerInfo.name"></div>
+					</div>
+				</li>
+				<!--/店面地址-->
+				<li class="ub">
+					<span>联系电话</span>
+					<div class="ub-f1 text-right">
+						<div ng-bind="tickerInfo.phone"></div>
+					</div>
+
+				</li>
+				<li class="ub heightAuto ">
+					<span>{{serviceText}}店面</span>
+					<div class="ub-f1 text-right">
+						<div class="p-r-20" ng-bind="tickerInfo.address"></div>
+					</div>
+				</li>
+				<li class="ub heightAuto " ng-class="{'order-time':tickerInfo.service_list.length > 0}">
+					<span>预约时间</span>
+					<div class="ub-f1 text-right">
+						<div class="p-r-20" ng-bind="tickerInfo.order_stime"></div>
+					</div>
+				</li>
+				<li class="ub heightAuto " ng-class="{'order-time':tickerInfo.service_list.length > 0}">
+					<span>{{technicianText}}</span>
+					<div class="ub-f1 text-right">
+						<div class="p-r-20" ng-bind="tickerInfo.beautician.nickname"></div>
+					</div>
+				</li>
+				<li class="ub heightAuto " ng-class="{'order-time':tickerInfo.service_list.length > 0}">
+					<span>{{serviceText}}项目</span>
+					<div class="ub-f1 text-right">
+						<div class="p-r-20" ng-bind="tickerInfo.service_name | cut:true:10:' ...'"></div>
+					</div>
+				</li>
+			</ul>
+			<div class='uba b-gra c-wh us uc-a money order-detail-list'>
+				<!--<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4'>
+					<div class='ub-f1 ut-s'>{{technicianText}}</div>
+					<div class='res8 photo m-r-1'></div>
+					<div class='tx-r t-blu' ng-bind="tickerInfo.bname"></div>
+				</div>
+				<div class=' ub ubb b-gra t-bla ub-ac lis umh4'>
+					<div class='ub-f1 ut-s'>{{serviceText}}项目</div>
+					<div class='tx-r t-blu'>
+						<span ng-bind="tickerInfo.service_name | cut:true:10:' ...'"></span>
+					</div>
+				</div>-->
+				<!--<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4' ng-if="showOtherService">
+					<div class='ub-f1 ut-s'>附加{{serviceText}}</div>
+					<!--<div class='lis-sw ub-img'></div>-->
+				<!--</div>-->
+			</div>
+			<div class="serlist-con">
+				<div class="ub serlists" ng-repeat="item in tickerInfo.service_list" ng-init="serNum = selectedData.length">
+					<div class="background-img ticket-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+					<div class="ub-f1 serlists-item">
+						<h2 class="f-s-20 line-ellipsis-1" ng-bind="item.iname"></h2>
+						<div class="f-s-20 ub time">
+							<div class="ub-f1">
+								<i ng-bind="item.iusetime" class="pl12"></i>分钟
+							</div>
+							<span class="c-e6"><i class="f-s-28">¥</i><i class="f-s-34" ng-bind="item.nowprice"></i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='uba b-gra c-wh us uc-a '>
+				<!--<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4' ng-class="{'order-time':tickerInfo.service_list.length > 0}">
+					<div class="ub-f1 ut-s">预约时间</div>
+					<div class='tx-r t-blu' ng-bind="tickerInfo.order_stime"></div>
+				</div>-->
+				<div class='uc-b ub t-bla ub-ac lis m-t-10 heightAuto'>
+					<div class='ut-s'>其他需求</div>
+					<div class='ub-f1' style="margin-left: 7rem;margin-right: 1rem;" ng-bind="tickerInfo.remark"></div>
+				</div>
+			</div>
+			<div class='uba b-gra c-wh us uc-a m-t-10' ng-if="tickerInfo.service_list">
+				<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 '>
+					<div class="ub-f1 ut-s">{{serviceText}}金额</div>
+					<div class='tx-r t-blu ulev-1 c-e6'>
+						¥<span class="f-s-30" ng-bind="tickerInfo.orderprice"></span>
+					</div>
+					<!--<div class='res8 lis-sw ub-img'></div>-->
+				</div>
+				<div class='uc-b ub t-bla ub-ac lis umh4'>
+					<div class='ub-f1 ut-s'>实付金额</div>
+					<div class="tx-r t-blu ulev-1 c-e6">
+						¥<span class="f-s-40" ng-bind="tickerInfo.actualprice"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	<div class="f-log-btn ub">
+			<div class="f-btn-submit ub-f1 text-center" ng-if="tickerInfo.cancel_able == 'Y'" ng-class="{true:'bg-c-f7',fasle:''}[isColor == 'true']" on-tap="cancelOrder()">取消</div>
+			<div class="f-btn-submit ub-f1 text-center" ng-if="tickerInfo.pay_surtime > 0 " ng-style="btnclick" on-tap="topay()" ng-bind="paytext"></div>
+
+	</div>
+</ion-view>

@@ -1,0 +1,83 @@
+<!--确认订单-->
+
+<ion-view class="confirm-order">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goBackSelf()"></div>
+		<h1 class="bar-title ub-f1">确认订单</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<ion-content id="body-view" class="ticket-order ticketOrderNew" lazy-scroll>
+		<div class="ticket-order-con">
+			<ul class="m-b-10">
+				<li class="ub">
+					<span>联系人</span>
+					<div class="ub-f1 line-ellipsis-1">
+						<input type="text" ng-model="orderInfo.linkname" />
+					</div>
+				</li>
+				<!--/店面地址-->
+				<li class="ub">
+					<span>联系电话</span>
+					<div class="ub-f1">
+						<input type="tel" ng-model="orderInfo.linktel" />
+					</div>
+
+				</li>
+				<li class="ub" on-tap="selectAddress()">
+					<span>{{serviceText}}地址</span>
+					<div class="ub-f1 c-e6">
+						<div class="line-ellipsis-1" ng-bind="orderInfo.serAddress"></div>
+					</div>
+				</li>
+
+				<li class="ub">
+					<span>详细地址</span>
+					<div class="ub-f1 line-ellipsis-1">
+						<input type="text" ng-model="orderInfo.detailaddres" />
+					</div>
+				</li>
+			</ul>
+			<div class="serlist-con">
+				<div class="ser-pay">购买{{serviceText}}</div>
+				<div class="ub serlists" ng-repeat="item in selectedData track by $index" ng-init="serNum = selectedData.length">
+					<div class="background-img ticket-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+					<div class="ub-f1 serlists-item">
+						<h2 class="f-s-26 c-3 line-ellipsis-1" ng-bind="item.iname"></h2>
+						<div class="f-s-20 ub time">
+							<div class="ub-f1">
+								<i class="time-ion time-ionNew"></i>
+								<i ng-bind="item.iusetime" class="pl12"></i>分钟
+							</div>
+							<span class="f-s-26 c-e6">¥<i ng-bind="item.nowprice"></i></span>
+						</div>
+						<span class="delser" on-tap="deleItem($index,item)" ng-style="isHidden" ng-if="serNum > 1"></span>
+					</div>
+				</div>
+			</div>
+			<div class='uba b-gra c-wh us uc-a money'>
+				<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 order-time' on-tap="selService(item)">
+					<div class="sertime-icon confirm-icon-pub"></div>
+					<div class='ub-f1 ut-s'>{{serviceText}}时间</div>
+					<div class='tx-r t-blu ulev-1 m-r-1 c-e6 line-ellipsis-1' ng-bind="serTime"></div>
+					<div class='res8 lis-sw ub-img'></div>
+				</div>
+				<div class='uc-t ubb ub b-gra t-bla ub-ac lis umh4 noline' on-tap="selTeach()">
+					<div class="teacher-icon confirm-icon-pub"></div>
+					<div class='ub-f1 ut-s'>{{technicianText}}</div>
+					<div class='res8 photo m-r-1' ng-if="photo_tow" image-lazy-background-image="true" image-lazy-src="{{photo_tow | baseUrl}}"></div>
+					<div class='tx-r t-blu ulev-1 m-r-1 c-e6 line-ellipsis-1' ng-bind="nickname | cut:true:10:' ...'"></div>
+					<div class='res8 lis-sw ub-img'></div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+	<div id="btnBottom" class="service-footer ub c-f bg-color-r">
+		<div class="ub-f1 footer-in">
+			合计： ¥
+			<span ng-bind="aprice  | number:1"></span>
+			<span class="time-ion"></span>
+			<span ng-bind="atime"></span>分钟
+		</div>
+		<div class="next" on-tap="toPay()">去下单</div>
+	</div>
+</ion-view>

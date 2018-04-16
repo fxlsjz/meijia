@@ -1,0 +1,77 @@
+<ion-view>
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior noImg" on-tap="leave()">取消</div>
+        <h1 class="bar-title ub-f1">商品评价</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content class="assess" lazy-scroll>
+        <!--商品信息-->
+        <div class="top ub bg-color-f">
+            <span class="u-img background-img u-imgTwo" image-lazy-background-image="true"
+                  image-lazy-src="{{(evainfo.pimg.split(',')[0]) | baseUrl}}" ></span>
+            <div class="right-details ub-f1">
+                <div ng-bind="evainfo.product_name" class="f-s-28 c-3 line-ellipsis-1"></div>
+                <div class="f-s-20 c-6 line-ellipsis-1">规格：<i ng-bind="evainfo.intro"></i></div>
+                <div class="f-s-20 c-6">数量：<i ng-bind="evainfo.num"></i></div>
+                <div class="ub padding0">
+                    <span class="f-s-30 c-e6 span-block">¥<span ng-bind="evainfo.price"></span></span>
+                    <span ng-bind='time * 1000 | date:"yyyy-MM-dd HH:mm"' class="span-block ub-f1 c-80 u-data "></span>
+                </div>
+            </div>
+        </div>
+        <!--星级-->
+        <div class="u-stars-box m-t-10">
+            <div class="ub ub-pc star-box ub-ac">
+                <div class="star-rating ">
+                    <li style="width: {{mark* 20}}%"></li>
+                    <div class="empty-box ub">
+                        <div ng-repeat="a in [1,2,3,4,5]" class="ub-f1 " on-tap="courseClick($index+1)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input id="Img" type="file" name="file" ng-model="chk" onchange="angular.element(this).scope().upload(this)"
+               style="display: none" accept="image/*" multiple="multiple">
+        <!--总体评价-->
+        <div class="assess-tab bg-color-f">
+            <span class="comment-unselected" on-tap="evatype(1)" ng-class="{'comment-selected': type == 1}">好评</span>
+            <span class="comment-unselected" on-tap="evatype(2)" ng-class="{'comment-selected': type == 2}">中评</span>
+            <span class="comment-unselected" on-tap="evatype(3)" ng-class="{'comment-selected': type == 3}">差评</span>
+        </div>
+        <div class="content">
+            <div class="content-in">
+                <div class="evaluate">
+                    <div class='s-left-top'></div>
+                    <div class='s-right-bottom'></div>
+                    <textarea ng-keydown="textlength()" class="f-s-26 c-6 u-text" ng-model="inut.text"
+                              placeholder="写下购买体会和使用感受来帮助其他伙伴"></textarea>
+
+                    <div class="img-box">
+                        <div class="img-content" ng-repeat="img in thumbnail track by $index" >
+                            <span class="delete" on-tap="remove($index);$event.stopPropagation();"></span>
+                            <li class="background-img " image-lazy-background-image="true" image-lazy-src="{{img.src}}"></li>
+                            <!--<li class="background-img" style="background-image: url('{{img.src}}')" image-preview="{{thumbnail}}" multiple="true" index="{{$index}}"></li>-->
+                        </div>
+                        <div class="add-img" ratio-scale="1:1" on-tap="uploadImg()" ng-hide="imgs.length >= 6">
+
+                        </div>
+                    </div>
+                    <div class="ub">
+                        <div class="ub-f1 f-s-24 c-80">添加照片（最多6张）</div>
+                        <div ng-if="inut.text.length < 10" class="f-s-24 c-80">字数不少于10个字</div>
+                        <div ng-if="inut.text.length >= 10" class="f-s-24 c-80"><i ng-bind="inut.text.length"></i>/500字
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--是否匿名-->
+            <div class="f-s-26 c-4c u-anonymous" on-tap="anSwitch()">
+                <span ng-class="{true: 'anonymous', false: ''}[AnoIsNo]"></span>
+                匿名评价
+            </div>
+        </div>
+    </ion-content>
+    <div class="f-log-btn" on-tap="submit()">
+        <span class="button button-block f-btn-submit f-s-30">提交</span>
+    </div>
+</ion-view>

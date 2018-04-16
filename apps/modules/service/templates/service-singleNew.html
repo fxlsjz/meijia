@@ -1,0 +1,81 @@
+<!--搜索头部-->
+<ion-view class="service-index wrap service-singleNew">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" ng-if="switchTitle" on-tap="backStore()" style="position: absolute; z-index: 999;" ng-if="switchTitle"></div>
+		<!--<div class="go-back-btn disable-user-behavior" ng-if="!switchTitle" on-tap="clearText();goback()"></div>-->
+		<!--<div class="ub-f1 wrap-search">
+        	<i class="search-icon"></i>
+        	<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)"/>
+      	</div>
+       <div class="bar-submit">&nbsp;&nbsp;</div>-->
+		<div class="ub-f1 wrap-search" ng-if="!switchTitle">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)" />
+		</div>
+		<h1 on-tap="openModal()" ng-if="switchTitle" class="bar-title ub-f1">到家{{packageText}}</h1>
+		<div class="u-search" on-tap="openSearch()" ng-if="switchTitle">&nbsp;&nbsp;</div>
+		<div ng-if="!switchTitle" class="bar-submit noColor">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<!--选项-->
+	<!--<div class="tabbed-slidebox" tab="0" style="border-bottom: 1px solid #dedede;">
+		<div class="tsb-icons">
+			<div class="tsb-ic-wrp">
+				<ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+					<div ng-style="DivWith">
+						<span ng-style="cWidth" ng-class="{'active': id == {{item.servicetype_id}}}" on-tap="serviceload(item.servicetype_id)" ng-repeat="item in serviceTypeList">
+							<i ng-bind="item.servicetype_name" class="icon iconfont oa-Inbox"></i>
+	                    </span>
+					</div>
+				</ion-scroll>
+			</div>
+		</div>
+	</div>-->
+	
+	<!--人气，价格，好评，分类start-->
+	<div class="tabbed-slidebox" tab="0">
+		<div class="tsb-icons">
+            <div class="tsb-ic-wrp tsb-ic-wrpNew">
+                <ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+                    <span ng-class="{'active': sortid == 0}" on-tap="categoryOrder(0)">
+						<i class="icon iconfont oa-Inbox ">人气</i>
+						<s class="xiaobian"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 1}" on-tap="categoryOrder(1);">
+						<i class="icon iconfont oa-Inbox ">价格</i>
+						<em class="mall-arrow-pos mall-arrow-up"
+                            ng-class="{true:'mall-arrow-up-active',false:''}[isUp]"></em>
+						<em class="mall-arrow-pos mall-arrow-down"
+                            ng-class="{true:'mall-arrow-down-active',false:''}[isDown]"></em>
+                        <s class="xiaobian"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 2}" on-tap="categoryOrder(2)">
+						<i class="icon iconfont oa-Inbox ">好评</i>
+						<s class="xiaobian"></s>
+                    </span>
+                    <div class="mall-a c-3" ng-class="{'active': sortid == 2}" on-tap="proType()" >
+                        <i class="mall-a-type mall-a-typeNew" ng-class="{true:'active-type',false:''}[isShow == true]">分类</i>
+                        <!--<span class="xiaobian"></span>-->
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+	</div>
+	<!--end-->
+	
+	<ion-content id="body-view" style='bottom: 4rem;' lazy-scroll>
+		<!--<div ng-include="'apps/modules/service/templates/service-list.html'"></div>-->
+		<div ng-include="'apps/modules/service/templates/service-listNew.html'" style="height: 100%;"></div>
+		
+	</ion-content>
+	<div id="btnBottom" class="service-footer service-single ub c-f">
+		<div class="ub-f1 footer-in p-l-30">
+			合计： ¥
+			<!--<span ng-bind="money  | number:1"></span>-->
+			{{money}}
+			<!--<span class="time-ion"></span>-->
+			<span class="m-l-20">{{time}}</span>分钟
+		</div>
+		<div class="next" on-tap="next()">去结算</div>
+	</div>
+</ion-view>

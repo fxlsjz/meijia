@@ -1,0 +1,46 @@
+<ion-view>
+    <!--<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">设置</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>-->
+    <ion-content lazy-scroll class="my_index bg-color-f">
+        <!--我的列表-->
+        <ion-list class="colars">
+            <!--<ion-item>
+                <div class="lists f-s-30" on-tap="MyAddress()">地址管理
+                    <span class="ufr"></span>
+                </div>
+            </ion-item>-->
+            <!--<ion-item>
+                <div class="list-last f-s-30" ui-sref="my-feedback">意见反馈
+                    <span class="ufr"></span>
+                </div>
+            </ion-item>-->
+            <ion-item class="myLists">
+            	<div class="lists f-s-30" ui-sref="my-feedback">
+            		意见反馈
+                    <span class="ufr"></span>
+                </div>
+                <a href="tel:{{tel_num}}" class="listNew">
+                    <div class="lists f-s-30">联系我们
+                        <span class="ufr"></span>
+                    </div>
+                </a>
+                <div class="listNew">
+                	<div class="lists f-s-30 " ui-sref="my-set-about">关于我们
+	                    <span class="ufr"></span>
+	                </div>
+                </div>
+                <!--<a class="listNew " ng-if="false">
+                    <div class="lists f-s-30 ding">推荐应用给好友
+                        <span class="ufr"></span>
+                    </div>
+                </a>-->
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    <div class="f-log-btn ub" on-tap="signOut()" ng-if="$_userInfo.user_id">
+        <div class="f-btn-submit ub-f1 text-center">退出登录</div>
+    </div>
+</ion-view>

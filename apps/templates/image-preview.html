@@ -1,0 +1,48 @@
+<ion-view class="image-preview openBigImg" on-tap="closeImagePreviewModal();">
+    <ion-content class="print" scroll="false" lazy-scroll>
+        <ion-header-bar class="ub ub-ac bar bar-header">
+            <div class="go-back-btn disable-user-behavior" on-tap=""></div>
+            <h1 class="bar-title ub-f1"><i>{{eq.num+1}}</i>/<i ng-bind="totle"></i></h1>
+            <div class="bar-submit">&nbsp;&nbsp;</div>
+        </ion-header-bar>
+        <!--on-swipe-left="swipeLeft(eq)"-->
+        <ion-slide-box delegate-handle="imagePreview" show-pager="false"
+                       active-slide="eq.num" on-slide-changed="swipeLeft(eq.num)"
+                       ng-if="slideimgs" show-pager="true">
+            <ion-slide ng-repeat="item in imagePreviewSrc">
+                <!--<ion-scroll zooming="true" min-zoom="1" max-zoom="2" scrollbar-y="false" class="ub-fv">-->
+
+                <!--商品图片-->
+                <p class="background-img ub-fv image-preview-item"
+                   ratio-scale="1:1"
+                   ng-show="multiple == 'true'"
+                   style="background-image: url({{item.cimg_large | baseUrl}});">
+                </p>
+                <p class="background-img ub-fv image-preview-item"
+                   ratio-scale="1:1"
+                   ng-if="multiple == 'list'"
+                   style="background-image: url({{item.cimg_large | baseUrl}});">
+                </p>
+                <p class="background-img ub-fv image-preview-item"
+                   ratio-scale="1:1"
+                   ng-if="multiple == 'false'"
+                   style="background-image: url({{item.cimg_large | baseUrl}});">
+                </p>
+                <!--商品信息-->
+                <div class="print-content p-l-30 p-r-30" ng-if="isShowDetail">
+                    <div class="ub">
+                        <div class="ub-f1 commont-start">
+                            <li style="width: {{(items.score | star) * 20}}%;"></li>
+                        </div>
+                    </div>
+                    <div class="c-f f-s-26 commont-author ng-binding" ng-bind="items.iname"></div>
+                    <div class="c-f f-s-26">{{items.datetime *1000 | date:"yyyy-MM-dd HH:mm"}}</div>
+                    <ion-scroll class="c-f f-s-26 text-content">
+                        <div ng-bind="items.content"></div>
+                    </ion-scroll>
+                </div>
+                <!--</ion-scroll>-->
+            </ion-slide>
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

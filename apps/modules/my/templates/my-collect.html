@@ -1,0 +1,37 @@
+<!--商品收藏-->
+<ion-view>
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">商品收藏</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+    <ion-content  class="u-my-collect" lazy-scroll>
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <!--列表-->
+            <ion-item ng-repeat="item in items">
+                <div on-tap="goGoodsDetail(item.product_id)" class="ub">
+                    <div class="list-left">
+                        <div class="u-img background-img" image-lazy-src="{{(item.pimg.split(',')[0]) | baseUrl}}"
+                             image-lazy-background-image="true"></div>
+                        <div class="no-goods" ng-if="item.issale == 1">
+							<span class="out-circle">
+								<i class="in-circle f-s-20">下架</i>
+							</span>
+                        </div>
+                    </div>
+                    <div class="ub-f1 collect-list-right ub ub-ver">
+                        <p class="ub-f1" ng-bind="item.product_title"></p>
+                        <p class="money">¥<span ng-bind="item.price"></span></p>
+                    </div>
+                </div>
+                <!--删除按钮-->
+                <ion-option-button ng-click="deleteItem($index)" class="button_del">取消收藏</ion-option-button>
+            </ion-item>
+            <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                                 distance="1%" immediate-check="false"
+                                 on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+        </ion-list>
+    </ion-content>
+</ion-view>

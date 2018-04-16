@@ -1,0 +1,61 @@
+<!--我的套票列表-->
+<ion-view>
+	<!--<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" ui-sref="tab.my"></div>
+		<h1 class="bar-title ub-f1">我的{{packageText}}</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>-->
+	<ion-content class="ticket bg-color-g" lazy-scroll>
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="items && counts"></mobo-no-data>
+		<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+		<mobo-data-loading ng-if="items && canLoadMore == undefined"></mobo-data-loading>
+		<div class="ticket-con m-b-10 ticket-box" ng-repeat="item in items" on-tap="itemLine(item)">
+			<!--<div class="packageno ub">
+				<span>订单号：</span>
+				<div class="ub-f1" ng-bind="item.packageno"></div>
+			</div>-->
+			<div class="ub">
+				<div class="myticket-img">
+					<div class="background-img myticket-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath | baseUrl}}"></div>
+					<!--到店-->
+					<!--<span class="ticketTohome f-s-18" ng-if="item.order_type == 'ORDER_OFFLINE_ONLINE'">到店</span>-->
+					<!--<span class="ticketTohome f-s-18" ng-if="item.order_type == 'ORDER_ONLINE'">到家</span>-->
+					<!--过期-->
+					<div class="no-goods-ticket expire" ng-if="item.state == 3 || item.state == 4">
+						<span class="out-circle">
+							<i class="in-circle f-s-18">{{item.state == 3 ? '已过期 ': '已取消'}}</i>
+						</span>
+					</div>
+				</div>
+				<div class="ub-f1 ticket-con-detail" ng-class="{'con-expire':(item.state == 3|| item.state == 4)}">
+					<div class="f-s-26 ub">
+						<p class="line-ellipsis-1 f-w-n" ng-bind="item.iname "></p>
+					</div>
+					<!--ng-bind="item.storename"-->
+					<!--<div class="c-6 f-s-20 storename">魏公村店</div>-->
+					<div class="timestor f-s-20">
+						<div class="f-l">
+							<i ng-bind="item.iusetime"></i>分钟
+						</div>
+						<div class="c-e6 f-r">
+							<i ng-bind="item.surplus"></i>/<i ng-bind="item.sumcount"></i>次
+						</div>
+					</div>
+
+					<!--<div>
+						<i class="f-s-20">截至日期</i>
+						<i class="f-s-20" ng-bind="item.expiratime*1000 |date:'yyyy-MM-dd'">2016-11-25 至 2016-12-26</i>
+					</div>-->
+				</div>
+			</div>
+			<div class="btns clearfix ub f-s-26">
+				<div class="ub-f1 comment-unselecteds" on-tap="useLog(item,$event)" ng-if="item.use_record == 'Y'">使用记录</div>
+				<span class="linespan" ng-if="item.use_record == 'Y' && item.state == 0  || item.state == 1"></span>
+				<div class="ub-f1 comment-unselecteds" ng-if="item.state == 0  || item.state == 1" on-tap="toUse(item,$event)">去使用</div>
+			</div>
+		</div>
+		</div>
+
+		<ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreData(v)"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

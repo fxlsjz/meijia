@@ -1,0 +1,99 @@
+<!--技师详情-->
+<ion-view class="detail">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="backorder()"></div>
+		<h1 class="bar-title ub-f1">{{technicianText}}详情</h1>
+		<div class="bar-submit">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<ion-content id="body-view" class="technician-m-b">
+		<div ng-if="showPageMall">
+		<div class="background-img technician-head" image-lazy-background-image="true" image-lazy-src="{{technician.background | baseUrl}}">
+			<div class="background-img technician-img" image-lazy-background-image="true" image-lazy-src="{{technician.photo_two | baseUrl}}"></div>
+			<div ng-bind="technician.nickname" class="f-s-28 c-ffffff"></div>
+			<div class="f-s-24 c-ffffff m-t-16 p-b-30">{{serviceText}}次数 <span ng-bind="technician.order_count"></span> 次</div>
+		</div>
+		<!--个人简介-->
+		<div class="personal">
+			<div class="f-s-30 c-e6 introduce">
+				<p class="text">个人简介</p>
+			</div>
+			<div class="f-s-24 c-e6 data m-b-10">
+				<span>籍贯：<i ng-bind="technician.nativeplace"></i></span>
+				<span>星座：<i ng-bind="technician.constellation"></i></span>
+				<span class="age">年龄：<i ng-bind="technician.age"></i></span>
+			</div>
+			<p ng-bind="technician.intro" class="personal-content f-s-24 c-6"></p>
+		</div>
+		<div ng-if="!indexShow"></div>
+		
+		<!--评价列表-->
+        <div class="commont-list bg-color-f p-l-30 p-t-32 p-r-30" ng-if="technician.commentcount != 0">
+        	<div class="line-black"></div>
+            <div class="ub commont-titleall">
+                <div class="commnont-title f-s-28 c-3 ub-f1">评价
+                	<span class="f-s-24 c-80">(<i>{{technician.commentcount}}</i>)</span>
+                </div>
+                <div class="ub-f1 commont-praise c-6 f-s-26" on-tap="goevaluat(technician.beauticianid)">好评率
+                	<span class="c-6 p-l-10 p-r-20">{{technician.goodradio}}%</span>
+                    <span class="commont-icon"></span>
+                </div>
+            </div>
+            <div class="commont-content p-t-20 p-b-20 assess" ng-repeat="item in jsEvaluaList">
+                <div class="ub">
+                	<!--买家昵称-->
+                    <div class="ub-f1 c-3 f-s-26 commont-author" ng-bind="item.isAnonysMity">爱美甲的兔子</div>
+                    <!--评论星级-->
+                    <div class="ub-f1 commont-start">
+                        <li style="width: {{(item.score | star) * 20}}%;"></li>
+                    </div>
+                </div>
+                <!--评价内容-->
+                <div class="p-t-10 c-3 f-s-24 assess  line-ellipsis-3 w-brdek" ng-bind="item.content"></div>
+                <!--评论图片-->
+                <!--image-preview="{{item}}"-->
+                <div class="comment-imgall">
+                    <div class="comment-img"  ng-repeat="cimg in item.comment_img.cimg" ratio-scale="1:1">
+                        <i  image-lazy-src="{{cimg | baseUrl}}" 
+                           multiple="true" index="{{$index}}" image-lazy-background-image="true"
+                           class="background-img" ratio-scale="1:1">
+                        </i>
+                    </div>
+                </div>
+                <!--商家回复-->
+                <div class="storeall storeallTwo" ng-if="item.seller_replay!=''">
+                    <span class="storea f-s-20 c-e6 storeaTwo">商家回复</span>
+                    <span class="c-3 f-s-20 line-ellipsis-3 replyContent" ng-bind="item.seller_replay">回复</span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="bottomHeight"></div>
+        </div>
+		<!--选时间选服务-->
+		<!--<div class="ub detail-list" ng-if="indexShow">
+			<span class="u-ion address-ion"></span>
+			<div class="ub-f1 f-s-28 c-3 ub">
+				<span class="address-title">{{serviceText}}地址：</span><span ng-bind="serviceAdd" class="ub-f1 line-ellipsis-1"></span>
+			</div>
+		</div>
+		<div class="ub detail-list margin0" on-tap="timeSelected()">
+			<span class="u-ion time-ion"></span>
+			<div class="ub-f1 f-s-28 c-3 ub">
+				<span class="address-title ">{{serviceText}}时间：</span>
+				<span class="c-e6 ub-f1 line-ellipsis-1" ng-bind='timeShow'></span>
+				<i class="ion-right" ng-show="selectShow"></i>
+			</div>
+		</div>
+		<div class="ub detail-list margin0" on-tap="serviceSelected()">
+			<span class="u-ion server-ion"></span>
+			<div class="ub-f1 f-s-28 c-3 ub">
+				<span class="address-title">{{serviceText}}：</span>
+				<span ng-bind="selectedDataName" class="c-e6 ub-f1 line-ellipsis-1"></span>
+				<i class="ion-right" ng-show="selectShow"></i>
+			</div>
+		</div>-->        
+	</ion-content>
+	<div id="btnBottom" class="f-log-btn ub" on-tap="submit()">
+		<div class="f-btn-submit ub-f1 text-center f-s-30">就选Ta</div>
+	</div>
+</ion-view>

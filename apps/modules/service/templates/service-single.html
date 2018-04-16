@@ -1,0 +1,46 @@
+<!--搜索头部-->
+<ion-view class="service-index wrap">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" ng-if="switchTitle" on-tap="backStore()" style="position: absolute; z-index: 999;" ng-if="switchTitle"></div>
+		<div class="go-back-btn disable-user-behavior" ng-if="!switchTitle" on-tap="clearText();goback()"></div>
+		<!--<div class="ub-f1 wrap-search">
+        	<i class="search-icon"></i>
+        	<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)"/>
+      	</div>
+       <div class="bar-submit">&nbsp;&nbsp;</div>-->
+		<div class="ub-f1 wrap-search" ng-if="!switchTitle">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)" />
+		</div>
+		<h1 on-tap="openModal()" ng-if="switchTitle" class="bar-title ub-f1">到家{{packageText}}</h1>
+		<div class="u-search" on-tap="openSearch()" ng-if="switchTitle">&nbsp;&nbsp;</div>
+		<div ng-if="!switchTitle" class="bar-submit noColor">&nbsp;&nbsp;</div>
+	</ion-header-bar>
+	<!--选项-->
+	<div class="tabbed-slidebox" tab="0" style="border-bottom: 1px solid #dedede;">
+		<div class="tsb-icons">
+			<div class="tsb-ic-wrp">
+				<ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+					<div ng-style="DivWith">
+						<span ng-style="cWidth" ng-class="{'active': id == {{item.servicetype_id}}}" on-tap="serviceload(item.servicetype_id)" ng-repeat="item in serviceTypeList">
+							<i ng-bind="item.servicetype_name" class="icon iconfont oa-Inbox"></i>
+	                    </span>
+					</div>
+				</ion-scroll>
+			</div>
+		</div>
+	</div>
+	<ion-content id="body-view" style='bottom: 4rem;' lazy-scroll>
+		<div ng-include="'apps/modules/service/templates/service-list.html'"></div>
+	</ion-content>
+	<div id="btnBottom" class="service-footer service-single ub c-f bg-color-r">
+		<div class="ub-f1 footer-in">
+			合计： ¥
+			<span ng-bind="money  | number:1"></span>
+			<span class="time-ion"></span>
+			<span ng-bind="time"></span>分钟
+		</div>
+		<div class="next" on-tap="next()">去结算</div>
+	</div>
+</ion-view>

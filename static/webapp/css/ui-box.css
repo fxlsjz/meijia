@@ -1,0 +1,149 @@
+@charset "utf-8";
+.ub
+{
+    display:-webkit-box !important;/* android 2.1-3.0， ios 3.2-4.3 */
+    display:-webkit-flex;/* Chrome 21+ */
+    display:-ms-flexbox !important;/* WP IE 10 */
+    display:flex ;/* android 4.4 */
+	display:box !important;/* android 2.1-3.0， ios 3.2-4.3 */
+	
+	position:relative;
+	
+}
+
+.ub-rev
+{
+	-webkit-box-direction:reverse;
+	box-direction:reverse;
+}
+
+.ub-fh
+{
+	width:100%;
+}
+
+.ub-fv
+{
+	height:100%;
+}
+
+.ub-con
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.ub-ac
+{
+	-webkit-box-align:center;
+	box-align:center;
+}
+.ub-ae
+{
+	-webkit-box-align:end;
+	box-align:end;
+}
+
+.ub-pc
+{
+	-webkit-box-pack:center;
+	box-pack:center;
+	-ms-box-pack:center;
+}
+.ub-pe
+{
+	-webkit-box-pack:end;
+	box-pack:end;
+}
+.ub-pj
+{
+	-webkit-box-pack:justify;
+	box-pack:justify;
+}
+
+.ub-ver
+{
+	-webkit-box-orient:vertical;
+	box-orient:vertical;
+}
+
+.ub-f1
+{
+	position:relative;
+	-webkit-box-flex:1;/* android 2.1-3.0， ios 3.2-4.3 */
+    -webkit-flex:1;/* Chrome 21+ */
+    -ms-flex:1;/* WP IE 10 */
+    flex:1;/* android 4.4 */
+	
+	
+	
+}
+
+.ub-f2
+{
+	position:relative;
+	-webkit-box-flex: 2;
+	box-flex: 2; 
+}
+
+.ub-f3
+{
+	position:relative;
+	-webkit-box-flex: 3;
+	box-flex: 3;
+}
+
+.ub-f4
+{
+	position:relative;
+	-webkit-box-flex: 4;
+	box-flex: 4;
+}
+
+.ub-img
+{
+	-webkit-background-size:contain;
+	background-size:contain;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.ub-img1
+{	
+	-webkit-background-size:cover;
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ub-img2
+{
+	background-repeat:repeat-x;
+	background-size:auto 100%
+}
+.ub-img3
+{
+	background-repeat:repeat-y;
+	background-size:100% auto
+}
+
+.ub-img4
+{
+	-webkit-background-size:100% auto;
+	background-size:100% auto;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.ub-img5
+{
+	-webkit-background-size:auto 100%;
+	background-size:auto 100%;
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+.ub-img6
+{
+	background-repeat:no-repeat;
+	background-position:center;
+}

@@ -1,0 +1,17 @@
+<!--待评价技师列表-->
+<!--tzb-->
+<ion-view class="evaluate-technician wrap">
+    <ion-content style="background-color: #FFFFFF;" lazy-scroll>
+        <div class="list-class" ng-repeat="item in items">
+            <span class="background-img technician-list-img" image-lazy-src="{{item.photo_two | baseUrl}}"
+                  image-lazy-background-image="true"></span>
+            <div class="list-content">
+                <!--技师名称和已服务次数 选她按钮-->
+                <div class="m-t-20 c-3 f-s-28 text-center ub-f1 line-ellipsis-1" ng-bind="item.nickname"></div>
+                <div class="m-t-20 c-9 f-s-20 text-center ub-f1 line-ellipsis-1">已服务 {{item.order_count}} 次</div>
+                <div class="m-t-20 f-s-26 technician-list-select" on-tap="toEvaluate(item)">选她
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

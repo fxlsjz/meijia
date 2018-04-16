@@ -1,0 +1,89 @@
+/*商品收藏列表
+ author wanghui
+ */
+
+/*收藏收藏列表*/
+
+.u-my-collect{
+	
+}
+
+.u-my-collect .list-left{
+	position: relative;
+	margin-right: 1.4rem;
+}
+.u-my-collect .collect-list-right .money{
+	color: #e64d65;
+}
+/*删除收藏*/
+.u-my-collect .button_del{
+	background: #e4a34c;
+	color: #fff;
+	font-size: 1.4rem;
+}
+.u-my-collect .popup-buttons .button, .button.button-positive{
+	color: #999;
+}
+.u-my-collect .item{
+	border: none;
+	margin-top: .5rem;
+}
+.u-my-collect .item:first-child{
+	
+	margin-top: 0;
+}
+.u-my-collect .u-img{
+	width: 12.8rem;
+	height: 6.9rem;
+}
+
+.u-my-collect .collect-list-right {
+	height: 6.9rem;
+}
+
+.u-my-collect .collect-list-right p{
+	display: block;
+}
+
+/*无货*/
+.u-my-collect .no-goods{
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+.u-my-collect .out-circle{
+	padding: 3px 0;
+	width: 4rem;
+	height: 4rem;
+	margin-left: -2rem;
+    margin-top: -2rem;
+}
+.u-my-collect .in-circle{
+	width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+/*左右间距*/
+.u-my-collect .item-content{
+	padding:0.7rem 1.5rem;
+}
+/*弹出框按钮*/
+/*.button.button-default {
+    border-color: #e64d65;
+    background-color: #fff;
+    color: #333;
+}
+
+.button.button-positive {
+    border-color: #e64d65;
+    background-color: #e64d65;
+    color: #fff !important;
+}*/
+.Mycollect{
+	top: 0 !important;
+}
+.Mycollect .popup{
+	width:85% !important;
+}

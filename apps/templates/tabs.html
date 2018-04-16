@@ -1,0 +1,69 @@
+<!--o2o-->
+<ion-tabs id="tab-view" delegate-handle="foot-tabs" class="tabs-icon-top tool-bar tab-footer" ng-if="isO2O">
+	<!-- home Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'home'}}" icon-off="s-icon-home" icon-on="s-icon-home-active" href="/tab/home">
+		<ion-nav-view name="tab-home" class=""></ion-nav-view>
+		<!--on-tab="flag.showBar=false"-->
+	</ion-tab>
+	<!--service Tab-->
+	<ion-tab class="u-border-none" title="{{serviceText}}" icon-off="s-icon-service" icon-on="s-icon-service-active" href="/tab/service">
+		<ion-nav-view name="tab-service"></ion-nav-view>
+	</ion-tab>
+	<!-- technician Tab -->
+	<ion-tab class="u-border-none" title="{{technicianText}}" icon-off="s-icon-technician" icon-on="s-icon-technician-active" href="/tab/technician">
+		<ion-nav-view name="tab-technician"></ion-nav-view>
+	</ion-tab>
+	<!--order Tab-->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'order'}}" icon-off="s-icon-order" icon-on="s-icon-order-active" href="/tab/order">
+		<ion-nav-view name="tab-order"></ion-nav-view>
+	</ion-tab>
+	<!-- my Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'my'}}" icon-off="s-icon-my" icon-on="s-icon-my-active" href="/tab/my">
+		<!---->
+		<ion-nav-view name="tab-my"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>
+
+<!--o2o + 电商-->
+<ion-tabs delegate-handle="foot-tabs" class="tabs-icon-top tool-bar tab-footer" ng-if="isShopO2O">
+	<!-- home Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'home'}}" icon-off="s-icon-home" icon-on="s-icon-home-active" href="/tab/home">
+		<ion-nav-view name="tab-home" class=""></ion-nav-view>
+	</ion-tab>
+	<!-- service Tab -->
+	<ion-tab class="u-border-none" title="项目" icon-off="s-icon-technician" icon-on="s-icon-technician-active" href="/tab/service">
+		<ion-nav-view name="tab-service"></ion-nav-view>
+	</ion-tab>
+	<!-- store Tab -->
+	<ion-tab class="u-border-none" title="店面" icon-off="s-icon-mall" icon-on="s-icon-mall-active" href="/tab/store">
+		<ion-nav-view name="tab-store"></ion-nav-view>
+	</ion-tab>
+	<!-- mallTab -->
+	<!--<ion-tab class="u-border-none" title="商城" icon-off="s-icon-my" icon-on="s-icon-my-active" href="/tab/my">
+		<ion-nav-view name="tab-my"></ion-nav-view>
+	</ion-tab>-->
+	<!-- my Tab -->
+	<!-- technician Tab -->
+	<!--<ion-tab class="u-border-none" title="{{technicianText}}" icon-off="s-icon-technician" icon-on="s-icon-technician-active" href="/tab/technician">-->
+		<!--<ion-nav-view name="tab-technician"></ion-nav-view>-->
+	<!--</ion-tab>-->
+	<!--<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'my'}}" icon-off="s-icon-my" icon-on="s-icon-my-active" href="/tab/my">
+		<ion-nav-view name="tab-my"></ion-nav-view>
+	</ion-tab>-->
+</ion-tabs>
+
+<!--电商-->
+<ion-tabs delegate-handle="foot-tabs" class="tabs-icon-top tool-bar tab-footer" ng-if="isShop">
+	<!-- home Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'home'}}" icon-off="s-icon-home" icon-on="s-icon-home-active" href="/tab/home">
+		<ion-nav-view name="tab-home" class=""></ion-nav-view>
+	</ion-tab>
+	<!-- mall Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'mall'}}" icon-off="s-icon-mall" icon-on="s-icon-mall-active" href="/tab/mall">
+		<ion-nav-view name="tab-mall"></ion-nav-view>
+	</ion-tab>
+	<!-- my Tab -->
+	<ion-tab class="u-border-none" title="{{'footer-tab' | i18n:'my'}}" icon-off="s-icon-my" icon-on="s-icon-my-active" href="/tab/my">
+		<ion-nav-view name="tab-my"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>

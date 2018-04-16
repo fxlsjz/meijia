@@ -1,0 +1,144 @@
+<!--电商加o2o-->
+<ion-view ng-if="ComslideImgs" class="home">
+    <ion-content overflow-scroll="true" lazy-scroll>
+        <!--轮播图-->
+        <div class="mb_banner" cache-view="false">
+            <ion-slide-box delegate-handle="homeRotateImg" auto-play="true" slide-interval="2500" show-pager="true"
+                           ng-if="slideimgs" does-continue="true"
+                           on-slide-changed="onPagerChanged($index)">
+                <div ng-if="rotateImgs == 0">
+                    <li class="background-img slide-img" image-lazy-background-image="true"
+                        image-lazy-src="baseUrl"></li>
+                </div>
+                <ion-slide ng-repeat="item in rotateImgs track by $index" on-tap="slideTo(item)">
+                    <li class="background-img slide-img" image-lazy-background-image="true"
+                         image-lazy-src="{{item.top_imgpath | baseUrl}}"></li>
+                </ion-slide>
+
+            </ion-slide-box>
+            <a class="phones lazy-scroll">
+                <div on-tap="gotoLogin()" class="my" image-lazy-background-image="true" image-lazy-src="{{userImg | baseUrl}}"></div>
+            </a>
+        </div>
+        <!--本月推荐 服务套餐 会员套票-->
+        <div class="ub clearfix recommend">
+            <div class="ub-f1 recommend-content" ng-click="goCurrentRecommendList();">
+                <div class="recommendImgContent">
+                    <div class="recommend-img-public recommendImg"></div>
+                </div>
+                <div class="c-3 text-center f-s-28">本月推荐</div>
+            </div>
+            <div class="space-line"></div>
+            <div class="ub-f1 recommend-content" ng-click="slideTo('');">
+                <div class="recommendImgContent">
+                    <div class="recommend-img-public serverImg"></div>
+                </div>
+                <div class="c-3 text-center f-s-28">服务套票</div>
+            </div>
+            <div class="space-line" ng-if="isShowPackage == 'Y'"></div>
+            <div class="ub-f1 recommend-content" ng-if="isShowPackage == 'Y'" on-tap="goVIPPackageList()">
+                <div class="recommendImgContent">
+                    <div class="recommend-img-public packageImg"></div>
+                </div>
+                <div class="c-3 text-center f-s-28">会员套票</div>
+            </div>
+        </div>
+        <!---热门标签--->
+        <div class="ub clearfix recommend">
+            <div class="ub-f1 left-content">
+                <div class="left-btn"></div>
+                <div class="recommend-text">潮流时尚</div>
+                <div class="recommend-text-english">Fashion trends</div>
+            </div>
+            <div class="ub-f1 right-content">
+                <div class="top-btn" ng-click="goServer('meijia')">
+                    <div class="recommend-text">预约美甲</div>
+                    <div class="recommend-text-english">Manicure</div>
+                </div>
+                <div class="bottom-btn" ng-click="goServer('meijie')">
+                    <div class="recommend-text">预约美睫</div>
+                    <div class="recommend-text-english">Beauty</div>
+                </div>
+
+            </div>
+        </div>
+        <div ng-class="{true:'arrow-store-show',false:'arrow-store-hidden'}[isShowArrowStoreView]">
+            <div class="m-15 c-3 f-w-b">一</div>
+
+            <!---附近店铺--->
+            <div class="clearfix p-l-15 p-r-15 p-b-20">
+                <div class="c-3 m-b-20 f-s-28 f-w-b">附近店铺</div>
+                <div class="ub-f1 arrow-content" on-tap="nearbyStoreClick()">
+                    <div class="arrow-btn"></div>
+                    <div class="arrow-name" ng-bind="nearbyStore.sname"></div>
+                    <div class="arrow-address" ng-bind="nearbyStore.adress"></div>
+                    <div class="arrow-distance"><span ng-bind="nearbyStore.store_dis"></span>m</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-15 c-3 f-w-b">一</div>
+
+        <!---热门推荐--->
+        <div class="hot-content">
+            <div class="c-3 m-b-20 f-s-28 f-w-b">热门推荐</div>
+            <div class="hot-list">
+                <div class="ub list-item" ng-repeat="item in itemsList" ng-click="recommendGoDetail(item)">
+                    <div ng-if="($index+1)%2 != 0" class="list-class">
+                        <div class="hot-list-img background-img" image-lazy-background-image="true"
+                             image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                        <div class="list-recommend-img" ng-if="item.isrecommend == 'Y'"></div>
+                        <div class="hot-right-content">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32 c-df3680" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime/60"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                            </div>
+                            <div class="u-cancel-collect" ng-if="item.iscollection == 'N'" ng-click="serversCollection($event,item,'N')"></div>
+                            <div class="u-collect" ng-if="item.iscollection == 'Y'" ng-click="serversCancelCollection($event,item,'Y')"></div>
+                        </div>
+                    </div>
+                    <div ng-if="($index+1)%2 == 0" class="list-class">
+                        <div class="hot-right-content-even">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime/60"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                            </div>
+                            <div class="u-cancel-collect" ng-if="item.iscollection == 'N'" ng-click="serversCollection($event,item,'N')"></div>
+                            <div class="u-collect" ng-if="item.iscollection == 'Y'" ng-click="serversCancelCollection($event,item,'Y')"></div>
+                        </div>
+                        <div class="hot-list-img-even background-img" image-lazy-background-image="true"
+                             image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                        <div class="list-recommend-img-even" ng-if="item.isrecommend == 'Y'"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--分页控制器-->
+        <div ng-if="!isSpecialCase" class="full-screen-indicators">
+
+            <div ng-if="rotateImgs.length > 1" style="width: 100%;display:flex;justify-content: center;">
+                <div ng-repeat="item in rotateImgs track by $index">
+                    <div ng-class="{true:'indicator-active',false:'indicator-inactive'}[$index == curIndicator]" ></div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="isSpecialCase" class="full-screen-indicators">
+            <div ng-class="{true:'indicator-active',false:'indicator-inactive'}[curIndicator == 0 || curIndicator == 2]"></div>
+            <div ng-class="{true:'indicator-active',false:'indicator-inactive'}[curIndicator == 1 || curIndicator == 3]"></div>
+        </div>
+
+        <!--上拉加载更多-->
+        <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreList()">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>

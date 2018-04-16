@@ -1,0 +1,104 @@
+/*积分规则按钮*/
+
+.integral-rule .integral {
+	position: absolute;
+	right: 1.7rem;
+	height: 3.75rem;
+	line-height: 3.75rem;
+	color: #fff;
+	font-size: 1.5rem;
+}
+
+
+/*积分信息布局*/
+
+.integral-rule .integral-info {
+	background-color: #e64d65;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	height: 10rem;
+}
+
+
+/*积分总计*/
+
+.integral-rule .integral-count {
+	font-size: 3rem;
+	height: 1rem;
+	line-height: 1rem;
+}
+
+
+/*列表分割线*/
+
+.integral-rule .line {
+	height: 1px;
+	margin-left: 1.5rem;
+	margin-right: 1.5rem;
+	background-color: #DEDEDE;
+}
+
+
+/*积分使用记录*/
+
+.integral-rule .integral-record {
+	margin-left: 0.5rem;
+	font-size: 3rem;
+}
+
+
+/*积分规则半透明背景*/
+
+.integral-rule .rule-view {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.15);
+	z-index: 9;
+}
+
+
+/*积分规则弹出框*/
+
+.integral-rule .rule-dialog {
+	background: white;
+	border-radius: 1rem;
+	width: 70%;
+	margin-left: 15%;
+	max-height: 70%;
+	position: relative;
+}
+
+
+/*积分规则标题*/
+
+.integral-rule .rule-dialog-title {
+	text-align: center;
+	line-height: 5rem;
+	height: 5rem;
+}
+
+
+/*积分规则内容*/
+
+.integral-rule .rule-dialog-content {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	overflow-y: scroll;
+}
+
+
+/*微信支付图标*/
+
+.integral-rule .rule-dialog-clean {
+	background: url(../../../images/my/wdjf_guanbi_btn.png);
+	width: 4rem;
+	height: 4rem;
+	background-size: cover;
+	position: absolute;
+	right: -2rem;
+	top: -2rem;
+}

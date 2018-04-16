@@ -1,0 +1,48 @@
+d
+<ion-view class="mall wrap">
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <!--<div class="search-btn"></div>-->
+        <!--<div class="go-back-btn disable-user-behavior"></div>-->
+        <div class="search-placeholder"></div>
+        <div class="ub-f1 wrap-search ">
+            <i class="search-icon"></i>
+            <input type="text" placeholder="请输入您要搜索的宝贝" ng-model="searchText.text" ng-keyup="search($event)"/>
+        </div>
+        <div class="search-placeholder"></div>
+        <!--<div class="bar-submit">&nbsp;&nbsp;</div>-->
+    </ion-header-bar>
+    <div class="tabbed-slidebox" tab="0">
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp tsb-ic-wrpNew">
+                <ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+                    <span ng-class="{'active': sortid == 0}" on-tap="categoryOrder(0)">
+						<i class="icon iconfont oa-Inbox ">销量</i>
+                    </span>
+                    <span ng-class="{'active': sortid == 1}" on-tap="categoryOrder(1);">
+						<i class="icon iconfont oa-Inbox ">价格</i>
+						<em class="mall-arrow-pos mall-arrow-up"
+                            ng-class="{true:'mall-arrow-up-active',false:''}[isUp]"></em>
+						<em class="mall-arrow-pos mall-arrow-down"
+                            ng-class="{true:'mall-arrow-down-active',false:''}[isDown]"></em>
+                    </span>
+                    <span ng-class="{'active': sortid == 2}" on-tap="categoryOrder(2)">
+						<i class="icon iconfont oa-Inbox ">好评</i>
+                    </span>
+                    <div class="mall-a c-3" on-tap="proType()">
+                        <i class="mall-a-type mall-a-typeNew" ng-class="{true:'active-type',false:''}[isShow == true]">分类</i>
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+        <ion-content lazy-scroll>
+            <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+            <!--<mobo-data-loading ng-if="items&&canLoadMoreGoodsList == undefined"></mobo-data-loading>-->
+            <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+            <div class="m-t-10 m-b-10" ng-include="'apps/modules/mall/templates/list.html'"></div>
+            <ion-infinite-scroll ng-class="{'u-loading-ion':(canLoadMore && isShowLoadMore)}" ng-if="canLoadMore"
+                                 distance="1%" immediate-check="false"
+                                 on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+        </ion-content>
+    </div>
+</ion-view>
+

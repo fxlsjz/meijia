@@ -1,0 +1,18 @@
+<!--广告页 by zhoulei-->
+<ion-view class="my_index">
+    <!--头-->
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="goback()"></div>
+        <h1 class="bar-title ub-f1">推广</h1>
+        <div class="header-right"></div>
+    </ion-header-bar>
+
+    <ion-content overflow-scroll="true" style="overflow: hidden">
+        <div class="ad-parent">
+            <div class="ad-page" image-lazy-background-image="true"
+                 image-lazy-src="{{$scope.adPic ? ($scope.adPic | baseUrl) : ''}}"></div>
+        </div>
+    </ion-content>
+
+
+</ion-view>

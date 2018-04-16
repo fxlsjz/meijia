@@ -1,0 +1,148 @@
+<!--商品订单详情-->
+<ion-view>
+    <ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">订单详情</h1>
+        <div class="bar-submit">&nbsp;&nbsp;</div>
+    </ion-header-bar>
+
+
+    <ion-content lazy-scroll class="orderDetail">
+        <div class="numbing bg-color-f">
+            <div class="number">
+                <p class="detail f-s-28 c-3 ">订单编号</p>
+                <p class="f-s-28 c-3 ">{{iteming.orderno}}</p>
+                <p class="f-s-26 c-e6 ufr">{{orderStatus}}</p>
+            </div>
+            <!--物流信息-->
+            <div ng-if="(iteming.delivery_list) && (iteming.delivery_list.length > 0)" class="logistics-layout ub"
+                 on-tap="sendFunc()">
+                <div class="logistics-pic">
+                    <div class="logistics-circle-pic"></div>
+                    <div class="logistics-line-pic"></div>
+                </div>
+                <div class="ub-f1">
+                    <p class="f-s-28 c-3">{{iteming.delivery_list[0].acceptstation + ',' +
+                        iteming.delivery_list[0].remark}}</p>
+                    <p class="f-s-24 c-6 math"
+                       ng-bind='iteming.delivery_list[0].trace * 1000 | date:"yyyy-MM-dd HH:mm"'></p>
+                </div>
+            </div>
+        </div>
+        <!---------地址------------>
+        <div class="addre m-t-10 bg-color-f f-s-28 c-3">
+            <div class="nei ">
+                <div class="p-l-30 p-r-30 p-t-30">
+                    <p>{{iteming.order_name}}</p>
+                    <p class="ufr">{{iteming.order_phone}}</p>
+                </div>
+                <div class="p-l-30 p-r-30 dizhiWeizhi">
+                    <p class="dizhi"></p>
+                    <p class="dizhiSet">{{iteming.order_address}}</p>
+                </div>
+            </div>
+
+        </div>
+        <!-------------------商品------------------->
+        <div class="list m-t-10 bg-color-f" ng-repeat="list in iteming.product_list">
+            <div class="list-lis p-l-30 p-r-30 p-t-20 p-b-20 ub ub-at">
+                <span class="list-bg background-img imge ub-f1 h8" image-lazy-background-image="true"
+                      image-lazy-src="{{list.pimg | baseUrl}}"></span>
+                <div class="kuanshi ub-f1">
+                    <p class="f-s-24 c-3 line-ellipsis-1">{{list.product_name}}</p>
+                    <p class="f-s-22 c-80 guige line-ellipsis-1">规格:<i>{{list.intro}}</i></p>
+                    <p class="f-s-22 c-80 line-ellipsis-1">数量:<i>{{list.num}}</i></p>
+                    <p class="f-s-26 c-e6 num line-ellipsis-1">¥{{list.price | number:1}}</p>
+                </div>
+            </div>
+        </div>
+        <!---------------------留言----------------------->
+        <div class="message m-t-10 bg-color-f ub">
+            <div class="desc f-s-28 c-3">留言</div>
+            <div class="content ub-f1 f-s-28 c-3">{{iteming.remark}}</div>
+        </div>
+
+        <!----------------------------------付款--------------------------------------->
+        <div class="payment bg-color-f m-t-10">
+            <div class="pay p-l-30 p-r-30">
+                <!--已支付的订单显示支付方式-->
+                <div class="payadd f-s-28 c-3" ng-if="!((iteming.order_state == 'orderstate_waitpay')||(iteming.order_state == 'orderstate_expire'))">
+                    <div ng-if="iteming.paytype == 'PAYTYPE_WECHATWEB'">
+                        <p>支付方式</p>
+                        <p class="ufr c-e6">微信支付</p>
+                    </div>
+                    <div ng-if="iteming.paytype == 'PAYTYPE_PRICE'">
+                        <p>支付方式</p>
+                        <p class="ufr c-e6">余额支付</p>
+                    </div>
+
+                </div>
+                <!--未支付的订单显示选择支付方式布局-->
+                <div class="payed f-s-28 c-3" ng-if="iteming.order_state == 'orderstate_waitpay'">
+                    <div class="adds f-s-28 c-3">
+                        <p>支付方式</p>
+                    </div>
+                    <div class="yue" style="position: relative;">
+                        <p class="yue_btn" style="position: absolute;top:1rem;"></p>
+                        <p class="f-s-28 c-3" style="padding-left: 4rem;">余额支付<i class="c-e6">（当前余额￥<i ng-bind="balance"></i>）</i></p>
+                        <div class="umh5 ufr"><span class="check-box-ion" ng-style="balNo"
+                                                    ng-class="{true:'active',false:''}[bal == 1]"
+                                                    on-tap="balancing(1)"></span></div>
+                    </div>
+                    <div class="zhifubao" style="position: relative;">
+                        <p class="zhifubao_btn" style="position: absolute;top:1rem;"></p>
+                        <p class="f-s-28 c-3" style="padding-left: 4rem;">微信支付</p>
+                        <div class="umh5 ufr"><span class="check-box-ion" ng-class="{true:'active',false:''}[bal == 2]"
+                                                    on-tap="balancing(2)"></span></div>
+                    </div>
+                </div>
+                <div class="mony f-s-28 c-3">
+                    <p>商品金额</p>
+                    <p class="ufr c-e6">¥{{iteming.price | number:1}}</p>
+                </div>
+                <div ng-if="iteming.discount&&(iteming.discount != '0.0')" class="Freight f-s-28 c-3">
+                    <p>积分减免</p>
+                    <p class="ufr c-e6">-¥{{iteming.discount}}</p>
+                </div>
+                <div class="Freight f-s-28 c-3">
+                    <p>运费</p>
+                    <p class="ufr c-e6">¥{{iteming.freight | number:1}}</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="fukuan bg-color-f">
+            <div class="timing p-l-30 p-r-30">
+                <div class="Freights m-t-0">
+                    <div class="payments f-s-28">
+                        <p class="c-3">实付款</p>
+                        <p class="c-e6">¥{{iteming.actualprice | number:1}}</p>
+                    </div>
+                    <div class="times f-s-20 c-80">
+                        <p>下单时间:</p>
+                        <p ng-bind='iteming.order_time * 1000 | date:"yyyy-MM-dd HH:mm"'></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-blank-div"></div>
+
+    </ion-content>
+
+    <!--详情底部按钮（取消订单，确认收货，去评价，去支付）-->
+
+    <div class="detail-bottom-btns f-s-28"
+         ng-if="(iteming.cencal_able == 'Y')||(iteming.order_state=='orderstate_indelivery')||(iteming.iscommon == 'Y')||((iteming.pay_surtime) && (iteming.pay_surtime != 0))">
+        <div ng-if="iteming.cencal_able == 'Y'" class="white-btn" on-tap="quxiao(iteming.oid)">取消订单</div>
+        <div ng-if="iteming.order_state=='orderstate_indelivery'" on-tap="reward(iteming.oid)" class="red-btn">确认收货
+        </div>
+        <div ng-if="iteming.iscommon == 'Y'" class="red-btn" on-tap="goEvaluate(iteming)">去评价</div>
+        <div ng-if="(iteming.pay_surtime) && (iteming.pay_surtime != 0)" class="red-btn" ng-style="btnclick"
+             on-tap="quickPay()">确认支付(<i
+                ng-bind="TimeFormat" ng-model="TimeFormat"></i>)
+        </div>
+    </div>
+
+</ion-view>

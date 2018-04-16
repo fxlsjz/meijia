@@ -1,0 +1,259 @@
+/*2016-11-18*/
+
+
+/* CSS Document */
+
+
+/*技师详情*/
+
+.detail .technician-m-b {
+	margin-bottom: 5.4rem;
+}
+
+.detail .technician-head {
+	background: #fff;
+	text-align: center;
+	padding-bottom: 1rem;
+	background: url(../../../images/service/fuwu_neuhuasgu_bg.png) no-repeat;
+	background-size: cover;
+}
+
+.detail .technician-img {
+	margin: 3rem 0 1rem;
+	display: inline-block;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+}
+
+.detail .personal {
+	padding: 1rem 0;
+	text-align: center;
+	background: #fff;
+}
+
+
+.detail .introduce .text {
+	height: 3rem;
+	background: #fff;
+	color: #000;
+	text-align: left;
+	padding: 0 1.5rem;
+	margin: 0;
+}
+
+.detail .personal .data {
+	padding: 0 1.5rem;
+	color: #000;
+}
+.c-ffffff{
+	color: #ffffff;
+}
+
+.detail .personal .data span {
+	display: inline-block;
+	width: 38%;
+	text-align: left;
+	/*overflow: hidden;*/
+	/*自动隐藏文字*/
+	/*text-overflow: ellipsis;*/
+	/*文字隐藏后添加省略号*/
+	white-space: nowrap;
+	/*强制不换行*/
+}
+
+.detail .personal .data .age {
+	display: inline-block;
+	width: 20%;
+	/*overflow: hidden;*/
+	/*自动隐藏文字*/
+	/*text-overflow: ellipsis;*/
+	/*文字隐藏后添加省略号*/
+	white-space: nowrap;
+	/*强制不换行*/
+}
+
+.detail .personal .personal-content {
+	text-indent: 2rem;
+	text-align: left;
+	padding: 0 1.5rem;
+}
+
+.detail .u-ion {
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	width: 2.3rem;
+	height: 2.3rem;
+	margin: 1rem;
+}
+
+.detail .address-ion {
+	background-image: url(../../../images/public/com_fuwudizhi_icon.png);
+}
+
+.detail .time-ion {
+	background-image: url(../../../images/public/com_fuwushijian_icon.png);
+}
+
+.detail .server-ion {
+	background-image: url(../../../images/public/com_fuwudizhi_icon.png);
+}
+
+.detail .detail-list {
+	border-bottom: 1px solid #dedede;
+	padding: 0 1.5rem;
+	height: 4.3rem;
+	line-height: 4.3rem;
+	margin-top: .5rem;
+	background: #fff;
+	margin-top: 0;
+}
+
+.detail .detail-list .address-title {
+	display: inline-block
+}
+
+.detail .margin0 {
+	margin: 0 !important;
+}
+
+.detail .detail-list .ion-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: .7rem;
+	height: 1.4rem;
+	margin-top: 1.4rem;
+	background-image: url(../../../images/public/com_jiantouhongse_icon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: .8rem;
+}
+/*评论晒图*/
+
+.detail .comment-imgall {
+	width: 100%;
+	height: auto;
+	margin-top: 1rem;
+	display: -webkit-flex;
+}
+
+.detail .assess:last-child .comment-imgall {
+	width: 100%;
+	height: auto;
+	margin-top: 3rem;
+}
+.detail .assess:last-child .comment-imgallNew {
+	margin-top: 1rem;
+}
+.detail .comment-img {
+	background-size: 100%;
+	width: calc((100% - 5rem)/ 6.0);
+	display: inline-block;
+	margin-right: 1rem;
+}
+
+.detail .comment-img:nth-child(6n) {
+	margin-right: 0rem;
+}
+
+.detail .comment-img i {
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+}
+
+/*评价列表*/
+.detail .line-black{
+	width: 12px;
+	border: 1.8px #000 solid;
+	margin-bottom: 1.6rem;
+}
+.detail .commont-icon{
+	background: url(../../../images/mall/spxq_pinglunmore_btn.png) no-repeat;
+    width: 0.6rem;
+    height: 1rem;
+    background-size: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+.detail .commont-praise {
+    text-align: right;
+}
+.detail .commont-start {
+    background: url(../../../images/public/com_zero_icon.png) no-repeat;
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    background-size: 100%;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -0.8rem;
+}
+.detail .commont-start li {
+    background: url(../../../images/public/com_five_icon.png) no-repeat;
+    width: 8.653846153846154rem;
+    height: 1.5rem;
+    /* background-size: 100%; */
+    display: inline-block;
+    background-position: left top;
+    background-size: auto 100%;
+}
+
+.detail .bar-subheader {
+    top: 0;
+    border: none;
+    padding: 0;
+    height: auto;
+}
+.detail .u-topNew {
+    top: 4rem;
+}
+.detail .u-tabs .active {
+    color: #e64c65;
+}
+.detail .bar-subheader {
+    top: 0;
+    border: none;
+    padding: 0;
+    height: auto;
+    background: #fff;
+}
+.detail .u-tabs .tab-in {
+    text-align: center;
+    padding: .5rem 0;
+}
+.detail .u-tabs .tab-in p {
+    margin: 0;
+}
+.detail .eval-userheader {
+    background: url(../../../images/public/com_niming_icon.png) no-repeat;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-size: cover;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 1rem;
+}
+/*.detail .eval-data {
+    text-align: right;
+    line-height: 3rem;
+}*/
+.detail .pinList .assess:last-child .comment-imgallNew {
+    margin-top: 1rem;
+}
+.detail .pinList .assess:last-child .comment-imgall {
+    width: 100%;
+    height: auto;
+    margin-top: 3rem;
+}
+.detail .eval-nametime{
+	display: inline-block;
+	vertical-align: middle;
+}
+.detail .eval-nametime>p{
+	margin: 0;
+}

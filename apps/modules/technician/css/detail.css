@@ -1,0 +1,132 @@
+/*2016-11-18*/
+
+
+/* CSS Document */
+
+
+/*技师详情*/
+
+.detail .technician-m-b {
+	margin-bottom: 5.4rem;
+}
+
+.detail .technician-head {
+	background: #fff;
+	text-align: center;
+	padding-bottom: 1rem;
+}
+
+.detail .technician-img {
+	margin: 1rem 0;
+	display: inline-block;
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+}
+
+.detail .personal {
+	padding: 1rem 0;
+	text-align: center;
+	background: #fff;
+	margin-top: .5rem;
+	margin-bottom: 0.5rem;
+}
+
+.detail .introduce {
+	border-top: 1px solid #bcbec0;
+	margin: 1.5em 3.59em 0;
+}
+
+.detail .introduce .text {
+	margin: 0 auto;
+	margin-top: -0.9rem;
+	width: 9rem;
+	height: 3rem;
+	background: #fff;
+	text-align: center;
+}
+
+.detail .personal .data {
+	padding: 0 1.5rem;
+}
+
+.detail .personal .data span {
+	display: inline-block;
+	width: 35%;
+	/*overflow: hidden;*/
+	/*自动隐藏文字*/
+	/*text-overflow: ellipsis;*/
+	/*文字隐藏后添加省略号*/
+	white-space: nowrap;
+	/*强制不换行*/
+}
+
+.detail .personal .data .age {
+	display: inline-block;
+	width: 20%;
+	/*overflow: hidden;*/
+	/*自动隐藏文字*/
+	/*text-overflow: ellipsis;*/
+	/*文字隐藏后添加省略号*/
+	white-space: nowrap;
+	/*强制不换行*/
+}
+
+.detail .personal .personal-content {
+	text-indent: 2rem;
+	text-align: left;
+	padding: 0 1.5rem;
+}
+
+.detail .u-ion {
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+	width: 2.3rem;
+	height: 2.3rem;
+	margin: 1rem;
+}
+
+.detail .address-ion {
+	background-image: url(../../../images/public/com_fuwudizhi_icon.png);
+}
+
+.detail .time-ion {
+	background-image: url(../../../images/public/com_fuwushijian_icon.png);
+}
+
+.detail .server-ion {
+	background-image: url(../../../images/public/com_fuwudizhi_icon.png);
+}
+
+.detail .detail-list {
+	border-bottom: 1px solid #dedede;
+	padding: 0 1.5rem;
+	height: 4.3rem;
+	line-height: 4.3rem;
+	margin-top: .5rem;
+	background: #fff;
+	margin-top: 0;
+}
+
+.detail .detail-list .address-title {
+	display: inline-block
+}
+
+.detail .margin0 {
+	margin: 0 !important;
+}
+
+.detail .detail-list .ion-right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: .7rem;
+	height: 1.4rem;
+	margin-top: 1.4rem;
+	background-image: url(../../../images/public/com_jiantouhongse_icon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: .8rem;
+}
+

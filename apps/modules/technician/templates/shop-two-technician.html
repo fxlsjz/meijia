@@ -1,0 +1,55 @@
+<!--到店双人下单流程上的技师列表 -->
+<ion-view class="technician-two wrap">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="left-img"></div>
+		<div class="ub-f1 wrap-search">
+			<i class="search-icon"></i>
+			<input class="m-t-5" type="text" placeholder="搜索美甲师姓名" ng-model="searchText.text" ng-keyup="search($event)" />
+		</div>
+		<div class="search-btn" on-tap="search($event)"></div>
+	</ion-header-bar>
+	<!--给我选给他选布局-->
+	<div class="classify ub c-3 f-s-28">
+		<div class="ub-f1">
+			<div class="geiwoxuan" ng-class="{true: 'select', false: ''}[isGiveMe]" on-tap="cutMyAndHer(true)">给我选</div>
+		</div>
+		<div class="ub-f1">
+			<div class="geiwoxuan" ng-class="{true: 'select', false: ''}[!isGiveMe]" on-tap="cutMyAndHer(false)">给TA选</div>
+		</div>
+	</div>
+	<!--排序方式选项-->
+	<div class="classify ub c-3 f-s-28">
+		<div class="ub-f1">
+			<div class="geiwoxuan" ng-class="{true: 'select', false: ''}[service_ordertype=='ORDER_COMMENT']" on-tap="cutType('ORDER_COMMENT')">评价最高</div>
+		</div>
+		<div class="ub-f1">
+			<div class="geiwoxuan" ng-class="{true: 'select', false: ''}[service_ordertype=='ORDER_COLLECTION']" on-tap="cutType('ORDER_COLLECTION')">收藏最多</div>
+		</div>
+		<div class="ub-f1">
+			<div class="geiwoxuan" ng-class="{true: 'select', false: ''}[service_ordertype=='ORDER_COMPLEX']" on-tap="cutType('ORDER_COMPLEX')">综合排序</div>
+		</div>
+	</div>
+	<ion-content class="listcontent" delegate-handle="scrollContent" lazy-scroll>
+		<!--下拉刷新-->
+		<ion-refresher class="u-loading-ion" on-refresh="stroeDoRefresh()"></ion-refresher>
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="isShowNoData"></mobo-no-data>
+		<!--技师列表-->
+		<div class="list-class" ng-repeat="item in items" on-tap="goDetail(item.beauticianid,item)">
+			<span class="background-img technician-list-img" image-lazy-src="{{item.photo_two | baseUrl}}" image-lazy-background-image="true"></span>
+			<div class="list-collect">
+				<div class="u-cancel-collect" ng-if="item.iscollection == 'Y'" on-tap="technicianCollection(item,$event)"></div>
+				<div class="u-collect" ng-if="item.iscollection == 'N'" on-tap="technicianCollectionCancel(item,$event)"></div>
+			</div>
+			<div class="list-content">
+				<!--技师名称和已服务次数 选她按钮-->
+				<div class="m-t-20 c-3 f-s-28 text-center ub-f1 line-ellipsis-1" ng-bind="item.nickname" ></div>
+				<div class="m-t-20 c-9 f-s-20 text-center ub-f1 line-ellipsis-1">已服务 {{item.order_count}} 次</div>
+				<div on-tap="select(item,$event)" class="m-t-20 f-s-26 technician-list-select" ng-class="{'technician-list-clear-select':(isGiveMe&&myTechnician&&myTechnician.beauticianid==item.beauticianid)||(!isGiveMe&&herTechnician&&herTechnician.beauticianid==item.beauticianid)}">选她</div>
+
+			</div>
+
+		</div>
+		<ion-infinite-scroll ng-class="{'u-loading-ion': isShowLoadMore}" ng-if="isShowLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+	</ion-content>
+</ion-view>

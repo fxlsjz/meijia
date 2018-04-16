@@ -1,0 +1,361 @@
+/*
+ *会员套票列表样式
+ */
+.VIPPackage{
+
+}
+
+/*美甲样式*/
+.VIPPackage .bar-header {
+    width: 100%;
+    height: 4.75rem;
+    background-color: #ffffff;
+    position: relative;
+    border-bottom: 0 solid #ffffff;
+}
+.VIPPackage .left-img{
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    width: 7.95rem;
+    height: 1.25rem;
+    background-size: cover;
+    background-image: url(../../../images/technician/fashion-me.png);
+}
+.VIPPackage .search-icon {
+    width: 1.15rem;
+    height: 1.35rem;
+    position: absolute;
+    top: 0.88rem;
+    left: 1rem;
+    background-image: url(../../../images/technician/dp_sousuo_icon.png);
+    background-size: cover;
+}
+
+.VIPPackage input[type=text] {
+    padding-left: 2.6rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 8px;
+    width: 100%;
+    background-color: #dedede;
+}
+.VIPPackage .wrap-search {
+    height: 3rem;
+    line-height: 3rem;
+    background-color: rgb(245,245,245);
+    border-radius: 8px;
+    position: relative;
+    margin-right: 1.25rem;
+}
+.VIPPackage .search-btn {
+    margin-right: 1.5rem;
+    width: 1.15rem;
+    height: 1.35rem;
+    background-size: cover;
+    background-image: url(../../../images/technician/dp_sousuo_btn.png);
+
+}
+
+/**
+ * 会员分类标签样式
+ */
+.VIPPackage .tabbed-slidebox {
+    width: 100%;
+    position: absolute;
+    z-index: 999;
+}
+.VIPPackage .tabbed-slidebox .tsb-hscroll.scroll-view .scroll {
+    border-bottom: 0px solid #dedede;
+}
+.VIPPackage .class-type-content-hidden{
+    display: none;
+    width:100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-top:1px solid #dedede;
+    border-bottom:1px solid #dedede;
+    height: 100rem;
+}
+.VIPPackage .class-type-content{
+    display: block;
+    width:100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-top:1px solid #dedede;
+    border-bottom:1px solid #dedede;
+    height: 100rem;
+}
+.VIPPackage .class-type-detail{
+    display:inline-block;
+    width:calc(100% / 4.0);
+}
+.VIPPackage .class-type-detail i{
+    height:4rem;
+    line-height: 5rem;
+    text-align: center;
+}
+.VIPPackage .btn-content{
+    height: 4.5rem;
+    border-top: 1px solid #dedede;
+
+}
+.VIPPackage .cancel{
+    width: 50%;
+    border-right: 1px solid #dedede;
+    color: #999999;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    height: 1.5rem;
+}
+.VIPPackage .confirm{
+    width: 50%;
+    color: #333333;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    height: 1.5rem;
+
+}
+
+/*分类item*/
+.VIPPackage .active-item-selected{
+    color:#df3680;
+}
+
+.VIPPackage .active-item{
+    color: #333333;
+
+}
+
+.VIPPackage .tsb-icons .tsb-ic-wrpNew .scroll span i {
+    padding-left: 0;
+    padding-right: 0;
+}
+.VIPPackage .tabbed-slidebox .tsb-icons .scroll span.active i {
+    color: #DF3680;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+/*标签上的下划线*/
+.VIPPackage .tabbed-slidebox .tsb-icons .scroll span .select-line{
+    display: block;
+    width: 13px;
+    border-bottom: 2px solid #fff;
+    margin: 0 auto;
+}
+.VIPPackage .tabbed-slidebox .tsb-icons .scroll span.active .select-line{
+    display: block;
+    width: 13px;
+    border-bottom: 2px solid #e64c65;
+    margin: 0 auto;
+}
+/*分类内容上的下划线*/
+.VIPPackage .class-line{
+    display: block;
+    width: 13px;
+    border-bottom: 2px solid #fff;
+    margin: 0 auto;
+}
+.VIPPackage .class-line-pressed{
+    display: block;
+    width: 13px;
+    border-bottom: 2px solid #e64c65;
+    margin: 0 auto;
+}
+.VIPPackage .arrow-pos{
+    width:0.75rem;
+    height:0.4rem;
+    position:absolute;
+    background-size: cover;
+}
+/*价格排序*/
+.VIPPackage .arrow-up{
+    top:30%;
+    background-image: url(../../../images/mall/sc_jiage_icon.png);
+}
+.VIPPackage .arrow-up-active{
+    top:30%;
+    background-image: url(../../../images/mall/sc_jiage_icon_pressed.png);
+}
+.VIPPackage .arrow-down{
+    bottom:20%;
+    background-image: url(../../../images/mall/sc_jiagedown_icon.png);
+}
+.VIPPackage .arrow-down-active{
+    bottom:20%;
+    background-image: url(../../../images/mall/sc_jiagedown_icon_pressed.png);
+}
+
+/**
+ * 会员套票列表样式
+ */
+
+.VIPPackage .scroll-refresher {
+    top: -5.44rem;
+}
+.VIPPackage .VIP-content{
+    margin: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+.VIPPackage .hot-list{
+    margin-top: 1rem;
+    background-color: #ffffff;
+}
+.VIPPackage .tab-footer {
+    color: #333333;
+    font-size: 1.6rem;
+}
+
+.VIPPackage ion-content {
+    background-color: #ffffff;
+}
+.VIPPackage .list-item{
+    border: 1px solid #dedede;
+    height: 13.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+}
+.VIPPackage .list-class{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+/*690 390:300 1.76923077:2.3*/
+/*奇数列表比例  上:57.5:42.5 下 62:38*/
+/*690 300:390*/
+/*偶数列表比例  2.3:上:57.5:42.5 下 62:38*/
+.VIPPackage .hot-list-img{
+    -webkit-clip-path:polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 57.5% 0%, 62% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.VIPPackage .hot-list-img-even{
+    -webkit-clip-path:polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    clip-path: polygon(42.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.VIPPackage .hot-list-content{
+    background-color: #ffffff;
+    -webkit-clip-path:polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    clip-path: polygon(57.5% 0%, 100% 0%, 100% 100%, 38% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.VIPPackage .hot-list-content-even{
+    background-color: #ffffff;
+    -webkit-clip-path:polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 42.5% 0%, 38% 100%, 0% 100%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.VIPPackage .list-recommend-img{
+    position: absolute;
+    left: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-image: url(../../../images/service/recommend-icon.png);
+    background-size: cover;
+}
+.VIPPackage .list-recommend-img-even{
+    position: absolute;
+    right: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    background-image: url(../../../images/service/recommend-iconyou.png);
+    background-size: cover;
+}
+.VIPPackage .hot-name{
+    font-size: 1.4rem;
+    color: #333333;
+    text-align: center;
+}
+.VIPPackage .hot-right-content{
+    width: 40%;
+    height: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    right: 0;
+}
+.VIPPackage .hot-right-content-even{
+    width: 40%;
+    height: 100%;
+    padding: 1rem 0;
+    position: absolute;
+    left: 0;
+}
+.VIPPackage .btn-Content{
+    position: absolute;
+    bottom: 1.5rem;
+    padding: 0 3rem;
+    width: 100%;
+}
+.VIPPackage .u-collect {
+    background: url(../../../images/home/home_shoucang_pressed.png) no-repeat center;
+    width: 2.05rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+    float: left;
+
+}
+.VIPPackage .u-cancel-collect {
+    background: url(../../../images/home/home_shoucang.png) no-repeat center;
+    width: 2.05rem;
+    height: 1.8rem;
+    display: inline-block;
+    background-size: 100%;
+    float: left;
+}
+.VIPPackage .m-t-20{
+    margin-top: 1rem;
+}
+/*加入购物车*/
+.VIPPackage .package-join-car{
+    display: inline-block;
+    background: url(../../../images/service/com_qujiesuan_btn.png) no-repeat;
+    background-size: contain;
+    width: 1.85rem;
+    height: 1.5rem;
+    float: right;
+    margin-top: 0.1px;
+}
+/*取消加入购物车*/
+.VIPPackage .package-join-car-cancel {
+    display: inline-block;
+    background: url(../../../images/service/com_qujiesuan_btn_pressed.png) no-repeat;
+    background-size: contain;
+    width: 1.85rem;
+    height: 1.5rem;
+    float: right;
+    margin-top: 2px;
+}
+
+/**
+ *  底部去结算
+ */
+.VIPPackage .bottom-btn {
+    border-top: 1px #dedede solid;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 4.5rem;
+    padding: 0 1.5rem;
+    background-color: #ffffff;
+    line-height: 4.5rem;
+    font-size: 1.5rem;
+    color: #333333;
+}
+/*去结算按钮*/
+.VIPPackage .bottom-next {
+    text-align: center;
+    color: #DF3680;
+}

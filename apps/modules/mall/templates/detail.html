@@ -1,0 +1,230 @@
+<ion-view class="detail">
+    <!--头部-->
+    <ion-header-bar class="ub ub-ac bar bar-header title">
+        <div class="go-back-btn go-back-btn-white h44 disable-user-behavior" on-tap="goBackList()"></div>
+        <!--标签-->
+        <div class="ub ub-pc ub-f1 mall-title">
+            <div class="title-tex" ng-class="{true:'lable-info-press',flase:''}[typeId=='1']" on-tap="selType(1)">商品
+            </div>
+        </div>
+        <div class=" ub ub-pc ub-f1 mall-title">
+            <div class="title-tex" ng-class="{true:'lable-info-press',flase:''}[typeId=='2']" on-tap="selType(2)">详情
+            </div>
+        </div>
+
+        <div class="ub ub-pc ub-f1 mall-title">
+            <div class="title-tex" ng-class="{true:'lable-info-press',flase:''}[typeId=='3']" on-tap="selType(3)">评价
+            </div>
+        </div>
+    </ion-header-bar>
+
+    <!--内容-->
+    <ion-content delegate-handle="cepingSlide" lazy-scroll>
+        <div ng-if="showPageMall">
+
+            <!--轮播图-->
+            <div class="mb_banner" cache-view="false" id="rotateImg">
+                <ion-slide-box delegate-handle="rotateImg" show-pager="false" on-slide-changed="changPage()">
+                    <ion-slide ng-repeat="pitem in imgcountallList  track by $index">
+                        <li image-lazy-src="{{pitem | baseUrl}}" image-preview="{{imgcountallList}}" multiple="true"
+                            image-lazy-background-image="true" class="background-img" index="{{$index}}">
+                            <i>{{phoneNum}}/{{imgcountall}}</i></li>
+                    </ion-slide>
+                </ion-slide-box>
+
+            </div>
+            <div class="f-s-30 c-3 bg-color-f x-detailtile">
+                {{shopDetails.name}}<br/>
+                <div class="p-t-40" ng-if="shopDetails.issale==0"><span ng-style='gray'
+                                                                        class="f-s-30 c-e6">¥</span><span
+                        ng-style='gray' class="f-s-60 c-e6" ng-bind="productPrice"></span></div>
+                <div class="p-t-40" ng-if="shopDetails.issale==1"><span class="f-s-60 c-e6">暂无报价</span><span
+                        class="f-s-30 c-3 p-l-20">已下架</span></div>
+            </div>
+            <div class="bg-color-f m-t-10 p-l-30 p-t-30 p-b-30 f-s-28 c-3 ub" ng-show="goodsOut">
+                <div class="ub-f1"><span class="c-80 f-s-28">已选：</span><span ng-bind="productName"></span>、<span
+                        ng-bind="numbers"></span>个
+                </div>
+                <div class="p-r-20 c-e6" ng-style="displayNo">无货</div>
+                <div class="p-r-56 detail-more" on-tap="format()" ng-style="formatClick"></div>
+            </div>
+            <!--产品标签-->
+            <div class="bg-color-f m-t-10 p-l-30 p-t-15 p-b-15 f-s-28 product-tagall">
+                <div class="product-tags" ng-repeat="productTag in shopDetails.product_tag">
+                    <div class="ub">
+                        <span class="product-tag ub-f1"></span>
+                        <span class="line-ellipsis-1 ub-f2 product-word">{{productTag}}&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+            </div>
+            <!--评价列表-->
+            <div class="commont-list bg-color-f p-l-30 p-t-32 p-r-30 m-t-10">
+                <div class="ub commont-titleall p-b-30">
+                    <div class="commnont-title f-s-28 c-3 ub-f1">评价<span class="f-s-24 c-80">(<i
+                            ng-bind="shopDetails.commentcount"></i>)</span></div>
+                    <div class="ub-f1 commont-praise c-6 f-s-26" on-tap="selType(3)"><!--on-tap="evalSelect()"-->
+                        好评率<span class="c-e6 p-l-10 p-r-20">{{shopDetails.goodradio}}%</span><span
+                                class="commont-icon"></span></div>
+                </div>
+                <!--				        	<mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="Y" ng-if="shopCommentList && shopCommentList.length == 0"></mobo-no-data>-->
+
+                <div class="commont-content p-t-20 p-b-20" ng-repeat="item in shopEvaluaList">
+
+                    <div class="ub" on-tap="evalSelect()">
+                        <!--评论星级-->
+                        <div class="ub-f1 commont-start">
+                            <li style="width: {{(item.score | star) * 20}}%;"></li>
+                        </div>
+                        <!--买家昵称-->
+                        <div class="ub-f1 c-3 f-s-28 commont-author" ng-bind="item.isAnonysMity"></div>
+
+                    </div>
+                    <div class="p-t-20 c-3 f-s-26  line-ellipsis-3" ng-bind="item.content" on-tap="evalSelect()"></div>
+                    <!--评论图片-->
+                    <div class="comment-imgall">
+                        <div class="comment-img" ng-repeat="cimg in item.comment_img.cimg" ratio-scale="1:1">
+                            <i image-lazy-src="{{cimg | baseUrl}}" image-preview="{{item.comment_img.cimg_large}}"
+                               multiple="true" index="{{$index}}" image-lazy-background-image="true"
+                               class="background-img">
+                            </i>
+                        </div>
+                    </div>
+                    <!--商家回复-->
+                    <div class="storeall storeallTwo" on-tap="evalSelect()" ng-if="item.seller_replay!=''">
+                        <span class="storea f-s-20 c-e6 storeaTwo">商家回复</span><span class="c-3 f-s-26 line-ellipsis-3 replyContent"
+                                                                          ng-bind="item.seller_replay"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomHeight"></div>
+        </div>
+        <!--详情-->
+        <div ng-if="showPageDetail">
+            <div ng-controller="MallShopDetailCtrl" class=" p-t-20 p-r-20 p-l-20 p-b-20 "
+                 ng-bind-html="pContent"></div>
+            </ion-slide>
+            <div style="height:5rem;width:100%;"></div>
+        </div>
+
+        <!--评价-->
+        <div ng-if="showEvaluate" ng-controller="MallEvaluateCtrl">
+            <div class="bar bar-subheader bar-stable">
+                <div class="u-tabs button-bar ub">
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 0}" ng-click="categoryOrder(0)">
+                        <p>全部评价</p>
+                        <p>（{{evaAll}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 1}" ng-click="categoryOrder(1)">
+                        <p>好评</p>
+                        <p>（{{evaUpper}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 2}" ng-click="categoryOrder(2)">
+                        <p>中评</p>
+                        <p>（{{evaMiddle}}）</p>
+                    </div>
+                    <div class="tab-in ub-f1" ng-class="{'active': sortid == 3}" ng-click="categoryOrder(3)">
+                        <p>差评</p>
+                        <p>（{{evaDown}}）</p>
+                    </div>
+                    <!--<div class="tab-in ub-f1" ng-class="{'active': sortid == 4}" ng-click="imgShow()">
+                        <p>晒图</p>
+                        <p>（{{evaImg}}）</p>
+                    </div>-->
+                </div>
+                <div style="height: 1rem;width:100%;background-color: #f2f7f6;"></div>
+                <!--<div class="u-line"></div>-->
+            </div>
+            
+            <!--评价内容-->
+            <ion-content class="bg-color-gr p-t-20 u-top4 u-topNew" lazy-scroll>
+                <!--图片无数据显示-->
+                <!--<mobo-no-data text="哎呀，页面被小怪兽吃掉了！重试一下吧!" layout="x" ng-if="listdata1"></mobo-no-data>-->
+                <!--评价无数据显示-->
+                <mobo-no-data text="暂无数据!" layout="x" ng-if="listdata"></mobo-no-data>
+                <!--晒图-->
+                <!--<div class="comment-imgall p-r-20 p-l-20" ng-show="!switchImg">
+
+                    <div class="comment-img" ng-repeat="cimg in item.comment_img.cimg" ratio-scale="1:1">
+                        <i image-lazy-src="{{cimg | baseUrl}}" image-preview="{{item.comment_img.cimg}}" multiple="true" index="{{$index}}" image-lazy-background-image="true" class="background-img">
+                                        </i>
+                    </div>
+                </div>-->
+                <!--晒图-->
+                <!--	<ion-infinite-scroll  class="u-loading-ion"  ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>-->
+                <!--</div>-->
+                <!--评价列表-->
+                <div class="pinList">
+                    <div class="bg-color-f m-t-16 p-t-20 p-r-20 p-l-20 assess" ng-repeat="list in evalList">
+                        <div class="ub eval-titleall p-b-20">
+                            <div class="eval-title f-s-28 c-3 ub-f1">
+                                <span ng-if="list.isanonymity == '0'" class="eval-userheader"
+                                      image-lazy-background-image="true"
+                                      image-lazy-src="{{list.uidimg | baseUrl}}"
+                                      ratio-scale="1:1"></span>
+                                <span ng-if="list.isanonymity == '0'">{{list.uname}}</span>
+                                <span ng-if="list.isanonymity == '1'" class="eval-userheader"></span>
+                                <span ng-if="list.isanonymity == '1'">匿名</span>
+                            </div>
+                            <div class="ub-f1 eval-data c-80 f-s-24">{{list.datetime *1000 | date:"yyyy-MM-dd HH:mm"}}
+                            </div>
+                        </div>
+                        <div class="eval-content p-t-20 p-b-20">
+                            <div class="ub">
+                                <div class="ub-f1 commont-start">
+                                    <li style="width: {{(list.score | star) * 20}}%;"></li>
+                                </div>
+                                <div class="ub-f1 c-3 f-s-28 commont-author ng-binding"
+                                     ng-bind="commentList.nickname"></div>
+                            </div>
+                            <div ng-bind="list.content" class="p-t-20 c-3 f-s-26"></div>
+                            <!--评论图片-->
+                            <div class="comment-imgall comment-imgallNew">
+                                <div class="comment-img" ng-repeat="cimg in list.comment_img" ratio-scale="1:1">
+                                    <i image-lazy-src="{{cimg.cimg | baseUrl}}" image-preview="{{getLargePicArray(list.comment_img)}}"
+                                       multiple="true" index="{{$index}}" image-lazy-background-image="true"
+                                       class="background-img" >
+                                    </i>
+                                </div>
+                            </div>
+                            <!--商家回复-->
+                            <div class="storeall storeallTwo" ng-if="list.seller_replay!=''">
+                                <span class="storea f-s-20 c-e6 storeaTwo">商家回复</span><span class="c-3 f-s-26 line-ellipsis-2 replyContent"
+                                                                                  ng-bind="list.seller_replay"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class=" bottomHeight"></div>--><!--bg-color-f-->
+                <!--评价上拉加载-->
+                <ion-infinite-scroll class="u-loading-ion" ng-if="canLoadMoreGoodsList" distance="1%"
+                                     immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+                <!--评价下拉刷新-->
+                <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+                <div class=" bottomHeight" style="height: 7rem;"></div>
+        </div>
+    </ion-content>
+    <div class="footer-submit ub">
+        <div ng-if="collIsNo" ng-click="collIs()" class="bg-color-f btn-collect c-3 p-r-56 p-l-56 p-t-10"
+             ng-style="noCollect"><i></i>
+            <p class="f-s-24 c-3">收藏</p>
+        </div>
+        <div ng-if="!collIsNo" ng-click="collNo()" class="bg-color-f btn-collect c-3 p-r-56 p-l-56 p-t-10"
+             ng-style="noCollect"><i class="red-stars"></i>
+            <p class="f-s-24 c-3">收藏</p>
+        </div>
+        <div class="bg-color-f btn-shop c-3 p-r-56 p-l-56 p-t-10" ui-sref="my-car">
+            <div style="align-content: center;text-align:center;position: relative;">
+                <i></i>
+                <span class="car-num" ng-if="shopNum && shopNum!=0 && shopNum < 99">{{shopNum}}</span>
+                <div class="car-num" ng-if="shopNum > 99" style="right: 0.1rem;top:0;">99</div>
+                <span class="c-e6" ng-if="shopNum > 99" style="position:absolute;right: -0.8rem;top:-0.4rem;">+</span>
+                <div class="f-s-24 c-3">购物车</div>
+            </div>
+        </div>
+
+        <div class="ub-f2 bg-color-r btn-addshop c-f f-s-28" on-tap="addcar(productfid,numbers)" ng-style="noAdd">
+            加入购物车
+        </div>
+    </div>
+
+</ion-view>

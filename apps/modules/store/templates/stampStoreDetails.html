@@ -1,0 +1,105 @@
+<!--套票店面详情-->
+<!--auth:wuhao-->
+<ion-view class="p-s-deteils">
+
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<div class="go-back-btn disable-user-behavior" on-tap="goBack()"></div>
+		<h1 class="bar-title" id="p-s-deteils-title">店面详情</h1>
+		<div class="ub-f1 wrap-search display-none search" id="p-s-deteils-search">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索关键字" ng-keyup="search($event)" ng-model="searchTxt.text" />
+		</div>
+		<div class="search-icons" on-tap="changeSearchShow()" id="detail-serch-ion"></div>
+	</ion-header-bar>
+	<!--服务分类悬浮-->
+	<ion-scroll id="serviceTypeFixed" delegate-handle="serviceTypeFixed" ng-if="serviceType!=null&&serviceType.length>0" on-scroll="onServiceTypeFixedScrollListener()" direction="x" class="bg-color-f servicetype-list-fixed">
+		<div class="service-type" style="width: {{cWidth}}px;">
+			<div class="service-type-view" style="width: {{serviceTypeWidth}}px;" ng-repeat="item in serviceType" on-tap="tab(item.servicetype_id,$event)">
+				<div class="c-3 f-s-28 service-type-item" ng-class="{'service-type-item-selected': selectServiceTypeId == item.servicetype_id}">{{item.servicetype_name}}</div>
+			</div>
+		</div>
+	</ion-scroll>
+	<ion-content id="body-view" delegate-handle="scrollContent" class="content" lazy-scroll on-scroll="onServiceScrollListener()">
+		<!--用来计算高度的元素-->
+		<div id="contentView">
+			<!--用来计算店面信息模块的高度-->
+			<div id="infoContent">
+
+				<!--店面图片-->
+				<div class="background-img imag" style="height: {{imageHeight}}px" image-lazy-background-image="true" image-lazy-src="{{imgPath[0]|baseUrl}}" on-tap="goAlbum()"></div>
+				<!--店面信息布局-->
+				<div class="c-f p-l-30 p-r-30">
+					<!--店面名称-->
+					<div class="f-s-34 c-3 name">{{storeInfo.sname}}</div>
+					<!--店面地址-->
+					<div class="ub adress" on-tap="goMap()">
+						<div class="adress-loction"></div>
+						<div class="adress-name ub-f1 f-s-28 c-e6 ub-ac">{{storeInfo.adress}}</div>
+					</div>
+					<!--电话-->
+					<div class="ub adress">
+						<div class="phone"></div>
+						<div class="adress-name ub-f1 f-s-28 c-e6 ub-ac">{{storeInfo.telephone}}</div>
+					</div>
+				</div>
+				<!--分割线-->
+				<div style="height:0.5rem;background-color: #f7f7f7;"></div>
+			</div>
+			<!--服务分类-->
+			<ion-scroll delegate-handle="serviceType" on-scroll="onServiceTypeScrollListener()" ng-if="serviceType!=null&&serviceType.length>0" direction="x">
+				<div class="service-type" style="width: {{cWidth}}px;">
+					<div class="service-type-view" style="width: {{serviceTypeWidth}}px;" ng-repeat="item in serviceType" on-tap="tab(item.servicetype_id,$event)">
+						<div class="c-3 f-s-28 service-type-item" ng-class="{'service-type-item-selected': selectServiceTypeId == item.servicetype_id}">{{item.servicetype_name}}</div>
+					</div>
+				</div>
+			</ion-scroll>
+			<!--服务列表-->
+			<div class="list-item ub" ng-repeat="item in items" on-tap="goDetail(item)">
+				<!--图片-->
+				<div class="background-img list-image" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+					<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+				</div>
+				<div class="list-content ub-f1">
+					<div class="ub">
+						<!--服务名称-->
+						<div class="f-s-28 c-3 line-ellipsis-1 ub-f1 list-name">{{item.iname}}</div>
+						<!--收藏图标-->
+						<div ng-class="{true:'u-cancel-collect',false:'u-collect'}[item.iscollection == 'N']" on-tap="collectionService(item,$event)"></div>
+					</div>
+					<!--服务时长-->
+					<div class="f-s-20 c-3 list-service-time-view">
+						<div class="list-service-time-img"></div>
+						<div class="list-service-time">{{item.iusetime}}分钟</div>
+					</div>
+					<div class="list-price-and-add">
+						<div class="list-price c-e6 f-s-28">¥{{item.nowprice}}
+							<!--原价-->
+							<i class="f-s-20 c-3">/{{item.service_count}}次</i>
+						</div>
+						<!--购买人数-->
+						<div class="f-s-16 c-9">{{item.iusecount}}人购买</div>
+
+					</div>
+					<!--加入购物车-->
+					<div class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)">{{item.selected?'取消购买':'加入购买'}}</div>
+					<!--分割线-->
+					<div class="list-line" ng-if="$index!=items.length-1"></div>
+				</div>
+			</div>
+			<mobo-no-data text="暂无数据!" layout="x" ng-if="isShowNoData"></mobo-no-data>
+			<!--上拉加载-->
+			<ion-infinite-scroll class="u-loading-ion" ng-if="isShowLoadMore" distance="1%" immediate-check="false"></ion-infinite-scroll>
+		</div>
+	</ion-content>
+	<!--底部去结算-->
+	<div id="btnBottom" class="bottom ub c-f bg-color-r f-s-28">
+		<div class="p-l-30 ub-f1 ub">
+			<div class="line-height-80">合计:&nbsp;¥&nbsp;&nbsp;{{money}}</div>
+			<div class="line-height-80 ub-f1 bottom-time-view">
+				<div class="bottom-time-ion"></div>
+				<div class="line-height-80 bottom-time">&nbsp;{{serviceTime}}分钟</div>
+			</div>
+		</div>
+		<div class="line-height-80 bottom-next" on-tap="settlement()">去结算</div>
+	</div>
+</ion-view>

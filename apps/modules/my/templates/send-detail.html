@@ -1,0 +1,97 @@
+<ion-view class="send-detail">
+	<ion-header-bar class="ub ub-ac bar bar-header">
+        <div class="go-back-btn disable-user-behavior" on-tap="onBackPressed()"></div>
+        <h1 class="bar-title ub-f1">物流详情</h1>
+        <div class="header-right"></div>
+    </ion-header-bar>
+    <ion-content>
+		<div class="bg-color-f p-l-30 p-r-30">
+			<div class="ub order-num p-t-30 p-b-30">
+				<div class="ub-f1 f-s-28 c-3">订单编号</div>
+				<div class="ub-f3 f-s-28 c-e6" ng-bind="SendDetail.orderno"></div>
+			</div>
+			<div class="ub p-t-30 p-b-30">
+				<div class="ub-f1 f-s-28 c-3">下单时间</div>
+				<div class="ub-f3 f-s-28 c-3">{{SendDetail.datetime *1000 | date:"yyyy-MM-dd HH:mm"   }}</div>
+			</div>
+		</div>
+		<div class="bg-color-f m-t-10 p-l-30 p-r-30 p-t-25 p-b-25">
+			<div class="ub">
+				<div class="send-car"></div>
+				<div class="ub-f1">
+					<div class="f-s-30 c-3 p-t-10 p-b-20" ng-bind="SendDetail.ename"></div>
+					<div class="f-s-28 c-59 p-b-10">运单编号 <i class="c-e6" ng-bind="SendDetail.logisticcode"></i></div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-color-f m-t-10 p-l-30 p-r-30 p-t-30 p-b-30">
+			<mobo-no-data text="暂时还没有物流信息哦！" layout="Y" ng-if="SendDetail.delivery_list && SendDetail.delivery_list.length == 0"></mobo-no-data>
+			<div class="detailSend" ng-repeat="item in SendDetail.delivery_list">
+				<div class="ub" >
+					<div class="">
+						<div class="process"></div>
+						<div class="line"></div>
+					</div>
+					<div class="ub-f1">
+						<div class="f-s-28 c-3" ng-bind="item.acceptstation"></div>
+						<div class="send-date f-s-24 c-6" ng-bind="item.trace"></div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="">
+				<div class="ub">
+					<div class="">
+						<div class="process active"></div>
+						<div class="line active"></div>
+					</div>
+					<div class="ub-f1">
+						<div class="f-s-28 c-3">金华市【义乌转运中心】，正发往【北京市转运中心】，电话13125698756</div>
+						<div class="send-date f-s-24 c-6">2016-10-11 15:20</div>
+					</div>
+				</div>
+			</div>
+			<div class="">
+				<div class="ub">
+					<div class="">
+						<div class="process"></div>
+						<div class="line"></div>
+					</div>
+					<div class="ub-f1">
+						<div class="f-s-28 c-3">金华市【义乌转运中心】，正发往【北京市转运中心】，电话13125698756</div>
+						<div class="send-date f-s-24 c-6">2016-10-11 15:20</div>
+					</div>
+				</div>
+			</div>-->
+			<!--<div class="">-->
+				<!--<div class="ub">
+					<div class="process active"></div>
+					<div class="ub-f1 f-s-28 c-3">已到达北京市【北京市转运中心】</div>
+				</div>-->
+				<!--<div class="ub">
+					<div class="line active"></div>
+					<div class="ub-f1 send-date f-s-24 c-6">2016-10-11 15:20</div>
+				</div>-->
+			<!--</div>-->
+			<!--<div class="">
+				<div class="ub">
+					<div class="process"></div>
+					<div class="ub-f1 f-s-28 c-3">金华市【义乌转运中心】，正发往【北京市转运中心】，电话13125698756</div>
+				</div>
+				<div class="ub">
+					<div class="line"></div>
+					<div class="ub-f1 send-date f-s-24 c-6">2016-10-11 15:20</div>
+				</div>
+			</div>
+			<div class="">
+				<div class="ub">
+					<div class="process active"></div>
+					<div class="ub-f1 f-s-28 c-3">已到达北京市【北京市转运中心】</div>
+				</div>
+				<div class="ub">
+					<div class="line active"></div>
+					<div class="ub-f1 send-date f-s-24 c-6">2016-10-11 15:20</div>
+				</div>
+			</div>-->
+		</div>
+    </ion-content>
+</ion-view>

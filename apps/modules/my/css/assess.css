@@ -1,0 +1,259 @@
+/*商品评价
+ author wanghui
+ */
+
+.noImg{
+	background:none;
+	color: #fff;
+	padding-left: 1rem;
+	width: auto;
+}
+/*商品评价*/
+.assess .top {
+    padding: 1.5rem;
+}
+
+.assess .selece {
+    margin-top: .5rem;
+}
+
+.assess .selece:first-child {
+    margin-top: 0;
+}
+
+.assess .top .u-img {
+    display: inline-block;
+    width: 12.4rem;
+    height: 7rem;
+    margin-right: 1.7rem;
+}
+.assess .top .u-imgTwo {
+    height: 7.5rem;
+}
+
+.assess .top .right-details {
+    padding: 0;
+}
+
+.assess .top .right-details .u-data {
+    text-align: right;
+}
+
+.assess .padding0 {
+    padding: 0;
+}
+
+.assess .span-block{
+    display: block;
+}
+
+.assess .u-stars {
+    margin-top: .5rem;
+    width: 100%;
+    padding: 2rem 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.assess .u-stars span {
+    display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin: 0 1.25em;
+    background: url(../../../images/my/pingjia_starkongxin.png);
+    background-size: cover;
+
+}
+
+.assess .assess-tab {
+    width: 100%;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+.assess .assess-tab span {
+    margin: 0 .7rem;
+}
+
+.assess .content {
+    padding-bottom: 8rem;
+    background: #fff;
+    padding-top: 2rem;
+}
+
+.assess .content .content-in {
+    border: 2px solid #dedede;
+    margin: 0 1.5rem;
+}
+
+.assess .content .content-in .evaluate {
+    position: relative;
+    padding: 1.5rem;
+
+}
+
+.assess .content .content-in .evaluate .f-topic-tj {
+    min-height: 19rem;
+}
+
+.assess .content .content-in .evaluate .f-topic-tj .background-img {
+    display: inline-block;
+    width: 32%;
+    height: 1rem;
+}
+
+.assess .content .content-in .evaluate .u-text {
+    width: 100%;
+    height: 10rem;
+}
+
+.assess .content .content-in .upload-a {
+    display: inline-block;
+    width: 4.5rem;
+    height: 4.5rem;
+    background: url(../../../images/my/pingjia_tianjiatupian_btn.png);
+    background-size: cover;
+}
+
+.assess .content .content-in .img-list span {
+    display: inline-block;
+    width: 32%;
+    height: 9rem;
+    background: #000000;
+}
+
+.assess .content .content-in .u-number {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+.assess .content .u-anonymous {
+    margin: 0 1.5rem;
+    padding: 1.25rem 0;
+}
+
+.assess .content .u-anonymous span {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../../../images/my/com_xuanze_btn.png);
+    background-size: cover;
+}
+
+.assess .content .u-anonymous .anonymous {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background: url(../../../images/my/com_xuanze_btn_pressed.png);
+    background-size: cover;
+}
+
+.f-topic-tj {
+    width: 1rem;
+    height: 1rem;
+}
+
+.s-left-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: .8rem solid #dedede;
+    border-right: .8rem solid transparent;
+}
+
+.s-right-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: .8rem solid #dedede;
+    border-left: .8rem solid transparent;
+}
+
+.assess .u-stars-box {
+    background: #fff;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    /*height:1.5rem ;*/
+}
+
+.mark-box {
+    position: relative;
+}
+
+.assess .u-stars-box .star-rating {
+    position: relative;
+    width: 21.9rem;
+    height: 2.3rem;
+    background-image: url(../../../images/public/pingjia_star_0.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+.assess .u-stars-box .star-rating .empty-box {
+    position: absolute;
+    width: 21.9rem;
+    height: 2.3rem;
+    top: 0;
+    left: 0;
+}
+
+.star-rating li {
+    width: 10rem;
+    display: block;
+    height: 100%;
+    background-image: url("../../../images/public/pingjia_star_5.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: auto 100%;
+}
+
+.assess .star-box {
+
+}
+
+.assess .img-content {
+    display: inline-block;
+    width: 7.5rem;
+    height: 7.5rem;
+    margin-right: 1rem;
+    position: relative;
+}
+
+.assess .img-content li{
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+}
+
+.assess .img-content .delete {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(../../../images/public/delete_pic.png);
+    background-size: cover;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+.assess .img-box {
+
+}
+
+.assess .add-img {
+    display: inline-block;
+    width: 7.5rem;
+    height: 7.5rem;
+    background-image: url(../../../images/my/pingjia_tianjiatupian_btn.png);
+    background-size: cover;
+}
+
+
+

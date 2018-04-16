@@ -1,0 +1,120 @@
+/*日期控件*/
+
+#select-date{
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+	padding:0em 1em;
+	
+	z-index:2000;
+	
+	}
+	
+#select-date .content-date{
+	position:relative;
+	top:50%;
+	min-height:30%;
+	margin:-9.8em auto 0 auto;
+	}	
+	
+#select-date .box{
+	border:#636363 0.15em solid;
+	border-radius:0.3em;
+	background:#000;
+	
+	
+	}
+	
+#select-date .bottom{
+	background-color:#939393;
+	padding:0.4em 0em;
+	height:2.8em;
+	line-height:1.8em;
+	
+	}
+	
+#select-date .bottom h1{
+	display:block;
+	background-color:#D4D4D4;
+	padding:0 2em;
+	border:#747474 0.1em solid;
+	box-shadow:inset 0 0.05em 0.1em rgba(0,0,0,0.6);
+	
+	}
+	
+#select-date .title{
+	text-indent:0.5em;
+	padding:.8em ;
+	height:.8em;
+	line-height:0em;
+	border-bottom:#1b1b1b 0.1em solid;
+	}
+	
+#select-date .dates{
+	padding:.8em 1em;
+	height:9.8em;
+	
+	
+	}
+#select-date .dates ul:nth-child(2){
+	padding:0em 0.5em;
+	}
+	
+#select-date .dates ul li{
+	width:3.2em;
+	padding:0.5em 0.5em;
+	background-color:#CACACA;
+	text-align:center;
+	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.35) ), to(rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.35) 0%,  rgba(0,0,0,0) 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0.35) 0%,  rgba(0,0,0,0) 100%);
+    box-shadow:inset 0 0.1em 0.1em rgba(0,0,0,0.6);
+	color:#666;
+	}
+	
+#select-date .dates ul li span{
+		font-size:1.5em;
+		}
+	
+#select-date .dates ul li:nth-child(1){
+	border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+	text-shadow:0px 0.05em 0.1em #333;
+	
+	font-family: "Arial", sans-serif;
+	
+	}
+	
+#select-date .dates ul li:nth-child(2){
+	background-color:#D8D8D8;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0) ), color-stop(50%, rgba(255,255,255,0.4) ), to(rgba(255, 255, 255, 0) ));
+	background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,  rgba(255,255,255,0) 100%);
+	background-image: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.4) 50%,  rgba(255,255,255,0) 100%);
+	border-radius:0;
+	box-shadow:inset 0 0.1em 0.8em rgba(0,0,0,0.6);
+	color:#000;
+	
+	
+	font-family:"Arial", sans-serif;
+	}
+	
+#select-date .dates ul li:nth-child(2) span{
+		text-shadow:0px 0.05em 0.1em #444;
+		}
+	
+#select-date .dates ul li:nth-child(3){
+	border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+	text-shadow:0px 0.05em 0.1em #444;
+	
+	font-family: "Arial", sans-serif;
+	}

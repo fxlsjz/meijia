@@ -1,0 +1,203 @@
+<!--搜索头部-->
+<ion-view class="service-index wrap">
+	<!--头部-->
+	<ion-header-bar class="ub ub-ac bar bar-header">
+		<!--<div  class="go-back-btn disable-user-behavior" on-tap="closeSearch()"></div>-->
+		<!--<div class="ub-f1 wrap-search" >
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索关键字" ng-model="searchText.text" ng-keyup="search($event)" />
+		</div>-->
+		<!--<h1 on-tap="openModal()" ng-if="switchTitle" class="bar-title ub-f1">预约到家<span class="triangle"></span></h1>-->
+		<div class="ub-f1 serviceTitle" ><!--ng-if="switchTitle"-->
+			Fashion Me
+			<span on-tap="openModal()">
+				<span class="c-f city"  ng-bind="selCityInfo.selCity"></span>
+				<i class="arrow"></i>
+			</span>
+		</div>
+		<div class="ub-f1 wrap-search">
+			<i class="search-icon"></i>
+			<input type="text" placeholder="搜索店面名称" ng-keyup="search($event)" ng-model="searchText.text" />
+		</div>
+		<!--<div class="u-search" on-tap="openSearch()" ng-if="switchTitle">&nbsp;&nbsp;</div>-->
+		<!--<div ng-if="!switchTitle" class="bar-submit">&nbsp;&nbsp;</div>-->
+	</ion-header-bar>
+	<!--选项-->
+	<!--服务分类-->
+	<!--<ion-scroll direction="x" style="margin-top: 0" ng-if="serviceType!=null&&serviceType.length>0">
+		<div class="service-type" style="width: {{serviceTypeWidth*serviceType.length}}px;">
+			<div class="service-view" style="width: {{serviceTypeWidth}}px;" ng-repeat="item in serviceType" on-tap="tab(item.servicetype_id)">
+				<div class="c-3 f-s-28 service-type-item" ng-class="{'service-type-item-selected': selectServiceTypeId == item.servicetype_id}">{{item.servicetype_name}}</div>
+			</div>
+		</div>
+	</ion-scroll>-->
+	<!--人气，价格，好评，分类start-->
+	<div class="tabbed-slidebox" tab="0">
+		<div class="tsb-icons">
+            <div class="tsb-ic-wrp tsb-ic-wrpNew">
+                <ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+                    <span ng-class="{'active': sortid == 0}" on-tap="categoryOrder(0)">
+						<i class="icon iconfont oa-Inbox ">人气</i>
+						<s class="xiaobian"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 1}" on-tap="categoryOrder(1);">
+						<i class="icon iconfont oa-Inbox ">价格</i>
+						<em class="mall-arrow-pos mall-arrow-up"
+                            ng-class="{true:'mall-arrow-up-active',false:''}[isUp]"></em>
+						<em class="mall-arrow-pos mall-arrow-down"
+                            ng-class="{true:'mall-arrow-down-active',false:''}[isDown]"></em>
+                        <s class="xiaobian"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 2}" on-tap="categoryOrder(2)">
+						<i class="icon iconfont oa-Inbox ">好评</i>
+						<s class="xiaobian"></s>
+                    </span>
+                    <div class="mall-a c-3" on-tap="proType()" ><!--proType()-->
+                        <i class="mall-a-type mall-a-typeNew" ng-class="{true:'active-type',false:''}[isShow == true]">分类</i>
+                        <s class="xiaobian"></s>
+                    </div>
+                </ion-scroll>
+            </div>
+        </div>
+	</div>
+	<!--end-->
+	
+	
+	<ion-content lazy-scroll class="scroll" delegate-handle="scrollContent" style="top: 8.25rem;bottom: 9.2rem;margin-bottom: 0;background: #fff;">
+		<!--下拉刷新-->
+		<ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+			<!--梯形-->
+		<!--<div class="list-item ub" ng-repeat="item in items" on-tap="goDetail(item,$index)">-->
+			<!--图片-->
+			<!--<div class="background-img list-image" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+				<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+			</div>-->
+			<!--右边-->
+			<!--<div class="list-content ub-f1">-->
+				<!--<div class="ub">-->
+					<!--服务名称-->
+					<!--<div class="f-s-28 c-3 line-ellipsis-1 ub-f1 list-name">{{item.iname}}</div>-->
+				<!--</div>-->
+				
+				<!--<div class="list-price c-e6 f-s-28">¥<span class="f-s-32">{{item.nowprice}}</span></div>-->
+				<!--服务时长-->
+				<!--<div class="f-s-20 c-9 list-service-time-view">
+					<span class="list-service-time">{{item.iusetime}}分钟</span>
+					<span>{{item.service_count}}人购买</span>
+				</div>-->
+				
+				<!--<div class="bottomBtn">-->
+					<!--收藏图标-->
+					<!--<div ng-class="{true:'u-cancel-collect',false:'u-collect'}[item.iscollection == 'N']" on-tap="item.iscollection=='N'?goodsCollection(item,$event):goodsCollectionDel(item,$event)"></div>-->
+					<!--加入购物车-->
+					<!--<div class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)">{{item.selected?'取消':'加入'}}</div>-->
+				<!--</div>-->
+					
+					
+			<!--</div>-->
+		<!--</div>-->
+		
+		<!--<div on-tap="choseStore()">12345678</div>-->
+		
+			<!--首页的梯形-->
+		<div class="list-item" ng-repeat="item in items" on-tap="goDetail(item,$index)">
+            <div ng-if="($index+1)%2 != 0" class="list-class">
+                <div class="hot-list-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+                <div class="hot-right-content">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center m-t-5">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20 m-t-5">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span class="m-l-5" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="botomBtns m-t-5">
+                    	<span class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)" ></span>
+                    	<span class="u-collect collection" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></span>
+                    	<!--加入购物车-->
+						<span class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)"></span>
+                    </div>
+                    
+                </div>
+            </div>
+            <div ng-if="($index+1)%2 == 0" class="list-class">
+                <div class="hot-right-content-even">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center" style="margin-top: 5px;">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20" style="margin-top: 5px;">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span class="m-l-5" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="botomBtns m-t-5">
+                    	<span class="u-cancel-collect collection" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></span>
+                    	<span class="u-collect collection m-t-5" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></span>
+                    	<!--加入购物车-->
+						<span class="list-join-car f-s-20" ng-class="{'list-cancel-car':item.selected}" on-tap="joinCar($event,item)"></span>
+                    </div>
+                    
+                </div>
+                <div class="hot-list-img-even" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}">
+                	<span class="list-tuijian" ng-if="item.isrecommend == 'Y'"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!--直角-->
+        <!--<div class="list-item newlList-item" ng-repeat="item in items" ng-click="itemClick($index)">
+            <div ng-if="($index+1)%2 != 0" class="list-class">
+                <div class="hot-list-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                <div class="hot-right-content">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center m-t-5">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20 m-t-5">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="u-cancel-collect collection m-t-5" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></div>
+                    <div class="u-collect collection m-t-5" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></div>
+                </div>
+            </div>
+            <div ng-if="($index+1)%2 == 0" class="list-class">
+                <div class="hot-right-content-even">
+                    <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                    <div class="ub-f1 text-center" style="margin-top: 5px;">
+                        <div class="c-e6 f-s-28">¥<span class="f-s-40" ng-bind="item.nowprice"></span></div>
+                    </div>
+                    <div class="content-times ub-f1 c-6 f-s-20" style="margin-top: 5px;">
+                        <span ng-bind="item.iusetime"></span>分钟
+                        <span style="margin-left: 10px;" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                    </div>
+                    <div class="u-cancel-collect collection m-t-5" ng-if="item.iscollection == 'N'" on-tap="goodsCollection(item,$event)"></div>
+                    <div class="u-collect collection m-t-5" ng-if="item.iscollection == 'Y'" on-tap="goodsCollectionDel(item,$event)"></div>
+                </div>
+                <div class="hot-list-img-even" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+            </div>
+        </div>-->
+		
+		<!--<div style="height: 17.4rem;"></div>-->
+
+		<!--上拉加载-->
+		<ion-infinite-scroll class="u-loading-ion" ng-if="isShowLoadMore" distance="1%" immediate-check="false" on-infinite="loadMoreGoodsList()"></ion-infinite-scroll>
+
+		<mobo-no-data text="暂无数据!" layout="x" ng-if="noData"></mobo-no-data>
+	</ion-content>
+	<!--底部去结算-->
+	<div id="btnBottom" class="bottom ub c-f f-s-28" ng-if="!noData">
+		<div class="p-l-30 ub-f1 ub">
+			<div class="line-height-80">合计:&nbsp;¥&nbsp;&nbsp;{{money}}</div>
+			<div class="line-height-80 ub-f1 bottom-time-view">
+				<!--<div class="bottom-time-ion"></div>-->
+				<div class="line-height-80 bottom-time">&nbsp;{{time}}分钟</div>
+			</div>
+		</div>
+		<div class="line-height-80 bottom-next" on-tap="next()">结算</div>
+	</div>
+
+</ion-view>

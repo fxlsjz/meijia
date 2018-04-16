@@ -1,0 +1,132 @@
+<!--搜索头部-->
+<ion-view class="VIPPackage wrap">
+    <!--头部-->
+    <ion-header-bar class="ub ub-ac bar bar-header clearfix">
+        <div class="left-img"></div>
+        <div class="ub-f1 wrap-search">
+            <i class="search-icon"></i>
+            <input class="m-t-5" type="text" placeholder="搜索套票服务名称" ng-model="searchText.text" ng-keyup="searchBtnClick($event)" />
+        </div>
+        <!--<div class="search-btn"></div>-->
+    </ion-header-bar>
+    <!--分类标签-->
+    <div class="tabbed-slidebox" tab="0">
+        <div class="tsb-icons">
+            <div class="tsb-ic-wrp tsb-ic-wrpNew">
+                <ion-scroll direction="x" class="tsb-hscroll" id="tsb-hscroll">
+                    <span ng-class="{'active': sortid == 0}" on-tap="categoryOrder(0)">
+						<i class="icon oa-Inbox">销量</i>
+						<s class="select-line"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 1}" on-tap="categoryOrder(1);">
+						<i class="icon iconfont oa-Inbox ">价格</i>
+						<em class="arrow-pos arrow-up"
+                            ng-class="{true:'arrow-up-active',false:''}[isUp]"></em>
+						<em class="arrow-pos arrow-down"
+                            ng-class="{true:'arrow-down-active',false:''}[isDown]"></em>
+                        <s class="select-line"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 2}" on-tap="categoryOrder(2)">
+						<i class="icon iconfont oa-Inbox">好评</i>
+						<s class="select-line"></s>
+                    </span>
+                    <span ng-class="{'active': sortid == 3}" on-tap="categoryOrder(3)">
+                        <i class="icon iconfont oa-Inbox">分类</i>
+                        <s class="select-line"></s>
+                    </span>
+                </ion-scroll>
+            </div>
+        </div>
+        <!--分类展开-->
+        <div class="class-content" ng-class="{true:'class-type-content',false:'class-type-content-hidden'}[isShowClassifyView]">
+            <div style="height: 18rem;background-color: #ffffff; opacity: 1;">
+                <ion-scroll style="heigth:15.5rem;">
+                    <div class="class-type-detail" ng-repeat="item in itemsType">
+                        <i class="c-3 f-s-30 line-ellipsis-1" ng-bind="item.servicetype_name"
+                           ng-class="{true:'active-item-selected',false:'active-item'}[currentClassID == item.servicetype_id]"
+                           on-tap="proTypeItem(item.servicetype_id,item.servicetype_name)"></i>
+                        <s class="class-line" ng-class="{true:'class-line-pressed',false:'class-line'}[currentClassID == item.servicetype_id]"></s>
+                    </div>
+                </ion-scroll>
+                <div class="ub btn-content">
+                    <div class="cancel" on-tap="cancelClick()">取消</div>
+                    <div class="confirm" on-tap="cancelConfirm()">确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--列表内容-->
+    <ion-content lazy-scroll delegate-handle="scrollContent" style="top: 8.25rem;bottom: 4rem;background: #fff;">
+        <!--下拉刷新-->
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <!---会员套票--->
+        <div class="VIP-content" delegate-handle="scrollContent">
+            <div class="hot-list">
+                <div class="ub list-item" ng-repeat="item in packageList" ng-click="packageListGoDetail(item)">
+                    <div ng-if="($index+1)%2 != 0" class="list-class">
+                        <div class="hot-list-img background-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                        <div class="list-recommend-img" ng-if="item.isrecommend == 'Y'"></div>
+                        <div class="hot-right-content">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32 c-df3680" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count" ng-if="!oldPrice"></span>人购买
+                            </div>
+                            <div class="btn-Content ub-ac">
+                                <div class="u-cancel-collect clearfix" ng-if="item.iscollection == 'N'" ng-click="serversCollection($event,item,'N')"></div>
+                                <div class="u-collect" ng-if="item.iscollection == 'Y'" ng-click="serversCancelCollection($event,item,'Y')"></div>
+                                <!--加入购物车-->
+                                <div class="package-join-car" ng-if="item.selected == false" on-tap="joinCar($event,item)"></div>
+                                <div class="package-join-car-cancel" ng-if="item.selected == true" on-tap="joinCar($event,item)"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div ng-if="($index+1)%2 == 0" class="list-class">
+                        <div class="hot-right-content-even">
+                            <div class="hot-name line-ellipsis-1" ng-bind="item.iname"></div>
+                            <div class="ub-f1 text-center m-t-20">
+                                <div class="c-df3680 f-s-24 line-ellipsis-1">¥<span class="f-s-32" ng-bind="item.nowprice"></span></div>
+                            </div>
+                            <div class="text-center ub-ac ub-f1 c-9 f-s-16 m-t-20 line-ellipsis-1">
+                                <span ng-bind="item.iusetime"></span>分钟
+                                <span class="m-l-10" ng-bind="item.service_count"></span>人购买
+                            </div>
+                            <div class="btn-Content ub-ac">
+                                <div class="u-cancel-collect" ng-if="item.iscollection == 'N'" ng-click="serversCollection($event,item,'N')"></div>
+                                <div class="u-collect" ng-if="item.iscollection == 'Y'" ng-click="serversCancelCollection($event,item,'Y')"></div>
+                                <!--加入购物车-->
+                                <div class="package-join-car" ng-if="item.selected == false" on-tap="joinCar($event,item)"></div>
+                                <div class="package-join-car-cancel" ng-if="item.selected == true" on-tap="joinCar($event,item)"></div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="hot-list-img-even background-img" image-lazy-background-image="true" image-lazy-src="{{item.service_thumpath_two | baseUrl}}"></div>
+                        <div class="list-recommend-img-even" ng-if="item.isrecommend == 'Y'"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--无数据显示-->
+        <mobo-no-data text="暂无数据!" layout="x" ng-if="isNoData"></mobo-no-data>
+        <!--下拉刷新-->
+        <ion-refresher class="u-loading-ion" on-refresh="doRefresh()"></ion-refresher>
+        <!--上拉加载-->
+        <ion-infinite-scroll ng-class="{'u-loading-ion': (canLoadMoreGoodsList && isShowLoadMore)}" ng-if="canLoadMoreGoodsList" distance="1%" immediate-check="false" on-infinite="loadMorePackageList()"></ion-infinite-scroll>
+    </ion-content>
+    <!--底部去结算-->
+    <div class="bottom-btn ub">
+        <div class="ub-f1">
+            合计:&nbsp;¥
+            <span ng-bind="totalAmount"></span>
+        </div>
+        <div class="bottom-next" on-tap="goNext()">结算</div>
+    </div>
+</ion-view>

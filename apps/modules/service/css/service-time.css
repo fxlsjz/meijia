@@ -1,0 +1,123 @@
+@charset "utf-8";
+.time {}
+
+.time .f-s-b75 {
+	font-size: 75%;
+}
+
+
+/*日期列表*/
+
+.time .date-list {
+	height: 5.3rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid #dedede;
+}
+
+
+/*日期列表item*/
+
+.time .date-item {
+	height: 5.3rem;
+	box-sizing: border-box;
+	margin-left: 1.25rem;
+	margin-right: 1.25rem;
+}
+
+
+/*日期列表item选中*/
+
+.time .date-item-press {
+	border-bottom: 2px solid #DF3680;
+	color: #E64c65;
+}
+
+
+/**
+ * 日期列表item内容
+ */
+
+.time .date-item-content {
+	position: relative;
+	height: 5.3rem;
+}
+
+
+/*日期item文案*/
+
+.time .date-text {
+	position: absolute;
+	bottom: 50%;
+	text-align: center;
+	width: 100%;
+}
+
+
+/*日期列表时间*/
+
+.time .date-time {
+	position: absolute;
+	top: 50%;
+	text-align: center;
+	width: 100%;
+}
+
+
+/*底部时间选择布局*/
+
+.time .option-time {
+	padding-top: 1.1rem;
+	padding-right: 1rem;
+	padding-bottom: 2.5rem;
+	padding-left: 2.5rem;
+	background: #fff;
+	top: 9.05rem;
+}
+
+.time .h5rem {
+	height: 5rem;
+	width: 100%;
+}
+
+
+/*时间选择item*/
+
+.time .option-time-item {
+	padding-top: 1.4rem;
+	padding-right: 1.5rem;
+	width: 25%;
+	display: inline-block;
+}
+
+
+/*时间选择item常规状态*/
+
+.time .option-time-item-routine {
+	width: 100%;
+	box-sizing: border-box;
+	background-color: white;
+	color: #e64c65;
+	border: 1px solid #DF3680;
+	line-height: 3.5rem;
+	text-align: center;
+	height: 3.5rem;
+}
+
+
+/*时间选择item不可点击状态*/
+
+.time .option-time-item-no-click {
+	background-color: #EFEFEF;
+	color: #999999;
+	border: 1px solid #EFEFEF;
+}
+
+
+/*时间选择item选中状态*/
+
+.time .option-time-item-press {
+	background-color: #DF3680;
+	color: white;
+	border: 1px solid #DF3680;
+}
+
